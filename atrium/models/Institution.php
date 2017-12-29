@@ -1,37 +1,47 @@
 <?php
-class Institution {
-  private $code;
-  private $name;
-  private $url;
-  private $small_logo_url;
-  private $medium_logo_url;
 
-  function __construct($response) {
-    $this->code = $response['code'];
-    $this->name = $response['name'];
-    $this->url = $response['url'];
-    $this->small_logo_url = $response['small_logo_url'];
-    $this->medium_logo_url = $response['medium_logo_url'];
-  }
+namespace AtriumMX\models;
 
-  function getCode() {
-    return $this->code;
-  }
+class Institution
+{
+    private $code;
+    private $name;
+    private $url;
+    private $small_logo_url;
+    private $medium_logo_url;
 
-  function getName() {
-    return $this->name;
-  }
+    function __construct($response)
+    {
+        $this->code = $response['code'];
+        $this->name = $response['name'];
+        $this->url = $response['url'];
+        $this->small_logo_url = $response['small_logo_url'];
+        $this->medium_logo_url = $response['medium_logo_url'];
+    }
 
-  function getUrl() {
-    return $this->url;
-  }
+    function getCode()
+    {
+        return $this->code;
+    }
 
-  function getSmallLogoUrl() {
-    return $this->small_logo_url;
-  }
+    function getName()
+    {
+        return $this->name;
+    }
 
-  function getMediumLogoUrl() {
-    return $this->medium_logo_url;
-  }
+    function getUrl()
+    {
+        return $this->url;
+    }
+
+    function getSmallLogoUrl()
+    {
+        return $this->small_logo_url;
+    }
+
+    function getMediumLogoUrl()
+    {
+        return $this->medium_logo_url;
+    }
 }
-?>
+

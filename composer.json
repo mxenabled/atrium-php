@@ -1,0 +1,35 @@
+{
+  "name": "mxenabled/atrium-php",
+  "description": "Atrium MX REST API SDK. PHP client.",
+  "keywords": [
+    "client",
+    "Atrium",
+    "MX",
+    "rest",
+    "api",
+    "sdk"
+  ],
+  "homepage": "https://github.com/mxenabled/atrium-php",
+  "type": "library",
+  "license": "MIT License",
+  "authors": [
+    {
+      "name": "Atrium MX",
+      "email": "dev@mx.com",
+      "homepage": "http://mx.com",
+      "role": "Provider"
+    }
+  ],
+  "support": {
+    "wiki": "https://github.com/mxenabled/atrium-php",
+    "source": "https://github.com/mxenabled/atrium-php"
+  },
+  "require": {
+    "php": ">=5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "AtriumMX\\": "atrium/"
+    }
+  }
+}
