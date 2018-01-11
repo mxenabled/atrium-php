@@ -38,7 +38,7 @@ class Account
         $this->apr = $response['apr'];
         $this->apy = $response['apy'];
         $this->available_balance = $response['available_balance'];
-        $this->available_credit = $response['avaialble_credit'];
+        $this->available_credit = $response['available_credit'];
         $this->balance = $response['balance'];
         $this->created_at = $response['created_at'];
         $this->credit_limit = $response['credit_limit'];
