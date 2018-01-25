@@ -1,31 +1,39 @@
 <?php
-class Credential {
-  private $field_name;
-  private $guid;
-  private $label;
-  private $type;
 
-  function __construct($response) {
-    $this->field_name = $response['field_name'];
-    $this->guid = $response['guid'];
-    $this->label = $response['label'];
-    $this->type = $response['type'];
-  }
+namespace AtriumMX\models;
 
-  function getFieldName() {
-    return $this->field_name;
-  }
+class Credential
+{
+    private $field_name;
+    private $guid;
+    private $label;
+    private $type;
 
-  function getGuid() {
-    return $this->guid;
-  }
+    function __construct($response)
+    {
+        $this->field_name = $response['field_name'];
+        $this->guid = $response['guid'];
+        $this->label = $response['label'];
+        $this->type = $response['type'];
+    }
 
-  function getLabel() {
-    return $this->label;
-  }
+    function getFieldName()
+    {
+        return $this->field_name;
+    }
 
-  function getType() {
-    return $this->type;
-  }
+    function getGuid()
+    {
+        return $this->guid;
+    }
+
+    function getLabel()
+    {
+        return $this->label;
+    }
+
+    function getType()
+    {
+        return $this->type;
+    }
 }
-?>

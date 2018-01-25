@@ -1,43 +1,53 @@
 <?php
-class Challenge {
-  private $field_name;
-  private $guid;
-  private $label;
-  private $type;
-  private $image_data;
-  private $options;
 
-  function __construct($response) {
-    $this->field_name = $response['field_name'];
-    $this->guid = $response['guid'];
-    $this->label = $response['label'];
-    $this->type = $response['type'];
-    $this->image_data = $response['image_data'];
-    $this->options = $response['options'];
-  }
+namespace AtriumMX\models;
 
-  function getFieldName() {
-    return $this->field_name;
-  }
+class Challenge
+{
+    private $field_name;
+    private $guid;
+    private $label;
+    private $type;
+    private $image_data;
+    private $options;
 
-  function getGuid() {
-    return $this->guid;
-  }
+    function __construct($response)
+    {
+        $this->field_name = $response['field_name'];
+        $this->guid = $response['guid'];
+        $this->label = $response['label'];
+        $this->type = $response['type'];
+        $this->image_data = $response['image_data'];
+        $this->options = $response['options'];
+    }
 
-  function getLabel() {
-    return $this->label;
-  }
+    function getFieldName()
+    {
+        return $this->field_name;
+    }
 
-  function getType() {
-    return $this->type;
-  }
+    function getGuid()
+    {
+        return $this->guid;
+    }
 
-  function getImageData() {
-    return $this->image_data;
-  }
+    function getLabel()
+    {
+        return $this->label;
+    }
 
-  function getOptions() {
-    return $this->options;
-  }
+    function getType()
+    {
+        return $this->type;
+    }
+
+    function getImageData()
+    {
+        return $this->image_data;
+    }
+
+    function getOptions()
+    {
+        return $this->options;
+    }
 }
-?>
