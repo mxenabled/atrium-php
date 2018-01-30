@@ -1,6 +1,7 @@
 <?php
 class Transaction {
   private $account_guid;
+  private $amount;
   private $category;
   private $check_number;
   private $created_at;
@@ -30,6 +31,7 @@ class Transaction {
 
   function __construct($response) {
     $this->account_guid = $response['account_guid'];
+    $this->amount = $response['amount'];
     $this->category = $response['category'];
     $this->check_number = $response['check_number'];
     $this->created_at = $response['created_at'];
@@ -60,6 +62,10 @@ class Transaction {
 
   function getAccountGuid() {
     return $this->account_guid;
+  }
+
+  function getAmount() {
+    return $this->amount;
   }
 
   function getCategory() {
