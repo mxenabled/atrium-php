@@ -327,12 +327,51 @@ class AtriumClient {
     $response_header = trim(substr($response, 0, $response_info['header_size']));
     $response_body = substr($response, $response_info['header_size']);
 
-    //echo $response_info['http_code'];
-    //echo $response_header;
+    $this->httpError($response_info['http_code']);
+
     return $response_body;
+  }
 
+  function httpError($code) {
+    switch($code) {
+      case 400:
+        echo $code . " error: Required parameter is missing.\n";
+        break;
+      case 401:
+        echo $code . " error: Invalid MX-API-Key, MX-Client-ID, or being used in wrong environment.\n";
+        break;
+      case 403:
+        echo $code . " error: Requests must be HTTPS.\n";
+        break;
+      case 404:
+        echo $code . " error: GUID / URL path not recognized.\n";
+        break;
+      case 405:
+        echo $code . " error: Endpoint constraint not met.\n";
+        break;
+      case 406:
+        echo $code . " error: Specifiy valid API version.\n";
+        break;
+      case 409:
+        echo $code . " error: Object already exists.\n";
+        break;
+      case 422:
+        echo $code . " error: Data provided cannot be processed.\n";
+        break;
+      case 500:
+      case 502:
+      case 504:
+        echo $code . " error: An unexpected error occurred on MX's systems.\n";
+        break;
+      case 503:
+        echo $code . " error: Please try again later. The MX Platform is currently being updated.\n";
+        break;
+    }
 
-    //return $response_body;
+    // Quit on 4XX or 5XX errors
+    if (intdiv($code, 100) == 4 || intdiv($code, 100) == 5) {
+      exit(0);
+    }
   }
 }
 
