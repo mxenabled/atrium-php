@@ -5,6 +5,8 @@ include_once('models/Credential.php');
 include_once('models/Member.php');
 include_once('models/Challenge.php');
 include_once('models/Account.php');
+include_once('models/AccountNumber.php');
+include_once('models/AccountOwner.php');
 include_once('models/Transaction.php');
 include_once('models/Connect.php');
 
@@ -215,6 +217,15 @@ class AtriumClient {
     return $transactionArray;
   }
 
+  function verifyMember($userGUID, $memberGUID) {
+    $response = $this->makeRequest('POST', '/users/' . $userGUID . '/members/' . $memberGUID . '/verify', '');
+    return new Member(json_decode($response, true)['member']);
+  }
+
+  function identifyMember($userGUID, $memberGUID) {
+    $response = $this->makeRequest('POST', '/users/' . $userGUID . '/members/' . $memberGUID . '/identify', '');
+    return new Member(json_decode($response, true)['member']);
+  }
 
   // ACCOUNT
 
@@ -247,6 +258,45 @@ class AtriumClient {
     return $transactionArray;
   }
 
+  // ACCOUNT NUMBER
+
+  function listAccountAccountNumbers($userGUID, $accountGUID) {
+    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/accounts/' . $accountGUID . '/account_numbers', '');
+    $accountNumbers = json_decode($response, true)['account_numbers'];
+
+    $accountNumberArray = [];
+    foreach ($accountNumbers as $accountNumber) {
+      $accountNumberArray[] = new AccountNumber($accountNumber);
+    }
+
+    return $accountNumberArray;
+  }
+
+  function listMemberAccountNumbers($userGUID, $memberGUID) {
+    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members/' . $memberGUID . '/account_numbers', '');
+    $accountNumbers = json_decode($response, true)['account_numbers'];
+
+    $accountNumberArray = [];
+    foreach ($accountNumbers as $accountNumber) {
+      $accountNumberArray[] = new AccountNumber($accountNumber);
+    }
+
+    return $accountNumberArray;
+  }
+
+  // ACCOUNT OWNER
+
+  function listMemberAccountOwners($userGUID, $memberGUID) {
+    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members/' . $memberGUID . '/account_owners', '');
+    $accountOwners = json_decode($response, true)['account_owners'];
+
+    $accountOwnerArray = [];
+    foreach ($accountOwners as $accountOwner) {
+      $accountOwnerArray[] = new AccountOwner($accountOwner);
+    }
+
+    return $accountOwnerArray;
+  }
 
   // TRANSACTION
 
