@@ -36,7 +36,7 @@ class AtriumClient {
   }
 
   function readUser($userGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID");
     return new User($response['user']);
   }
 
@@ -52,7 +52,7 @@ class AtriumClient {
   }
 
   function listUsers() {
-    $response = $this->makeRequest('GET', '/users', '');
+    $response = $this->makeRequest('GET', '/users');
     $users = $response['users'];
 
     $userArray = [];
@@ -64,14 +64,14 @@ class AtriumClient {
   }
 
   function deleteUser($userGUID) {
-    return $this->makeRequest('DELETE', "/users/$userGUID", '');
+    return $this->makeRequest('DELETE', "/users/$userGUID");
   }
 
 
   // INSTITUTION
 
   function listInstitutions($name = '') {
-    $response = $this->makeRequest('GET', "/institutions?name=$name", '');
+    $response = $this->makeRequest('GET', "/institutions?name=$name");
     $institutions = $response['institutions'];
 
     $institutionArray = [];
@@ -83,12 +83,12 @@ class AtriumClient {
   }
 
   function readInstitution($institutionCode) {
-    $response = $this->makeRequest('GET', "/institutions/$institutionCode", '');
+    $response = $this->makeRequest('GET', "/institutions/$institutionCode");
     return new Institution($response['institution']);
   }
 
   function readInstitutionCredentials($institutionCode) {
-    $response = $this->makeRequest('GET', "/institutions/$institutionCode/credentials", '');
+    $response = $this->makeRequest('GET', "/institutions/$institutionCode/credentials");
     $credentials = $response['credentials'];
 
     $credentialArray = [];
@@ -115,7 +115,7 @@ class AtriumClient {
   }
 
   function readMember($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID");
     return new Member($response['member']);
   }
 
@@ -132,11 +132,11 @@ class AtriumClient {
   }
 
   function deleteMember($userGUID, $memberGUID) {
-    return $this->makeRequest('DELETE', "/users/$userGUID/members/$memberGUID", '');
+    return $this->makeRequest('DELETE', "/users/$userGUID/members/$memberGUID");
   }
 
   function listMembers($userGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/members", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/members");
     $members = $response['members'];
 
     $memberArray = [];
@@ -148,17 +148,17 @@ class AtriumClient {
   }
 
   function aggregateMember($userGUID, $memberGUID) {
-    $response = $this->makeRequest('POST', "/users/$userGUID/members/$memberGUID/aggregate", '');
+    $response = $this->makeRequest('POST', "/users/$userGUID/members/$memberGUID/aggregate");
     return new Member($response['member']);
   }
 
   function readMemberAggregationStatus($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID /status", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID /status");
     return new Member($response['member']);
   }
 
   function listMemberMFAChallenges($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/challenges", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/challenges");
     $challenges = $response['challenges'];
 
     $challengeArray = [];
@@ -194,7 +194,7 @@ class AtriumClient {
   }
 
   function listMemberAccounts($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/accounts", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/accounts");
     $accounts = $response['accounts'];
 
     $accountArray = [];
@@ -206,7 +206,7 @@ class AtriumClient {
   }
 
   function listMemberTransactions($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/transactions", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/transactions");
     $transactions = $response['transactions'];
 
     $transactionArray = [];
@@ -218,24 +218,24 @@ class AtriumClient {
   }
 
   function verifyMember($userGUID, $memberGUID) {
-    $response = $this->makeRequest('POST', "/users/$userGUID/members/$memberGUID/verify", '');
+    $response = $this->makeRequest('POST', "/users/$userGUID/members/$memberGUID/verify");
     return new Member($response['member']);
   }
 
   function identifyMember($userGUID, $memberGUID) {
-    $response = $this->makeRequest('POST', "/users/$userGUID/members/$memberGUID/identify", '');
+    $response = $this->makeRequest('POST', "/users/$userGUID/members/$memberGUID/identify");
     return new Member($response['member']);
   }
 
   // ACCOUNT
 
   function readAccount($userGUID, $accountGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/accounts/$accountGUID", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/accounts/$accountGUID");
     return new Account($response['account']);
   }
 
   function listAccounts($userGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/accounts", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/accounts");
     $accounts = $response['accounts'];
 
     $accountArray = [];
@@ -247,7 +247,7 @@ class AtriumClient {
   }
 
   function listAccountTransactions($userGUID, $accountGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/accounts/$accountGUID/transactions", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/accounts/$accountGUID/transactions");
     $transactions = $response['transactions'];
 
     $transactionArray = [];
@@ -261,7 +261,7 @@ class AtriumClient {
   // ACCOUNT NUMBER
 
   function listAccountAccountNumbers($userGUID, $accountGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/accounts/$accountGUID/account_numbers", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/accounts/$accountGUID/account_numbers");
     $accountNumbers = $response['account_numbers'];
 
     $accountNumberArray = [];
@@ -273,7 +273,7 @@ class AtriumClient {
   }
 
   function listMemberAccountNumbers($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/account_numbers", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/account_numbers");
     $accountNumbers = $response['account_numbers'];
 
     $accountNumberArray = [];
@@ -287,7 +287,7 @@ class AtriumClient {
   // ACCOUNT OWNER
 
   function listMemberAccountOwners($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/account_owners", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/account_owners");
     $accountOwners = $response['account_owners'];
 
     $accountOwnerArray = [];
@@ -301,12 +301,12 @@ class AtriumClient {
   // TRANSACTION
 
   function readTransaction($userGUID, $transactionGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/transactions/$transactionGUID", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/transactions/$transactionGUID");
     return new Transaction($response['transaction']);
   }
 
   function listTransactions($userGUID) {
-    $response = $this->makeRequest('GET', "/users/$userGUID/transactions", '');
+    $response = $this->makeRequest('GET', "/users/$userGUID/transactions");
     $transactions = $response['transactions'];
 
     $transactionArray = [];
@@ -321,7 +321,7 @@ class AtriumClient {
   // CONNECT WIDGET
 
   function createWidget($userGUID) {
-    $response = $this->makeRequest('POST', "/users/$userGUID/connect_widget_url", '');
+    $response = $this->makeRequest('POST', "/users/$userGUID/connect_widget_url");
     return new Connect($response['user']);
   }
 
@@ -329,7 +329,7 @@ class AtriumClient {
 
 
 
-  private function makeRequest($method, $endpoint, $body) {
+  private function makeRequest($method, $endpoint, $body = "") {
     $request = curl_init();
     curl_setopt($request, CURLOPT_RETURNTRANSFER, TRUE);
 
