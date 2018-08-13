@@ -32,12 +32,12 @@ class AtriumClient {
     $json = json_encode($user);
 
     $response = $this->makeRequest('POST', '/users', $json);
-    return new User(json_decode($response, true)['user']);
+    return new User($response['user']);
   }
 
   function readUser($userGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID, '');
-    return new User(json_decode($response, true)['user']);
+    $response = $this->makeRequest('GET', "/users/$userGUID");
+    return new User($response['user']);
   }
 
   function updateUser($userGUID, $params) {
@@ -47,13 +47,13 @@ class AtriumClient {
 
     $json = json_encode($user);
 
-    $response = $this->makeRequest('PUT', '/users/' . $userGUID, $json);
-    return new User(json_decode($response, true)['user']);
+    $response = $this->makeRequest('PUT', "/users/$userGUID", $json);
+    return new User($response['user']);
   }
 
   function listUsers() {
-    $response = $this->makeRequest('GET', '/users', '');
-    $users = json_decode($response, true)['users'];
+    $response = $this->makeRequest('GET', '/users');
+    $users = $response['users'];
 
     $userArray = [];
     foreach ($users as $user) {
@@ -64,15 +64,15 @@ class AtriumClient {
   }
 
   function deleteUser($userGUID) {
-    return $this->makeRequest('DELETE', '/users/' . $userGUID, '');
+    return $this->makeRequest('DELETE', "/users/$userGUID");
   }
 
 
   // INSTITUTION
 
   function listInstitutions($name = '') {
-    $response = $this->makeRequest('GET', '/institutions?name=' . $name, '');
-    $institutions = json_decode($response, true)['institutions'];
+    $response = $this->makeRequest('GET', "/institutions?name=$name");
+    $institutions = $response['institutions'];
 
     $institutionArray = [];
     foreach ($institutions as $institution) {
@@ -83,13 +83,13 @@ class AtriumClient {
   }
 
   function readInstitution($institutionCode) {
-    $response = $this->makeRequest('GET', '/institutions/' . $institutionCode, '');
-    return new Institution(json_decode($response, true)['institution']);
+    $response = $this->makeRequest('GET', "/institutions/$institutionCode");
+    return new Institution($response['institution']);
   }
 
   function readInstitutionCredentials($institutionCode) {
-    $response = $this->makeRequest('GET', '/institutions/' . $institutionCode . '/credentials', '');
-    $credentials = json_decode($response, true)['credentials'];
+    $response = $this->makeRequest('GET', "/institutions/$institutionCode/credentials");
+    $credentials = $response['credentials'];
 
     $credentialArray = [];
     foreach ($credentials as $credential) {
@@ -109,14 +109,14 @@ class AtriumClient {
 
     $json = json_encode($member);
 
-    $response = $this->makeRequest('POST', '/users/' . $userGUID . '/members', $json);
+    $response = $this->makeRequest('POST', "/users/$userGUID/members", $json);
 
-    return new Member(json_decode($response, true)['member']);
+    return new Member($response['member']);
   }
 
   function readMember($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members/' . $memberGUID, '');
-    return new Member(json_decode($response, true)['member']);
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID");
+    return new Member($response['member']);
   }
 
   function updateMember($userGUID, $memberGUID, $params) {
@@ -126,18 +126,18 @@ class AtriumClient {
 
     $json = json_encode($member);
 
-    $response = $this->makeRequest('PUT', '/users/' . $userGUID . '/members/' . $memberGUID, $json);
+    $response = $this->makeRequest('PUT', "/users/$userGUID/members/$memberGUID", $json);
 
-    return new Member(json_decode($response, true)['member']);
+    return new Member($response['member']);
   }
 
   function deleteMember($userGUID, $memberGUID) {
-    return $this->makeRequest('DELETE', '/users/' . $userGUID . '/members/' . $memberGUID, '');
+    return $this->makeRequest('DELETE', "/users/$userGUID/members/$memberGUID");
   }
 
   function listMembers($userGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members', '');
-    $members = json_decode($response, true)['members'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/members");
+    $members = $response['members'];
 
     $memberArray = [];
     foreach ($members as $member) {
@@ -148,18 +148,18 @@ class AtriumClient {
   }
 
   function aggregateMember($userGUID, $memberGUID) {
-    $response = $this->makeRequest('POST', '/users/' . $userGUID . '/members/' . $memberGUID . '/aggregate', '');
-    return new Member(json_decode($response, true)['member']);
+    $response = $this->makeRequest('POST', "/users/$userGUID/members/$memberGUID/aggregate");
+    return new Member($response['member']);
   }
 
   function readMemberAggregationStatus($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members/' . $memberGUID . '/status', '');
-    return new Member(json_decode($response, true)['member']);
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID /status");
+    return new Member($response['member']);
   }
 
   function listMemberMFAChallenges($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members/' . $memberGUID . '/challenges', '');
-    $challenges = json_decode($response, true)['challenges'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/challenges");
+    $challenges = $response['challenges'];
 
     $challengeArray = [];
     foreach ($challenges as $challenge) {
@@ -176,14 +176,14 @@ class AtriumClient {
 
     $json = json_encode($member);
 
-    $response = $this->makeRequest('PUT', '/users/' . $userGUID . '/members/' . $memberGUID . '/resume', $json);
+    $response = $this->makeRequest('PUT', "/users/$userGUID/members/$memberGUID/resume", $json);
 
-    return new Member(json_decode($response, true)['member']);
+    return new Member($response['member']);
   }
 
   function listMemberCredentials($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members/' . $memberGUID . '/credentials', $json);
-    $credentials = json_decode($response, true)['credentials'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/credentials", $json);
+    $credentials = $response['credentials'];
 
     $credentialArray = [];
     foreach ($credentials as $credential) {
@@ -194,8 +194,8 @@ class AtriumClient {
   }
 
   function listMemberAccounts($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members/' . $memberGUID . '/accounts', '');
-    $accounts = json_decode($response, true)['accounts'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/accounts");
+    $accounts = $response['accounts'];
 
     $accountArray = [];
     foreach ($accounts as $account) {
@@ -206,8 +206,8 @@ class AtriumClient {
   }
 
   function listMemberTransactions($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members/' . $memberGUID . '/transactions', '');
-    $transactions = json_decode($response, true)['transactions'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/transactions");
+    $transactions = $response['transactions'];
 
     $transactionArray = [];
     foreach ($transactions as $transaction) {
@@ -218,25 +218,25 @@ class AtriumClient {
   }
 
   function verifyMember($userGUID, $memberGUID) {
-    $response = $this->makeRequest('POST', '/users/' . $userGUID . '/members/' . $memberGUID . '/verify', '');
-    return new Member(json_decode($response, true)['member']);
+    $response = $this->makeRequest('POST', "/users/$userGUID/members/$memberGUID/verify");
+    return new Member($response['member']);
   }
 
   function identifyMember($userGUID, $memberGUID) {
-    $response = $this->makeRequest('POST', '/users/' . $userGUID . '/members/' . $memberGUID . '/identify', '');
-    return new Member(json_decode($response, true)['member']);
+    $response = $this->makeRequest('POST', "/users/$userGUID/members/$memberGUID/identify");
+    return new Member($response['member']);
   }
 
   // ACCOUNT
 
   function readAccount($userGUID, $accountGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/accounts/' . $accountGUID, '');
-    return new Account(json_decode($response, true)['account']);
+    $response = $this->makeRequest('GET', "/users/$userGUID/accounts/$accountGUID");
+    return new Account($response['account']);
   }
 
   function listAccounts($userGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/accounts', '');
-    $accounts = json_decode($response, true)['accounts'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/accounts");
+    $accounts = $response['accounts'];
 
     $accountArray = [];
     foreach ($accounts as $account) {
@@ -247,8 +247,8 @@ class AtriumClient {
   }
 
   function listAccountTransactions($userGUID, $accountGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/accounts/' . $accountGUID . '/transactions', '');
-    $transactions = json_decode($response, true)['transactions'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/accounts/$accountGUID/transactions");
+    $transactions = $response['transactions'];
 
     $transactionArray = [];
     foreach ($transactions as $transaction) {
@@ -261,8 +261,8 @@ class AtriumClient {
   // ACCOUNT NUMBER
 
   function listAccountAccountNumbers($userGUID, $accountGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/accounts/' . $accountGUID . '/account_numbers', '');
-    $accountNumbers = json_decode($response, true)['account_numbers'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/accounts/$accountGUID/account_numbers");
+    $accountNumbers = $response['account_numbers'];
 
     $accountNumberArray = [];
     foreach ($accountNumbers as $accountNumber) {
@@ -273,8 +273,8 @@ class AtriumClient {
   }
 
   function listMemberAccountNumbers($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members/' . $memberGUID . '/account_numbers', '');
-    $accountNumbers = json_decode($response, true)['account_numbers'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/account_numbers");
+    $accountNumbers = $response['account_numbers'];
 
     $accountNumberArray = [];
     foreach ($accountNumbers as $accountNumber) {
@@ -287,8 +287,8 @@ class AtriumClient {
   // ACCOUNT OWNER
 
   function listMemberAccountOwners($userGUID, $memberGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/members/' . $memberGUID . '/account_owners', '');
-    $accountOwners = json_decode($response, true)['account_owners'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/members/$memberGUID/account_owners");
+    $accountOwners = $response['account_owners'];
 
     $accountOwnerArray = [];
     foreach ($accountOwners as $accountOwner) {
@@ -301,13 +301,13 @@ class AtriumClient {
   // TRANSACTION
 
   function readTransaction($userGUID, $transactionGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/transactions/' . $transactionGUID, '');
-    return new Transaction(json_decode($response, true)['transaction']);
+    $response = $this->makeRequest('GET', "/users/$userGUID/transactions/$transactionGUID");
+    return new Transaction($response['transaction']);
   }
 
   function listTransactions($userGUID) {
-    $response = $this->makeRequest('GET', '/users/' . $userGUID . '/transactions', '');
-    $transactions = json_decode($response, true)['transactions'];
+    $response = $this->makeRequest('GET', "/users/$userGUID/transactions");
+    $transactions = $response['transactions'];
 
     $transactionArray = [];
     foreach ($transactions as $transaction) {
@@ -321,15 +321,15 @@ class AtriumClient {
   // CONNECT WIDGET
 
   function createWidget($userGUID) {
-    $response = $this->makeRequest('POST', '/users/' . $userGUID . '/connect_widget_url', '');
-    return new Connect(json_decode($response, true)['user']);
+    $response = $this->makeRequest('POST', "/users/$userGUID/connect_widget_url");
+    return new Connect($response['user']);
   }
 
 
 
 
 
-  private function makeRequest($method, $endpoint, $body) {
+  private function makeRequest($method, $endpoint, $body = "") {
     $request = curl_init();
     curl_setopt($request, CURLOPT_RETURNTRANSFER, TRUE);
 
@@ -379,42 +379,42 @@ class AtriumClient {
 
     $this->httpError($response_info['http_code']);
 
-    return $response_body;
+    return json_decode($response_body, true);
   }
 
   function httpError($code) {
     switch($code) {
       case 400:
-        echo $code . " error: Required parameter is missing.\n";
+        echo "$code error: Required parameter is missing.\n";
         break;
       case 401:
-        echo $code . " error: Invalid MX-API-Key, MX-Client-ID, or being used in wrong environment.\n";
+        echo "$code error: Invalid MX-API-Key, MX-Client-ID, or being used in wrong environment.\n";
         break;
       case 403:
-        echo $code . " error: Requests must be HTTPS.\n";
+        echo "$code error: Requests must be HTTPS.\n";
         break;
       case 404:
-        echo $code . " error: GUID / URL path not recognized.\n";
+        echo "$code error: GUID / URL path not recognized.\n";
         break;
       case 405:
-        echo $code . " error: Endpoint constraint not met.\n";
+        echo "$code error: Endpoint constraint not met.\n";
         break;
       case 406:
-        echo $code . " error: Specifiy valid API version.\n";
+        echo "$code error: Specifiy valid API version.\n";
         break;
       case 409:
-        echo $code . " error: Object already exists.\n";
+        echo "$code error: Object already exists.\n";
         break;
       case 422:
-        echo $code . " error: Data provided cannot be processed.\n";
+        echo "$code error: Data provided cannot be processed.\n";
         break;
       case 500:
       case 502:
       case 504:
-        echo $code . " error: An unexpected error occurred on MX's systems.\n";
+        echo "$code error: An unexpected error occurred on MX's systems.\n";
         break;
       case 503:
-        echo $code . " error: Please try again later. The MX Platform is currently being updated.\n";
+        echo "$code error: Please try again later. The MX Platform is currently being updated.\n";
         break;
     }
 
