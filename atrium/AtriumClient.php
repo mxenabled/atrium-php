@@ -300,6 +300,24 @@ class AtriumClient {
 
   // TRANSACTION
 
+  function categorizeAndDescribeTransactions($transactions) {
+    $transactionArray = array(
+      'transactions' => $transactions
+    );
+
+    $json = json_encode($transactionArray);
+    $response = $this->makeRequest('POST', "/categorize_and_describe", $json);
+
+    $categorizedTransactions = $response['transactions'];
+
+    $transactionsArray = [];
+    foreach ($categorizedTransactions as $transaction) {
+      $transactionsArray[] = new Transaction($transaction);
+    }
+    
+    return $transactionsArray;
+  }
+
   function readTransaction($userGUID, $transactionGUID) {
     $response = $this->makeRequest('GET', "/users/$userGUID/transactions/$transactionGUID");
     return new Transaction($response['transaction']);
