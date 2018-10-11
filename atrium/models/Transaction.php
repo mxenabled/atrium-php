@@ -8,6 +8,7 @@ class Transaction {
   private $date;
   private $description;
   private $guid;
+  private $id;
   private $is_bill_pay;
   private $is_direct_deposit;
   private $is_expense;
@@ -38,6 +39,7 @@ class Transaction {
     $this->date = $response['date'];
     $this->description = $response['description'];
     $this->guid = $response['guid'];
+    $this->id = $response['id'];
     $this->is_bill_pay = $response['is_bill_pay'];
     $this->is_direct_deposit = $response['is_direct_deposit'];
     $this->is_expense = $response['is_expense'];
@@ -90,6 +92,10 @@ class Transaction {
 
   function getGuid() {
     return $this->guid;
+  }
+
+  function getId() {
+    return $this->id;
   }
 
   function getIsBillPay() {
