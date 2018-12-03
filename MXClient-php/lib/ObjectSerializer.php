@@ -31,7 +31,7 @@ class ObjectSerializer
      *
      * @param mixed  $data   the data to serialize
      * @param string $type   the mxType of the data
-     * @param string $format the format of the Swagger type of the data
+     * @param string $format the format of MX type of the data
      *
      * @return string|object serialized form of $data
      */

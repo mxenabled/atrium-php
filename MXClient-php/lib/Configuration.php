@@ -71,11 +71,11 @@ class Configuration
     protected $host = 'https://vestibule.mx.com';
 
     /**
-     * User agent of the HTTP request, set to "PHP-Swagger" by default
+     * User agent of the HTTP request
      *
      * @var string
      */
-    protected $userAgent = 'Swagger-Codegen/1.0.0/php';
+    protected $userAgent = 'MX-Codegen/1.0.0/php';
 
     /**
      * Debug switch (default set to false)

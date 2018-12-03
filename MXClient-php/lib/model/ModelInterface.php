@@ -22,7 +22,7 @@ namespace atrium\model;
  * Interface abstracting model access.
  *
  * @package atrium\model
- * @author  Swagger Codegen team
+ * @author  MX team
  */
 interface ModelInterface
 {
