@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -16,14 +16,14 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 /**
  * AccountOwnersTest Class Doc Comment
  *
  * @category    Class
  * @description AccountOwners
- * @package     atrium-php
+ * @package     atrium
  */
 class AccountOwnersTest extends \PHPUnit_Framework_TestCase
 {

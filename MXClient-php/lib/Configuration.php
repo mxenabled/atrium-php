@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -15,14 +15,14 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 class Configuration
 {
@@ -380,7 +380,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (atrium-php) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (atrium) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 0.1' . PHP_EOL;

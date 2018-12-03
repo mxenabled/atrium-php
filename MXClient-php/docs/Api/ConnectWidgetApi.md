@@ -1,4 +1,4 @@
-# atrium-php\ConnectWidgetApi
+# atrium\ConnectWidgetApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -6,7 +6,7 @@ Method | HTTP request | Description
 
 
 # **getConnectWidget**
-> \atrium-php\atrium-php\ConnectWidget getConnectWidget($user_guid, $body)
+> \atrium\model\ConnectWidget getConnectWidget($user_guid, $body)
 
 Embedding in a website
 
@@ -18,22 +18,22 @@ This endpoint will return a URL for an embeddable version of MX Connect.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
 // Configure API key authorization: clientID
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
 
-$apiInstance = new atrium-php\Api\ConnectWidgetApi(
+$apiInstance = new atrium\Api\ConnectWidgetApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
-$body = new \atrium-php\atrium-php\ConnectWidgetRequestBody(); // \atrium-php\atrium-php\ConnectWidgetRequestBody | Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
+$body = new \atrium\model\ConnectWidgetRequestBody(); // \atrium\model\ConnectWidgetRequestBody | Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
 
 try {
     $result = $apiInstance->getConnectWidget($user_guid, $body);
@@ -49,11 +49,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_guid** | **string**| The unique identifier for a &#x60;user&#x60;. |
- **body** | [**\atrium-php\atrium-php\ConnectWidgetRequestBody**](../Model/ConnectWidgetRequestBody.md)| Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials) |
+ **body** | [**\atrium\model\ConnectWidgetRequestBody**](../Model/ConnectWidgetRequestBody.md)| Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials) |
 
 ### Return type
 
-[**\atrium-php\atrium-php\ConnectWidget**](../Model/ConnectWidget.md)
+[**\atrium\model\ConnectWidget**](../Model/ConnectWidget.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

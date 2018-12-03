@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -16,14 +16,14 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 /**
  * CredentialResponseAttributesTest Class Doc Comment
  *
  * @category    Class
  * @description CredentialResponseAttributes
- * @package     atrium-php
+ * @package     atrium
  */
 class CredentialResponseAttributesTest extends \PHPUnit_Framework_TestCase
 {

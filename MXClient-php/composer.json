@@ -27,9 +27,9 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "atrium-php\\" : "lib/" }
+        "psr-4": { "atrium\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "atrium-php\\" : "test/" }
+        "psr-4": { "atrium\\" : "test/" }
     }
 }

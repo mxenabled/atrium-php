@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -16,14 +16,14 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 /**
  * AccountNumberAttributesTest Class Doc Comment
  *
  * @category    Class
  * @description AccountNumberAttributes
- * @package     atrium-php
+ * @package     atrium
  */
 class AccountNumberAttributesTest extends \PHPUnit_Framework_TestCase
 {

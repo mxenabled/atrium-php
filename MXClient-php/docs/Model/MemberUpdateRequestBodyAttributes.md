@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**credentials** | [**\atrium-php\atrium-php\CredentialResponseAttributes[]**](CredentialResponseAttributes.md) |  | [optional] 
+**credentials** | [**\atrium\model\CredentialResponseAttributes[]**](CredentialResponseAttributes.md) |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **metadata** | **string** |  | [optional] 
 

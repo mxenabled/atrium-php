@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -16,14 +16,14 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 /**
  * InstitutionTest Class Doc Comment
  *
  * @category    Class
  * @description Institution
- * @package     atrium-php
+ * @package     atrium
  */
 class InstitutionTest extends \PHPUnit_Framework_TestCase
 {

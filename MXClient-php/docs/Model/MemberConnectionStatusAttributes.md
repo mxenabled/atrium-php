@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregated_at** | **string** |  | [optional] 
-**challenges** | [**\atrium-php\atrium-php\ChallengeAttributes[]**](ChallengeAttributes.md) |  | [optional] 
+**challenges** | [**\atrium\model\ChallengeAttributes[]**](ChallengeAttributes.md) |  | [optional] 
 **connection_status** | **string** |  | [optional] 
 **guid** | **bool** |  | [optional] 
 **has_processed_accounts** | **bool** |  | [optional] 

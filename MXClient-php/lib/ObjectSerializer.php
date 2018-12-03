@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -16,13 +16,13 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 /**
  * ObjectSerializer Class Doc Comment
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 class ObjectSerializer
 {
@@ -280,7 +280,7 @@ class ObjectSerializer
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = $class::DISCRIMINATOR;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\atrium-php\Model\\' . $data->{$discriminator};
+                $subclass = '\atrium\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }

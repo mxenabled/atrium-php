@@ -1,4 +1,4 @@
-# atrium-php\IdentityApi
+# atrium\IdentityApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -7,7 +7,7 @@ Method | HTTP request | Description
 
 
 # **identifyMember**
-> \atrium-php\atrium-php\Member identifyMember($member_guid, $user_guid)
+> \atrium\model\Member identifyMember($member_guid, $user_guid)
 
 Identify
 
@@ -19,15 +19,15 @@ The identify endpoint begins an identification process for an already-existing m
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
 // Configure API key authorization: clientID
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
 
-$apiInstance = new atrium-php\Api\IdentityApi(
+$apiInstance = new atrium\Api\IdentityApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -54,12 +54,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium-php\atrium-php\Member**](../Model/Member.md)
+[**\atrium\model\Member**](../Model/Member.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAccountOwners**
-> \atrium-php\atrium-php\AccountOwners listAccountOwners($member_guid, $user_guid)
+> \atrium\model\AccountOwners listAccountOwners($member_guid, $user_guid)
 
 List member account owners
 
@@ -71,15 +71,15 @@ This endpoint returns an array with information about every account associated w
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
 // Configure API key authorization: clientID
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
 
-$apiInstance = new atrium-php\Api\IdentityApi(
+$apiInstance = new atrium\Api\IdentityApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium-php\atrium-php\AccountOwners**](../Model/AccountOwners.md)
+[**\atrium\model\AccountOwners**](../Model/AccountOwners.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

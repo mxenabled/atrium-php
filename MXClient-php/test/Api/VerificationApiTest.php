@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -15,17 +15,17 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
-use \atrium-php\Configuration;
-use \atrium-php\ApiException;
-use \atrium-php\ObjectSerializer;
+use \atrium\Configuration;
+use \atrium\ApiException;
+use \atrium\ObjectSerializer;
 
 /**
  * VerificationApiTest Class Doc Comment
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 class VerificationApiTest extends \PHPUnit_Framework_TestCase
 {

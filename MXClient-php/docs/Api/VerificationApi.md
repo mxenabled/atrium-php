@@ -1,4 +1,4 @@
-# atrium-php\VerificationApi
+# atrium\VerificationApi
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **listAccountNumbers**
-> \atrium-php\atrium-php\AccountNumbers listAccountNumbers($member_guid, $user_guid)
+> \atrium\model\AccountNumbers listAccountNumbers($member_guid, $user_guid)
 
 Read account numbers
 
@@ -20,15 +20,15 @@ Use this endpoint to check whether account and routing numbers are available for
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
 // Configure API key authorization: clientID
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
 
-$apiInstance = new atrium-php\Api\VerificationApi(
+$apiInstance = new atrium\Api\VerificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -55,12 +55,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium-php\atrium-php\AccountNumbers**](../Model/AccountNumbers.md)
+[**\atrium\model\AccountNumbers**](../Model/AccountNumbers.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAccountNumbersByAccount**
-> \atrium-php\atrium-php\AccountNumbers listAccountNumbersByAccount($account_guid, $user_guid)
+> \atrium\model\AccountNumbers listAccountNumbersByAccount($account_guid, $user_guid)
 
 Read account numbers by account GUID
 
@@ -72,15 +72,15 @@ Use this endpoint to check whether account and routing numbers are available for
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
 // Configure API key authorization: clientID
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
 
-$apiInstance = new atrium-php\Api\VerificationApi(
+$apiInstance = new atrium\Api\VerificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -107,12 +107,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium-php\atrium-php\AccountNumbers**](../Model/AccountNumbers.md)
+[**\atrium\model\AccountNumbers**](../Model/AccountNumbers.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **verifyMember**
-> \atrium-php\atrium-php\Member verifyMember($member_guid, $user_guid)
+> \atrium\model\Member verifyMember($member_guid, $user_guid)
 
 Verify
 
@@ -124,15 +124,15 @@ The verify endpoint begins a verification process for a member.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-API-Key', 'Bearer');
 // Configure API key authorization: clientID
-$config = atrium-php\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = atrium-php\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
+// $config = atrium\Configuration::getDefaultConfiguration()->setApiKeyPrefix('MX-Client-ID', 'Bearer');
 
-$apiInstance = new atrium-php\Api\VerificationApi(
+$apiInstance = new atrium\Api\VerificationApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium-php\atrium-php\Member**](../Model/Member.md)
+[**\atrium\model\Member**](../Model/Member.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

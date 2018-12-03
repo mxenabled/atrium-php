@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -16,14 +16,14 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 /**
  * MemberUpdateRequestBodyAttributesTest Class Doc Comment
  *
  * @category    Class
  * @description MemberUpdateRequestBodyAttributes
- * @package     atrium-php
+ * @package     atrium
  */
 class MemberUpdateRequestBodyAttributesTest extends \PHPUnit_Framework_TestCase
 {

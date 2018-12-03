@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -15,7 +15,7 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 use \Exception;
 
@@ -23,7 +23,7 @@ use \Exception;
  * ApiException Class Doc Comment
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 class HeaderSelector
 {

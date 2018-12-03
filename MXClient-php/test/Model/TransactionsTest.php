@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -16,14 +16,14 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 /**
  * TransactionsTest Class Doc Comment
  *
  * @category    Class
  * @description Transactions
- * @package     atrium-php
+ * @package     atrium
  */
 class TransactionsTest extends \PHPUnit_Framework_TestCase
 {

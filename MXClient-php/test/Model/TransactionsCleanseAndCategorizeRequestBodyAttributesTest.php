@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -16,14 +16,14 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 /**
  * TransactionsCleanseAndCategorizeRequestBodyAttributesTest Class Doc Comment
  *
  * @category    Class
  * @description TransactionsCleanseAndCategorizeRequestBodyAttributes
- * @package     atrium-php
+ * @package     atrium
  */
 class TransactionsCleanseAndCategorizeRequestBodyAttributesTest extends \PHPUnit_Framework_TestCase
 {

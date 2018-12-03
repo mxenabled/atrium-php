@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  atrium-php
+ * @package  atrium
  */
 
 /**
@@ -16,14 +16,14 @@
  */
 
 
-namespace atrium-php;
+namespace atrium;
 
 /**
  * MemberAttributesTest Class Doc Comment
  *
  * @category    Class
  * @description MemberAttributes
- * @package     atrium-php
+ * @package     atrium
  */
 class MemberAttributesTest extends \PHPUnit_Framework_TestCase
 {
