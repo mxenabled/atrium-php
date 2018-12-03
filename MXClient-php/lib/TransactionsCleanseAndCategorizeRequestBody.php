@@ -44,7 +44,7 @@ class TransactionsCleanseAndCategorizeRequestBody implements ModelInterface, Arr
       * @var string[]
       */
     protected static $mxTypes = [
-        'transactions' => 'object[]'
+        'transactions' => '\atrium-php\atrium-php\TransactionsCleanseAndCategorizeRequestBodyAttributes[]'
     ];
 
     /**
@@ -194,7 +194,7 @@ class TransactionsCleanseAndCategorizeRequestBody implements ModelInterface, Arr
     /**
      * Gets transactions
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\TransactionsCleanseAndCategorizeRequestBodyAttributes[]
      */
     public function getTransactions()
     {
@@ -204,7 +204,7 @@ class TransactionsCleanseAndCategorizeRequestBody implements ModelInterface, Arr
     /**
      * Sets transactions
      *
-     * @param object[] $transactions transactions
+     * @param \atrium-php\atrium-php\TransactionsCleanseAndCategorizeRequestBodyAttributes[] $transactions transactions
      *
      * @return $this
      */

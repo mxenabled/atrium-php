@@ -44,8 +44,8 @@ class Institutions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'institutions' => 'object[]',
-        'pagination' => 'object'
+        'institutions' => '\atrium-php\atrium-php\InstitutionAttributes[]',
+        'pagination' => '\atrium-php\atrium-php\Pagination'
     ];
 
     /**
@@ -200,7 +200,7 @@ class Institutions implements ModelInterface, ArrayAccess
     /**
      * Gets institutions
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\InstitutionAttributes[]
      */
     public function getInstitutions()
     {
@@ -210,7 +210,7 @@ class Institutions implements ModelInterface, ArrayAccess
     /**
      * Sets institutions
      *
-     * @param object[] $institutions institutions
+     * @param \atrium-php\atrium-php\InstitutionAttributes[] $institutions institutions
      *
      * @return $this
      */
@@ -224,7 +224,7 @@ class Institutions implements ModelInterface, ArrayAccess
     /**
      * Gets pagination
      *
-     * @return object
+     * @return \atrium-php\atrium-php\Pagination
      */
     public function getPagination()
     {
@@ -234,7 +234,7 @@ class Institutions implements ModelInterface, ArrayAccess
     /**
      * Sets pagination
      *
-     * @param object $pagination pagination
+     * @param \atrium-php\atrium-php\Pagination $pagination pagination
      *
      * @return $this
      */

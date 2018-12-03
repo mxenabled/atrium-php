@@ -44,7 +44,7 @@ class Institution implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'institution' => 'object'
+        'institution' => '\atrium-php\atrium-php\InstitutionAttributes'
     ];
 
     /**
@@ -194,7 +194,7 @@ class Institution implements ModelInterface, ArrayAccess
     /**
      * Gets institution
      *
-     * @return object
+     * @return \atrium-php\atrium-php\InstitutionAttributes
      */
     public function getInstitution()
     {
@@ -204,7 +204,7 @@ class Institution implements ModelInterface, ArrayAccess
     /**
      * Sets institution
      *
-     * @param object $institution institution
+     * @param \atrium-php\atrium-php\InstitutionAttributes $institution institution
      *
      * @return $this
      */

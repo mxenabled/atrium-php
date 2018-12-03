@@ -1,6 +1,6 @@
 <?php
 /**
- * ChallengeAttributesOptions
+ * ChallengeOptionAttributes
  *
  * PHP version 5
  *
@@ -22,12 +22,12 @@ use \ArrayAccess;
 use \atrium-php\ObjectSerializer;
 
 /**
- * ChallengeAttributesOptions Class Doc Comment
+ * ChallengeOptionAttributes Class Doc Comment
  *
  * @category Class
  * @package  atrium-php
  */
-class ChallengeAttributesOptions implements ModelInterface, ArrayAccess
+class ChallengeOptionAttributes implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class ChallengeAttributesOptions implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $mxModelName = 'ChallengeAttributes_options';
+    protected static $mxModelName = 'ChallengeOptionAttributes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

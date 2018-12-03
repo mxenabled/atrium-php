@@ -44,7 +44,7 @@ class Account implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'account' => 'object'
+        'account' => '\atrium-php\atrium-php\AccountAttributes'
     ];
 
     /**
@@ -194,7 +194,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Gets account
      *
-     * @return object
+     * @return \atrium-php\atrium-php\AccountAttributes
      */
     public function getAccount()
     {
@@ -204,7 +204,7 @@ class Account implements ModelInterface, ArrayAccess
     /**
      * Sets account
      *
-     * @param object $account account
+     * @param \atrium-php\atrium-php\AccountAttributes $account account
      *
      * @return $this
      */

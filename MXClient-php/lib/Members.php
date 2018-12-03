@@ -44,8 +44,8 @@ class Members implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'members' => 'object[]',
-        'pagination' => 'object'
+        'members' => '\atrium-php\atrium-php\MemberAttributes[]',
+        'pagination' => '\atrium-php\atrium-php\Pagination'
     ];
 
     /**
@@ -200,7 +200,7 @@ class Members implements ModelInterface, ArrayAccess
     /**
      * Gets members
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\MemberAttributes[]
      */
     public function getMembers()
     {
@@ -210,7 +210,7 @@ class Members implements ModelInterface, ArrayAccess
     /**
      * Sets members
      *
-     * @param object[] $members members
+     * @param \atrium-php\atrium-php\MemberAttributes[] $members members
      *
      * @return $this
      */
@@ -224,7 +224,7 @@ class Members implements ModelInterface, ArrayAccess
     /**
      * Gets pagination
      *
-     * @return object
+     * @return \atrium-php\atrium-php\Pagination
      */
     public function getPagination()
     {
@@ -234,7 +234,7 @@ class Members implements ModelInterface, ArrayAccess
     /**
      * Sets pagination
      *
-     * @param object $pagination pagination
+     * @param \atrium-php\atrium-php\Pagination $pagination pagination
      *
      * @return $this
      */

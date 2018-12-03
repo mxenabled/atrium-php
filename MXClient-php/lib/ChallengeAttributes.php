@@ -48,7 +48,7 @@ class ChallengeAttributes implements ModelInterface, ArrayAccess
         'guid' => 'string',
         'image_data' => 'string',
         'label' => 'string',
-        'options' => '\atrium-php\atrium-php\ChallengeAttributesOptions[]'
+        'options' => '\atrium-php\atrium-php\ChallengeOptionAttributes[]'
     ];
 
     /**
@@ -314,7 +314,7 @@ class ChallengeAttributes implements ModelInterface, ArrayAccess
     /**
      * Gets options
      *
-     * @return \atrium-php\atrium-php\ChallengeAttributesOptions[]
+     * @return \atrium-php\atrium-php\ChallengeOptionAttributes[]
      */
     public function getOptions()
     {
@@ -324,7 +324,7 @@ class ChallengeAttributes implements ModelInterface, ArrayAccess
     /**
      * Sets options
      *
-     * @param \atrium-php\atrium-php\ChallengeAttributesOptions[] $options options
+     * @param \atrium-php\atrium-php\ChallengeOptionAttributes[] $options options
      *
      * @return $this
      */

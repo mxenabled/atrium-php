@@ -44,7 +44,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'member' => 'object'
+        'member' => '\atrium-php\atrium-php\MemberConnectionStatusAttributes'
     ];
 
     /**
@@ -194,7 +194,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
     /**
      * Gets member
      *
-     * @return object
+     * @return \atrium-php\atrium-php\MemberConnectionStatusAttributes
      */
     public function getMember()
     {
@@ -204,7 +204,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
     /**
      * Sets member
      *
-     * @param object $member member
+     * @param \atrium-php\atrium-php\MemberConnectionStatusAttributes $member member
      *
      * @return $this
      */

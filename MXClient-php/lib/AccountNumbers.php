@@ -44,7 +44,7 @@ class AccountNumbers implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'account_numbers' => 'object[]'
+        'account_numbers' => '\atrium-php\atrium-php\AccountNumberAttributes[]'
     ];
 
     /**
@@ -194,7 +194,7 @@ class AccountNumbers implements ModelInterface, ArrayAccess
     /**
      * Gets account_numbers
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\AccountNumberAttributes[]
      */
     public function getAccountNumbers()
     {
@@ -204,7 +204,7 @@ class AccountNumbers implements ModelInterface, ArrayAccess
     /**
      * Sets account_numbers
      *
-     * @param object[] $account_numbers account_numbers
+     * @param \atrium-php\atrium-php\AccountNumberAttributes[] $account_numbers account_numbers
      *
      * @return $this
      */

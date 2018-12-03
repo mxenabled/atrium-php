@@ -44,8 +44,8 @@ class Transactions implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'transactions' => 'object[]',
-        'pagination' => 'object'
+        'transactions' => '\atrium-php\atrium-php\TransactionAttributes[]',
+        'pagination' => '\atrium-php\atrium-php\Pagination'
     ];
 
     /**
@@ -200,7 +200,7 @@ class Transactions implements ModelInterface, ArrayAccess
     /**
      * Gets transactions
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\TransactionAttributes[]
      */
     public function getTransactions()
     {
@@ -210,7 +210,7 @@ class Transactions implements ModelInterface, ArrayAccess
     /**
      * Sets transactions
      *
-     * @param object[] $transactions transactions
+     * @param \atrium-php\atrium-php\TransactionAttributes[] $transactions transactions
      *
      * @return $this
      */
@@ -224,7 +224,7 @@ class Transactions implements ModelInterface, ArrayAccess
     /**
      * Gets pagination
      *
-     * @return object
+     * @return \atrium-php\atrium-php\Pagination
      */
     public function getPagination()
     {
@@ -234,7 +234,7 @@ class Transactions implements ModelInterface, ArrayAccess
     /**
      * Sets pagination
      *
-     * @param object $pagination pagination
+     * @param \atrium-php\atrium-php\Pagination $pagination pagination
      *
      * @return $this
      */

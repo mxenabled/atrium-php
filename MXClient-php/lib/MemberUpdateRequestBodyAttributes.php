@@ -44,7 +44,7 @@ class MemberUpdateRequestBodyAttributes implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'credentials' => 'object[]',
+        'credentials' => '\atrium-php\atrium-php\CredentialResponseAttributes[]',
         'identifier' => 'string',
         'metadata' => 'string'
     ];
@@ -206,7 +206,7 @@ class MemberUpdateRequestBodyAttributes implements ModelInterface, ArrayAccess
     /**
      * Gets credentials
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\CredentialResponseAttributes[]
      */
     public function getCredentials()
     {
@@ -216,7 +216,7 @@ class MemberUpdateRequestBodyAttributes implements ModelInterface, ArrayAccess
     /**
      * Sets credentials
      *
-     * @param object[] $credentials credentials
+     * @param \atrium-php\atrium-php\CredentialResponseAttributes[] $credentials credentials
      *
      * @return $this
      */

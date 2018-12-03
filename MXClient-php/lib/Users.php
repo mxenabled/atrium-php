@@ -44,8 +44,8 @@ class Users implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'users' => 'object[]',
-        'pagination' => 'object'
+        'users' => '\atrium-php\atrium-php\UserAttributes[]',
+        'pagination' => '\atrium-php\atrium-php\Pagination'
     ];
 
     /**
@@ -200,7 +200,7 @@ class Users implements ModelInterface, ArrayAccess
     /**
      * Gets users
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\UserAttributes[]
      */
     public function getUsers()
     {
@@ -210,7 +210,7 @@ class Users implements ModelInterface, ArrayAccess
     /**
      * Sets users
      *
-     * @param object[] $users users
+     * @param \atrium-php\atrium-php\UserAttributes[] $users users
      *
      * @return $this
      */
@@ -224,7 +224,7 @@ class Users implements ModelInterface, ArrayAccess
     /**
      * Gets pagination
      *
-     * @return object
+     * @return \atrium-php\atrium-php\Pagination
      */
     public function getPagination()
     {
@@ -234,7 +234,7 @@ class Users implements ModelInterface, ArrayAccess
     /**
      * Sets pagination
      *
-     * @param object $pagination pagination
+     * @param \atrium-php\atrium-php\Pagination $pagination pagination
      *
      * @return $this
      */

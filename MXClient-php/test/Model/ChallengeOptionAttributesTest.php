@@ -1,6 +1,6 @@
 <?php
 /**
- * ChallengeAttributesOptionsTest
+ * ChallengeOptionAttributesTest
  *
  * PHP version 5
  *
@@ -19,13 +19,13 @@
 namespace atrium-php;
 
 /**
- * ChallengeAttributesOptionsTest Class Doc Comment
+ * ChallengeOptionAttributesTest Class Doc Comment
  *
  * @category    Class
- * @description ChallengeAttributesOptions
+ * @description ChallengeOptionAttributes
  * @package     atrium-php
  */
-class ChallengeAttributesOptionsTest extends \PHPUnit_Framework_TestCase
+class ChallengeOptionAttributesTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -57,9 +57,9 @@ class ChallengeAttributesOptionsTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ChallengeAttributesOptions"
+     * Test "ChallengeOptionAttributes"
      */
-    public function testChallengeAttributesOptions()
+    public function testChallengeOptionAttributes()
     {
     }
 

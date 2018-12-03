@@ -44,7 +44,7 @@ class ConnectWidget implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'user' => 'object'
+        'user' => '\atrium-php\atrium-php\ConnectWidgetAttributes'
     ];
 
     /**
@@ -194,7 +194,7 @@ class ConnectWidget implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return object
+     * @return \atrium-php\atrium-php\ConnectWidgetAttributes
      */
     public function getUser()
     {
@@ -204,7 +204,7 @@ class ConnectWidget implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param object $user user
+     * @param \atrium-php\atrium-php\ConnectWidgetAttributes $user user
      *
      * @return $this
      */

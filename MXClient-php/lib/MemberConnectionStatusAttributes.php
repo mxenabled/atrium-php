@@ -45,7 +45,7 @@ class MemberConnectionStatusAttributes implements ModelInterface, ArrayAccess
       */
     protected static $mxTypes = [
         'aggregated_at' => 'string',
-        'challenges' => 'object[]',
+        'challenges' => '\atrium-php\atrium-php\ChallengeAttributes[]',
         'connection_status' => 'string',
         'guid' => 'bool',
         'has_processed_accounts' => 'bool',
@@ -266,7 +266,7 @@ class MemberConnectionStatusAttributes implements ModelInterface, ArrayAccess
     /**
      * Gets challenges
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\ChallengeAttributes[]
      */
     public function getChallenges()
     {
@@ -276,7 +276,7 @@ class MemberConnectionStatusAttributes implements ModelInterface, ArrayAccess
     /**
      * Sets challenges
      *
-     * @param object[] $challenges challenges
+     * @param \atrium-php\atrium-php\ChallengeAttributes[] $challenges challenges
      *
      * @return $this
      */

@@ -44,7 +44,7 @@ class AccountOwners implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'account_owners' => 'object[]'
+        'account_owners' => '\atrium-php\atrium-php\AccountOwnerAttributes[]'
     ];
 
     /**
@@ -194,7 +194,7 @@ class AccountOwners implements ModelInterface, ArrayAccess
     /**
      * Gets account_owners
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\AccountOwnerAttributes[]
      */
     public function getAccountOwners()
     {
@@ -204,7 +204,7 @@ class AccountOwners implements ModelInterface, ArrayAccess
     /**
      * Sets account_owners
      *
-     * @param object[] $account_owners account_owners
+     * @param \atrium-php\atrium-php\AccountOwnerAttributes[] $account_owners account_owners
      *
      * @return $this
      */

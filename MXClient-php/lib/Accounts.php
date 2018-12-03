@@ -44,8 +44,8 @@ class Accounts implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'accounts' => 'object[]',
-        'pagination' => 'object'
+        'accounts' => '\atrium-php\atrium-php\AccountAttributes[]',
+        'pagination' => '\atrium-php\atrium-php\Pagination'
     ];
 
     /**
@@ -200,7 +200,7 @@ class Accounts implements ModelInterface, ArrayAccess
     /**
      * Gets accounts
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\AccountAttributes[]
      */
     public function getAccounts()
     {
@@ -210,7 +210,7 @@ class Accounts implements ModelInterface, ArrayAccess
     /**
      * Sets accounts
      *
-     * @param object[] $accounts accounts
+     * @param \atrium-php\atrium-php\AccountAttributes[] $accounts accounts
      *
      * @return $this
      */
@@ -224,7 +224,7 @@ class Accounts implements ModelInterface, ArrayAccess
     /**
      * Gets pagination
      *
-     * @return object
+     * @return \atrium-php\atrium-php\Pagination
      */
     public function getPagination()
     {
@@ -234,7 +234,7 @@ class Accounts implements ModelInterface, ArrayAccess
     /**
      * Sets pagination
      *
-     * @param object $pagination pagination
+     * @param \atrium-php\atrium-php\Pagination $pagination pagination
      *
      * @return $this
      */

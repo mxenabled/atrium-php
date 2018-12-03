@@ -44,7 +44,7 @@ class MemberResumeRequestBody implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'member' => 'object'
+        'member' => '\atrium-php\atrium-php\MemberResumeRequestBodyAttributes'
     ];
 
     /**
@@ -194,7 +194,7 @@ class MemberResumeRequestBody implements ModelInterface, ArrayAccess
     /**
      * Gets member
      *
-     * @return object
+     * @return \atrium-php\atrium-php\MemberResumeRequestBodyAttributes
      */
     public function getMember()
     {
@@ -204,7 +204,7 @@ class MemberResumeRequestBody implements ModelInterface, ArrayAccess
     /**
      * Sets member
      *
-     * @param object $member member
+     * @param \atrium-php\atrium-php\MemberResumeRequestBodyAttributes $member member
      *
      * @return $this
      */

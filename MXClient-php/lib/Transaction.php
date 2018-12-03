@@ -44,7 +44,7 @@ class Transaction implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'transaction' => 'object'
+        'transaction' => '\atrium-php\atrium-php\TransactionAttributes'
     ];
 
     /**
@@ -194,7 +194,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Gets transaction
      *
-     * @return object
+     * @return \atrium-php\atrium-php\TransactionAttributes
      */
     public function getTransaction()
     {
@@ -204,7 +204,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Sets transaction
      *
-     * @param object $transaction transaction
+     * @param \atrium-php\atrium-php\TransactionAttributes $transaction transaction
      *
      * @return $this
      */

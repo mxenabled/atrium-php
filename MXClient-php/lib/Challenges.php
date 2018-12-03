@@ -44,7 +44,7 @@ class Challenges implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'challenges' => 'object[]'
+        'challenges' => '\atrium-php\atrium-php\ChallengeAttributes[]'
     ];
 
     /**
@@ -194,7 +194,7 @@ class Challenges implements ModelInterface, ArrayAccess
     /**
      * Gets challenges
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\ChallengeAttributes[]
      */
     public function getChallenges()
     {
@@ -204,7 +204,7 @@ class Challenges implements ModelInterface, ArrayAccess
     /**
      * Sets challenges
      *
-     * @param object[] $challenges challenges
+     * @param \atrium-php\atrium-php\ChallengeAttributes[] $challenges challenges
      *
      * @return $this
      */

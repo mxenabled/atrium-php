@@ -44,7 +44,7 @@ class Credentials implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'credentials' => 'object[]'
+        'credentials' => '\atrium-php\atrium-php\CredentialAttributes[]'
     ];
 
     /**
@@ -194,7 +194,7 @@ class Credentials implements ModelInterface, ArrayAccess
     /**
      * Gets credentials
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\CredentialAttributes[]
      */
     public function getCredentials()
     {
@@ -204,7 +204,7 @@ class Credentials implements ModelInterface, ArrayAccess
     /**
      * Sets credentials
      *
-     * @param object[] $credentials credentials
+     * @param \atrium-php\atrium-php\CredentialAttributes[] $credentials credentials
      *
      * @return $this
      */

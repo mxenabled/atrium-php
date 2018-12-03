@@ -47,7 +47,7 @@ class CredentialAttributes implements ModelInterface, ArrayAccess
         'field_name' => 'string',
         'guid' => 'string',
         'label' => 'string',
-        'options' => 'object[]',
+        'options' => '\atrium-php\atrium-php\CredentialOptionAttributes[]',
         'type' => 'string'
     ];
 
@@ -290,7 +290,7 @@ class CredentialAttributes implements ModelInterface, ArrayAccess
     /**
      * Gets options
      *
-     * @return object[]
+     * @return \atrium-php\atrium-php\CredentialOptionAttributes[]
      */
     public function getOptions()
     {
@@ -300,7 +300,7 @@ class CredentialAttributes implements ModelInterface, ArrayAccess
     /**
      * Sets options
      *
-     * @param object[] $options options
+     * @param \atrium-php\atrium-php\CredentialOptionAttributes[] $options options
      *
      * @return $this
      */

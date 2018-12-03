@@ -44,7 +44,7 @@ class Member implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'member' => 'object'
+        'member' => '\atrium-php\atrium-php\MemberAttributes'
     ];
 
     /**
@@ -194,7 +194,7 @@ class Member implements ModelInterface, ArrayAccess
     /**
      * Gets member
      *
-     * @return object
+     * @return \atrium-php\atrium-php\MemberAttributes
      */
     public function getMember()
     {
@@ -204,7 +204,7 @@ class Member implements ModelInterface, ArrayAccess
     /**
      * Sets member
      *
-     * @param object $member member
+     * @param \atrium-php\atrium-php\MemberAttributes $member member
      *
      * @return $this
      */
