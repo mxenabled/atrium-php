@@ -97,4 +97,11 @@ class ChallengeAttributesTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOptions()
     {
     }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
 }

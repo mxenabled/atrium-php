@@ -48,7 +48,8 @@ class ChallengeAttributes implements ModelInterface, ArrayAccess
         'guid' => 'string',
         'image_data' => 'string',
         'label' => 'string',
-        'options' => '\atrium\model\ChallengeOptionAttributes[]'
+        'options' => '\atrium\model\ChallengeOptionAttributes[]',
+        'type' => 'string'
     ];
 
     /**
@@ -61,7 +62,8 @@ class ChallengeAttributes implements ModelInterface, ArrayAccess
         'guid' => null,
         'image_data' => null,
         'label' => null,
-        'options' => null
+        'options' => null,
+        'type' => null
     ];
 
     /**
@@ -95,7 +97,8 @@ class ChallengeAttributes implements ModelInterface, ArrayAccess
         'guid' => 'guid',
         'image_data' => 'image_data',
         'label' => 'label',
-        'options' => 'options'
+        'options' => 'options',
+        'type' => 'type'
     ];
 
     /**
@@ -108,7 +111,8 @@ class ChallengeAttributes implements ModelInterface, ArrayAccess
         'guid' => 'setGuid',
         'image_data' => 'setImageData',
         'label' => 'setLabel',
-        'options' => 'setOptions'
+        'options' => 'setOptions',
+        'type' => 'setType'
     ];
 
     /**
@@ -121,7 +125,8 @@ class ChallengeAttributes implements ModelInterface, ArrayAccess
         'guid' => 'getGuid',
         'image_data' => 'getImageData',
         'label' => 'getLabel',
-        'options' => 'getOptions'
+        'options' => 'getOptions',
+        'type' => 'getType'
     ];
 
     /**
@@ -189,6 +194,7 @@ class ChallengeAttributes implements ModelInterface, ArrayAccess
         $this->container['image_data'] = isset($data['image_data']) ? $data['image_data'] : null;
         $this->container['label'] = isset($data['label']) ? $data['label'] : null;
         $this->container['options'] = isset($data['options']) ? $data['options'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -331,6 +337,30 @@ class ChallengeAttributes implements ModelInterface, ArrayAccess
     public function setOptions($options)
     {
         $this->container['options'] = $options;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }
