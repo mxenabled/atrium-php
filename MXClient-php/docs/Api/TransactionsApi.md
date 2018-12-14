@@ -25,16 +25,16 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\TransactionsApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $body = new \atrium\model\TransactionsCleanseAndCategorizeRequestBody(); // \atrium\model\TransactionsCleanseAndCategorizeRequestBody | User object to be created with optional parameters (amount, type) amd required parameters (description, identifier)
 
 try {
-    $result = $apiInstance->cleanseAndCategorizeTransactions($body);
+    $result = $client->transactions->cleanseAndCategorizeTransactions($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->cleanseAndCategorizeTransactions: ', $e->getMessage(), PHP_EOL;
@@ -72,11 +72,11 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\TransactionsApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 $page = 12; // int | Specify current page.
@@ -85,7 +85,7 @@ $records_per_page = 12; // int | Specify records per page.
 $to_date = "to_date_example"; // string | Filter transactions to this date.
 
 try {
-    $result = $apiInstance->listUserTransactions($user_guid, $page, $from_date, $records_per_page, $to_date);
+    $result = $client->transactions->listUserTransactions($user_guid, $page, $from_date, $records_per_page, $to_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->listUserTransactions: ', $e->getMessage(), PHP_EOL;
@@ -127,17 +127,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\TransactionsApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $transaction_guid = "transaction_guid_example"; // string | The unique identifier for a `transaction`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->readTransaction($transaction_guid, $user_guid);
+    $result = $client->transactions->readTransaction($transaction_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->readTransaction: ', $e->getMessage(), PHP_EOL;

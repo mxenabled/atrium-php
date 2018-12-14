@@ -27,16 +27,16 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\UsersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $body = new \atrium\model\UserCreateRequestBody(); // \atrium\model\UserCreateRequestBody | User object to be created with optional parameters (identifier, is_disabled, metadata)
 
 try {
-    $result = $apiInstance->createUser($body);
+    $result = $client->users->createUser($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->createUser: ', $e->getMessage(), PHP_EOL;
@@ -74,16 +74,16 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\UsersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $apiInstance->deleteUser($user_guid);
+    $client->users->deleteUser($user_guid);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->deleteUser: ', $e->getMessage(), PHP_EOL;
 }
@@ -120,17 +120,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\UsersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $page = 12; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $apiInstance->listUsers($page, $records_per_page);
+    $result = $client->users->listUsers($page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->listUsers: ', $e->getMessage(), PHP_EOL;
@@ -169,16 +169,16 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\UsersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->readUser($user_guid);
+    $result = $client->users->readUser($user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->readUser: ', $e->getMessage(), PHP_EOL;
@@ -216,17 +216,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\UsersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 $body = new \atrium\model\UserUpdateRequestBody(); // \atrium\model\UserUpdateRequestBody | User object to be updated with optional parameters (identifier, is_disabled, metadata)
 
 try {
-    $result = $apiInstance->updateUser($user_guid, $body);
+    $result = $client->users->updateUser($user_guid, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->updateUser: ', $e->getMessage(), PHP_EOL;

@@ -23,17 +23,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\ConnectWidgetApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 $body = new \atrium\model\ConnectWidgetRequestBody(); // \atrium\model\ConnectWidgetRequestBody | Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
 
 try {
-    $result = $apiInstance->getConnectWidget($user_guid, $body);
+    $result = $client->connectWidget->getConnectWidget($user_guid, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConnectWidgetApi->getConnectWidget: ', $e->getMessage(), PHP_EOL;

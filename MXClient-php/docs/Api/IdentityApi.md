@@ -24,17 +24,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\IdentityApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->identifyMember($member_guid, $user_guid);
+    $result = $client->identity->identifyMember($member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IdentityApi->identifyMember: ', $e->getMessage(), PHP_EOL;
@@ -73,17 +73,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\IdentityApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->listAccountOwners($member_guid, $user_guid);
+    $result = $client->identity->listAccountOwners($member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IdentityApi->listAccountOwners: ', $e->getMessage(), PHP_EOL;

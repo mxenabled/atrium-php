@@ -25,18 +25,18 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\InstitutionsApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $name = "name_example"; // string | This will list only institutions in which the appended string appears.
 $page = 12; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $apiInstance->listInstitutions($name, $page, $records_per_page);
+    $result = $client->institutions->listInstitutions($name, $page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstitutionsApi->listInstitutions: ', $e->getMessage(), PHP_EOL;
@@ -76,16 +76,16 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\InstitutionsApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $institution_code = "institution_code_example"; // string | The institution_code of the institution.
 
 try {
-    $result = $apiInstance->readInstitution($institution_code);
+    $result = $client->institutions->readInstitution($institution_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstitutionsApi->readInstitution: ', $e->getMessage(), PHP_EOL;
@@ -123,16 +123,16 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\InstitutionsApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $institution_code = "institution_code_example"; // string | The institution_code of the institution.
 
 try {
-    $result = $apiInstance->readInstitutionCredentials($institution_code);
+    $result = $client->institutions->readInstitutionCredentials($institution_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstitutionsApi->readInstitutionCredentials: ', $e->getMessage(), PHP_EOL;

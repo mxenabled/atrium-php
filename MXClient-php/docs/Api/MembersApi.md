@@ -34,17 +34,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->aggregateMember($member_guid, $user_guid);
+    $result = $client->members->aggregateMember($member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->aggregateMember: ', $e->getMessage(), PHP_EOL;
@@ -83,17 +83,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 $body = new \atrium\model\MemberCreateRequestBody(); // \atrium\model\MemberCreateRequestBody | Member object to be created with optional parameters (identifier and metadata) and required parameters (credentials and institution_code)
 
 try {
-    $result = $apiInstance->createMember($user_guid, $body);
+    $result = $client->members->createMember($user_guid, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->createMember: ', $e->getMessage(), PHP_EOL;
@@ -132,17 +132,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $apiInstance->deleteMember($member_guid, $user_guid);
+    $client->members->deleteMember($member_guid, $user_guid);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->deleteMember: ', $e->getMessage(), PHP_EOL;
 }
@@ -180,11 +180,11 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
@@ -192,7 +192,7 @@ $page = 12; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $apiInstance->listMemberAccounts($member_guid, $user_guid, $page, $records_per_page);
+    $result = $client->members->listMemberAccounts($member_guid, $user_guid, $page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->listMemberAccounts: ', $e->getMessage(), PHP_EOL;
@@ -233,17 +233,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->listMemberCredentials($member_guid, $user_guid);
+    $result = $client->members->listMemberCredentials($member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->listMemberCredentials: ', $e->getMessage(), PHP_EOL;
@@ -282,17 +282,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->listMemberMFAChallenges($member_guid, $user_guid);
+    $result = $client->members->listMemberMFAChallenges($member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->listMemberMFAChallenges: ', $e->getMessage(), PHP_EOL;
@@ -331,11 +331,11 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
@@ -345,7 +345,7 @@ $page = 12; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $apiInstance->listMemberTransactions($member_guid, $user_guid, $from_date, $to_date, $page, $records_per_page);
+    $result = $client->members->listMemberTransactions($member_guid, $user_guid, $from_date, $to_date, $page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->listMemberTransactions: ', $e->getMessage(), PHP_EOL;
@@ -388,18 +388,18 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 $page = 12; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $apiInstance->listMembers($user_guid, $page, $records_per_page);
+    $result = $client->members->listMembers($user_guid, $page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->listMembers: ', $e->getMessage(), PHP_EOL;
@@ -439,17 +439,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->readMember($member_guid, $user_guid);
+    $result = $client->members->readMember($member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->readMember: ', $e->getMessage(), PHP_EOL;
@@ -488,17 +488,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->readMemberStatus($member_guid, $user_guid);
+    $result = $client->members->readMemberStatus($member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->readMemberStatus: ', $e->getMessage(), PHP_EOL;
@@ -537,18 +537,18 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 $body = new \atrium\model\MemberResumeRequestBody(); // \atrium\model\MemberResumeRequestBody | Member object with MFA challenge answers
 
 try {
-    $result = $apiInstance->resumeMember($member_guid, $user_guid, $body);
+    $result = $client->members->resumeMember($member_guid, $user_guid, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->resumeMember: ', $e->getMessage(), PHP_EOL;
@@ -588,18 +588,18 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\MembersApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 $body = new \atrium\model\MemberUpdateRequestBody(); // \atrium\model\MemberUpdateRequestBody | Member object to be updated with optional parameters (credentials, identifier, metadata)
 
 try {
-    $result = $apiInstance->updateMember($member_guid, $user_guid, $body);
+    $result = $client->members->updateMember($member_guid, $user_guid, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->updateMember: ', $e->getMessage(), PHP_EOL;

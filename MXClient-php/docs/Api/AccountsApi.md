@@ -26,11 +26,11 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\AccountsApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $account_guid = "account_guid_example"; // string | The unique identifier for an `account`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
@@ -40,7 +40,7 @@ $page = 12; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $apiInstance->listAccountTransactions($account_guid, $user_guid, $from_date, $to_date, $page, $records_per_page);
+    $result = $client->accounts->listAccountTransactions($account_guid, $user_guid, $from_date, $to_date, $page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->listAccountTransactions: ', $e->getMessage(), PHP_EOL;
@@ -83,18 +83,18 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\AccountsApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 $page = 12; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $apiInstance->listUserAccounts($user_guid, $page, $records_per_page);
+    $result = $client->accounts->listUserAccounts($user_guid, $page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->listUserAccounts: ', $e->getMessage(), PHP_EOL;
@@ -134,17 +134,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\AccountsApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $account_guid = "account_guid_example"; // string | The unique identifier for an `account`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->readAccount($account_guid, $user_guid);
+    $result = $client->accounts->readAccount($account_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->readAccount: ', $e->getMessage(), PHP_EOL;
@@ -183,18 +183,18 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\AccountsApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $account_guid = "account_guid_example"; // string | The unique identifier for an `account`.
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->readAccountByMemberGUID($account_guid, $member_guid, $user_guid);
+    $result = $client->accounts->readAccountByMemberGUID($account_guid, $member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->readAccountByMemberGUID: ', $e->getMessage(), PHP_EOL;

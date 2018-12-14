@@ -25,17 +25,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\VerificationApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->listAccountNumbers($member_guid, $user_guid);
+    $result = $client->verification->listAccountNumbers($member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VerificationApi->listAccountNumbers: ', $e->getMessage(), PHP_EOL;
@@ -74,17 +74,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\VerificationApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $account_guid = "account_guid_example"; // string | The unique identifier for an `account`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->listAccountNumbersByAccount($account_guid, $user_guid);
+    $result = $client->verification->listAccountNumbersByAccount($account_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VerificationApi->listAccountNumbersByAccount: ', $e->getMessage(), PHP_EOL;
@@ -123,17 +123,17 @@ $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key
 // Configure Client ID authorization
 $config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
 
-$apiInstance = new atrium\Api\VerificationApi(
+$client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    $config,
+    new GuzzleHttp\Client()
 );
 $member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
 
 try {
-    $result = $apiInstance->verifyMember($member_guid, $user_guid);
+    $result = $client->verification->verifyMember($member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VerificationApi->verifyMember: ', $e->getMessage(), PHP_EOL;
