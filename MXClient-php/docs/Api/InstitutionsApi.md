@@ -19,16 +19,9 @@ This endpoint allows you to see what institutions are available for connection. 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $name = "name_example"; // string | This will list only institutions in which the appended string appears.
@@ -70,16 +63,9 @@ This endpoint allows you to see information for a specific institution.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $institution_code = "institution_code_example"; // string | The institution_code of the institution.
@@ -117,16 +103,9 @@ Use this endpoint to see which credentials will be needed to create a member for
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $institution_code = "institution_code_example"; // string | The institution_code of the institution.

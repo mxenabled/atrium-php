@@ -21,16 +21,9 @@ Call this endpoint to create a new user. Atrium will respond with the newly-crea
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $body = new \atrium\model\UserCreateRequestBody(); // \atrium\model\UserCreateRequestBody | User object to be created with optional parameters (identifier, is_disabled, metadata)
@@ -68,16 +61,9 @@ Calling this endpoint will permanently delete a user from Atrium. If successful,
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
@@ -114,16 +100,9 @@ Use this endpoint to list every user you've created in Atrium.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $page = 12; // int | Specify current page.
@@ -163,16 +142,9 @@ Use this endpoint to read the attributes of a specific user.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
@@ -210,16 +182,9 @@ Use this endpoint to update the attributes of a specific user. Atrium will respo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.

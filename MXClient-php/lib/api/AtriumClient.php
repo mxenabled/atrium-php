@@ -54,8 +54,11 @@ class AtriumClient
   public $users;
   public $verification;
 
-  public function __construct(Configuration $config, ClientInterface $httpClient = null)
-  { 
+  public function __construct($apiKey, $clientID, ClientInterface $httpClient = null)
+  {
+    $config = Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', $apiKey);
+    $config = Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', $clientID);
+    
     $this->accounts = new AccountsApi($httpClient, $config);
     $this->connectWidget = new ConnectWidgetApi($httpClient, $config);
     $this->identity = new IdentityApi($httpClient, $config);

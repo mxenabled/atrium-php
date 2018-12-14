@@ -19,16 +19,9 @@ Use this endpoint to categorize, cleanse, and classify transactions. These trans
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $body = new \atrium\model\TransactionsCleanseAndCategorizeRequestBody(); // \atrium\model\TransactionsCleanseAndCategorizeRequestBody | User object to be created with optional parameters (amount, type) amd required parameters (description, identifier)
@@ -66,16 +59,9 @@ Use this endpoint to get all transactions that belong to a specific user, across
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
@@ -121,16 +107,9 @@ This endpoint allows you to view information about a specific transaction that b
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
-
-// Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
-
 $client = new atrium\Api\AtriumClient(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    $config,
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
 $transaction_guid = "transaction_guid_example"; // string | The unique identifier for a `transaction`.
