@@ -29,10 +29,10 @@ Calling this endpoint initiates an aggregation event for the member. This brings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -78,10 +78,10 @@ This endpoint allows you to create a new member. Members are created with the re
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -127,10 +127,10 @@ Accessing this endpoint will permanently delete a member.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -175,10 +175,10 @@ This endpoint returns an array with information about every account associated w
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -228,10 +228,10 @@ This endpoint returns an array which contains information on every non-MFA crede
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -277,10 +277,10 @@ Use this endpoint for information on what multi-factor authentication challenges
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -326,10 +326,10 @@ Use this endpoint to get all transactions from all accounts associated with a sp
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -383,10 +383,10 @@ This endpoint returns an array which contains information on every member associ
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -434,10 +434,10 @@ Use this endpoint to read the attributes of a specific member.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -483,10 +483,10 @@ This endpoint provides the status of the member's most recent aggregation event.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -532,10 +532,10 @@ This endpoint answers the challenges needed when a member has been challenged by
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -583,10 +583,10 @@ Use this endpoint to update a member's attributes. Only the credentials, identif
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.

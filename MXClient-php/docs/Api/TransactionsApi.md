@@ -20,10 +20,10 @@ Use this endpoint to categorize, cleanse, and classify transactions. These trans
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -67,10 +67,10 @@ Use this endpoint to get all transactions that belong to a specific user, across
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -122,10 +122,10 @@ This endpoint allows you to view information about a specific transaction that b
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API Key authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-API-Key', 'YOUR_API_KEY');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-API-Key', 'YOUR_API_KEY');
 
 // Configure Client ID authorization
-$config = atrium\Configuration::getDefaultConfiguration()->setApiKey('MX-Client-ID', 'YOUR_CLIENT_ID');
+$config = atrium\Configuration::getDefaultConfiguration()->setHeader('MX-Client-ID', 'YOUR_CLIENT_ID');
 
 $client = new atrium\Api\AtriumClient(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
