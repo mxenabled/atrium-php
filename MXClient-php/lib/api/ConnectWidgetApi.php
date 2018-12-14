@@ -84,7 +84,7 @@ class ConnectWidgetApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\ConnectWidget
+     * @return \atrium\model\ConnectWidgetResponseBody
      */
     public function getConnectWidget($user_guid, $body)
     {
@@ -102,11 +102,11 @@ class ConnectWidgetApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\ConnectWidget, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\ConnectWidgetResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function getConnectWidgetWithHttpInfo($user_guid, $body)
     {
-        $returnType = '\atrium\model\ConnectWidget';
+        $returnType = '\atrium\model\ConnectWidgetResponseBody';
         $request = $this->getConnectWidgetRequest($user_guid, $body);
 
         try {
@@ -158,7 +158,7 @@ class ConnectWidgetApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\ConnectWidget',
+                        '\atrium\model\ConnectWidgetResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -202,7 +202,7 @@ class ConnectWidgetApi
      */
     public function getConnectWidgetAsyncWithHttpInfo($user_guid, $body)
     {
-        $returnType = '\atrium\model\ConnectWidget';
+        $returnType = '\atrium\model\ConnectWidgetResponseBody';
         $request = $this->getConnectWidgetRequest($user_guid, $body);
 
         return $this->client

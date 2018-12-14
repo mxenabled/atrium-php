@@ -6,7 +6,7 @@ Method | HTTP request | Description
 
 
 # **getConnectWidget**
-> \atrium\model\ConnectWidget getConnectWidget($user_guid, $body)
+> \atrium\model\ConnectWidgetResponseBody getConnectWidget($user_guid, $body)
 
 Embedding in a website
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\ConnectWidget**](../Model/ConnectWidget.md)
+[**\atrium\model\ConnectWidgetResponseBody**](../Model/ConnectWidgetResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

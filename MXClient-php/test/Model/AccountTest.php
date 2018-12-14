@@ -64,9 +64,198 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "account"
+     * Test attribute "apr"
      */
-    public function testPropertyAccount()
+    public function testPropertyApr()
+    {
+    }
+
+    /**
+     * Test attribute "apy"
+     */
+    public function testPropertyApy()
+    {
+    }
+
+    /**
+     * Test attribute "available_balance"
+     */
+    public function testPropertyAvailableBalance()
+    {
+    }
+
+    /**
+     * Test attribute "available_credit"
+     */
+    public function testPropertyAvailableCredit()
+    {
+    }
+
+    /**
+     * Test attribute "balance"
+     */
+    public function testPropertyBalance()
+    {
+    }
+
+    /**
+     * Test attribute "created_at"
+     */
+    public function testPropertyCreatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "credit_limit"
+     */
+    public function testPropertyCreditLimit()
+    {
+    }
+
+    /**
+     * Test attribute "currency_code"
+     */
+    public function testPropertyCurrencyCode()
+    {
+    }
+
+    /**
+     * Test attribute "day_payment_is_due"
+     */
+    public function testPropertyDayPaymentIsDue()
+    {
+    }
+
+    /**
+     * Test attribute "guid"
+     */
+    public function testPropertyGuid()
+    {
+    }
+
+    /**
+     * Test attribute "institution_code"
+     */
+    public function testPropertyInstitutionCode()
+    {
+    }
+
+    /**
+     * Test attribute "interest_rate"
+     */
+    public function testPropertyInterestRate()
+    {
+    }
+
+    /**
+     * Test attribute "is_closed"
+     */
+    public function testPropertyIsClosed()
+    {
+    }
+
+    /**
+     * Test attribute "last_payment"
+     */
+    public function testPropertyLastPayment()
+    {
+    }
+
+    /**
+     * Test attribute "matures_on"
+     */
+    public function testPropertyMaturesOn()
+    {
+    }
+
+    /**
+     * Test attribute "member_guid"
+     */
+    public function testPropertyMemberGuid()
+    {
+    }
+
+    /**
+     * Test attribute "minimum_balance"
+     */
+    public function testPropertyMinimumBalance()
+    {
+    }
+
+    /**
+     * Test attribute "minimum_payment"
+     */
+    public function testPropertyMinimumPayment()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "original_balance"
+     */
+    public function testPropertyOriginalBalance()
+    {
+    }
+
+    /**
+     * Test attribute "payment_due_at"
+     */
+    public function testPropertyPaymentDueAt()
+    {
+    }
+
+    /**
+     * Test attribute "payoff_balance"
+     */
+    public function testPropertyPayoffBalance()
+    {
+    }
+
+    /**
+     * Test attribute "started_on"
+     */
+    public function testPropertyStartedOn()
+    {
+    }
+
+    /**
+     * Test attribute "subtype"
+     */
+    public function testPropertySubtype()
+    {
+    }
+
+    /**
+     * Test attribute "total_account_value"
+     */
+    public function testPropertyTotalAccountValue()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "updated_at"
+     */
+    public function testPropertyUpdatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "user_guid"
+     */
+    public function testPropertyUserGuid()
     {
     }
 }

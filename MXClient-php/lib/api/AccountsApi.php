@@ -88,7 +88,7 @@ class AccountsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Transactions
+     * @return \atrium\model\TransactionsResponseBody
      */
     public function listAccountTransactions($account_guid, $user_guid, $from_date = null, $to_date = null, $page = null, $records_per_page = null)
     {
@@ -110,11 +110,11 @@ class AccountsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Transactions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\TransactionsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAccountTransactionsWithHttpInfo($account_guid, $user_guid, $from_date = null, $to_date = null, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Transactions';
+        $returnType = '\atrium\model\TransactionsResponseBody';
         $request = $this->listAccountTransactionsRequest($account_guid, $user_guid, $from_date, $to_date, $page, $records_per_page);
 
         try {
@@ -166,7 +166,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Transactions',
+                        '\atrium\model\TransactionsResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -218,7 +218,7 @@ class AccountsApi
      */
     public function listAccountTransactionsAsyncWithHttpInfo($account_guid, $user_guid, $from_date = null, $to_date = null, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Transactions';
+        $returnType = '\atrium\model\TransactionsResponseBody';
         $request = $this->listAccountTransactionsRequest($account_guid, $user_guid, $from_date, $to_date, $page, $records_per_page);
 
         return $this->client
@@ -412,7 +412,7 @@ class AccountsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Accounts
+     * @return \atrium\model\AccountsResponseBody
      */
     public function listUserAccounts($user_guid, $page = null, $records_per_page = null)
     {
@@ -431,11 +431,11 @@ class AccountsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Accounts, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\AccountsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUserAccountsWithHttpInfo($user_guid, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Accounts';
+        $returnType = '\atrium\model\AccountsResponseBody';
         $request = $this->listUserAccountsRequest($user_guid, $page, $records_per_page);
 
         try {
@@ -487,7 +487,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Accounts',
+                        '\atrium\model\AccountsResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -533,7 +533,7 @@ class AccountsApi
      */
     public function listUserAccountsAsyncWithHttpInfo($user_guid, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Accounts';
+        $returnType = '\atrium\model\AccountsResponseBody';
         $request = $this->listUserAccountsRequest($user_guid, $page, $records_per_page);
 
         return $this->client
@@ -701,7 +701,7 @@ class AccountsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Account
+     * @return \atrium\model\AccountResponseBody
      */
     public function readAccount($account_guid, $user_guid)
     {
@@ -719,11 +719,11 @@ class AccountsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\AccountResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function readAccountWithHttpInfo($account_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Account';
+        $returnType = '\atrium\model\AccountResponseBody';
         $request = $this->readAccountRequest($account_guid, $user_guid);
 
         try {
@@ -775,7 +775,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Account',
+                        '\atrium\model\AccountResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -819,7 +819,7 @@ class AccountsApi
      */
     public function readAccountAsyncWithHttpInfo($account_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Account';
+        $returnType = '\atrium\model\AccountResponseBody';
         $request = $this->readAccountRequest($account_guid, $user_guid);
 
         return $this->client
@@ -993,7 +993,7 @@ class AccountsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Account
+     * @return \atrium\model\AccountResponseBody
      */
     public function readAccountByMemberGUID($account_guid, $member_guid, $user_guid)
     {
@@ -1012,11 +1012,11 @@ class AccountsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\AccountResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function readAccountByMemberGUIDWithHttpInfo($account_guid, $member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Account';
+        $returnType = '\atrium\model\AccountResponseBody';
         $request = $this->readAccountByMemberGUIDRequest($account_guid, $member_guid, $user_guid);
 
         try {
@@ -1068,7 +1068,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Account',
+                        '\atrium\model\AccountResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1114,7 +1114,7 @@ class AccountsApi
      */
     public function readAccountByMemberGUIDAsyncWithHttpInfo($account_guid, $member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Account';
+        $returnType = '\atrium\model\AccountResponseBody';
         $request = $this->readAccountByMemberGUIDRequest($account_guid, $member_guid, $user_guid);
 
         return $this->client

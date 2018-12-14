@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **aggregateMember**
-> \atrium\model\Member aggregateMember($member_guid, $user_guid)
+> \atrium\model\MemberResponseBody aggregateMember($member_guid, $user_guid)
 
 Aggregate member
 
@@ -61,12 +61,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Member**](../Model/Member.md)
+[**\atrium\model\MemberResponseBody**](../Model/MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createMember**
-> \atrium\model\Member createMember($user_guid, $body)
+> \atrium\model\MemberResponseBody createMember($user_guid, $body)
 
 Create member
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Member**](../Model/Member.md)
+[**\atrium\model\MemberResponseBody**](../Model/MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -163,7 +163,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMemberAccounts**
-> \atrium\model\Accounts listMemberAccounts($member_guid, $user_guid, $page, $records_per_page)
+> \atrium\model\AccountsResponseBody listMemberAccounts($member_guid, $user_guid, $page, $records_per_page)
 
 List member accounts
 
@@ -211,12 +211,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Accounts**](../Model/Accounts.md)
+[**\atrium\model\AccountsResponseBody**](../Model/AccountsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMemberCredentials**
-> \atrium\model\Credentials listMemberCredentials($member_guid, $user_guid)
+> \atrium\model\CredentialsResponseBody listMemberCredentials($member_guid, $user_guid)
 
 List member credentials
 
@@ -260,12 +260,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Credentials**](../Model/Credentials.md)
+[**\atrium\model\CredentialsResponseBody**](../Model/CredentialsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMemberMFAChallenges**
-> \atrium\model\Challenges listMemberMFAChallenges($member_guid, $user_guid)
+> \atrium\model\ChallengesResponseBody listMemberMFAChallenges($member_guid, $user_guid)
 
 List member MFA challenges
 
@@ -309,12 +309,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Challenges**](../Model/Challenges.md)
+[**\atrium\model\ChallengesResponseBody**](../Model/ChallengesResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMemberTransactions**
-> \atrium\model\Transactions listMemberTransactions($member_guid, $user_guid, $from_date, $to_date, $page, $records_per_page)
+> \atrium\model\TransactionsResponseBody listMemberTransactions($member_guid, $user_guid, $from_date, $to_date, $page, $records_per_page)
 
 List member transactions
 
@@ -366,12 +366,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Transactions**](../Model/Transactions.md)
+[**\atrium\model\TransactionsResponseBody**](../Model/TransactionsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMembers**
-> \atrium\model\Members listMembers($user_guid, $page, $records_per_page)
+> \atrium\model\MembersResponseBody listMembers($user_guid, $page, $records_per_page)
 
 List members
 
@@ -417,12 +417,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Members**](../Model/Members.md)
+[**\atrium\model\MembersResponseBody**](../Model/MembersResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readMember**
-> \atrium\model\Member readMember($member_guid, $user_guid)
+> \atrium\model\MemberResponseBody readMember($member_guid, $user_guid)
 
 Read member
 
@@ -466,12 +466,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Member**](../Model/Member.md)
+[**\atrium\model\MemberResponseBody**](../Model/MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readMemberStatus**
-> \atrium\model\MemberConnectionStatus readMemberStatus($member_guid, $user_guid)
+> \atrium\model\MemberConnectionStatusResponseBody readMemberStatus($member_guid, $user_guid)
 
 Read member connection status
 
@@ -515,12 +515,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\MemberConnectionStatus**](../Model/MemberConnectionStatus.md)
+[**\atrium\model\MemberConnectionStatusResponseBody**](../Model/MemberConnectionStatusResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **resumeMember**
-> \atrium\model\Member resumeMember($member_guid, $user_guid, $body)
+> \atrium\model\MemberResponseBody resumeMember($member_guid, $user_guid, $body)
 
 Resume aggregation from MFA
 
@@ -566,12 +566,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Member**](../Model/Member.md)
+[**\atrium\model\MemberResponseBody**](../Model/MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMember**
-> \atrium\model\Member updateMember($member_guid, $user_guid, $body)
+> \atrium\model\MemberResponseBody updateMember($member_guid, $user_guid, $body)
 
 Update member
 
@@ -617,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Member**](../Model/Member.md)
+[**\atrium\model\MemberResponseBody**](../Model/MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -84,7 +84,7 @@ class VerificationApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\AccountNumbers
+     * @return \atrium\model\AccountNumbersResponseBody
      */
     public function listAccountNumbers($member_guid, $user_guid)
     {
@@ -102,11 +102,11 @@ class VerificationApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\AccountNumbers, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\AccountNumbersResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAccountNumbersWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\AccountNumbers';
+        $returnType = '\atrium\model\AccountNumbersResponseBody';
         $request = $this->listAccountNumbersRequest($member_guid, $user_guid);
 
         try {
@@ -158,7 +158,7 @@ class VerificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\AccountNumbers',
+                        '\atrium\model\AccountNumbersResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -202,7 +202,7 @@ class VerificationApi
      */
     public function listAccountNumbersAsyncWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\AccountNumbers';
+        $returnType = '\atrium\model\AccountNumbersResponseBody';
         $request = $this->listAccountNumbersRequest($member_guid, $user_guid);
 
         return $this->client
@@ -375,7 +375,7 @@ class VerificationApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\AccountNumbers
+     * @return \atrium\model\AccountNumbersResponseBody
      */
     public function listAccountNumbersByAccount($account_guid, $user_guid)
     {
@@ -393,11 +393,11 @@ class VerificationApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\AccountNumbers, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\AccountNumbersResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAccountNumbersByAccountWithHttpInfo($account_guid, $user_guid)
     {
-        $returnType = '\atrium\model\AccountNumbers';
+        $returnType = '\atrium\model\AccountNumbersResponseBody';
         $request = $this->listAccountNumbersByAccountRequest($account_guid, $user_guid);
 
         try {
@@ -449,7 +449,7 @@ class VerificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\AccountNumbers',
+                        '\atrium\model\AccountNumbersResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -493,7 +493,7 @@ class VerificationApi
      */
     public function listAccountNumbersByAccountAsyncWithHttpInfo($account_guid, $user_guid)
     {
-        $returnType = '\atrium\model\AccountNumbers';
+        $returnType = '\atrium\model\AccountNumbersResponseBody';
         $request = $this->listAccountNumbersByAccountRequest($account_guid, $user_guid);
 
         return $this->client
@@ -666,7 +666,7 @@ class VerificationApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Member
+     * @return \atrium\model\MemberResponseBody
      */
     public function verifyMember($member_guid, $user_guid)
     {
@@ -684,11 +684,11 @@ class VerificationApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Member, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\MemberResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function verifyMemberWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->verifyMemberRequest($member_guid, $user_guid);
 
         try {
@@ -740,7 +740,7 @@ class VerificationApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Member',
+                        '\atrium\model\MemberResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -784,7 +784,7 @@ class VerificationApi
      */
     public function verifyMemberAsyncWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->verifyMemberRequest($member_guid, $user_guid);
 
         return $this->client

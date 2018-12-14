@@ -44,7 +44,7 @@ class MemberCreateRequestBody implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'member' => '\atrium\model\MemberCreateRequestBodyAttributes'
+        'member' => '\atrium\model\MemberCreateRequest'
     ];
 
     /**
@@ -194,7 +194,7 @@ class MemberCreateRequestBody implements ModelInterface, ArrayAccess
     /**
      * Gets member
      *
-     * @return \atrium\model\MemberCreateRequestBodyAttributes
+     * @return \atrium\model\MemberCreateRequest
      */
     public function getMember()
     {
@@ -204,7 +204,7 @@ class MemberCreateRequestBody implements ModelInterface, ArrayAccess
     /**
      * Sets member
      *
-     * @param \atrium\model\MemberCreateRequestBodyAttributes $member member
+     * @param \atrium\model\MemberCreateRequest $member member
      *
      * @return $this
      */

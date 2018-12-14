@@ -64,9 +64,30 @@ class UserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user"
+     * Test attribute "guid"
      */
-    public function testPropertyUser()
+    public function testPropertyGuid()
+    {
+    }
+
+    /**
+     * Test attribute "identifier"
+     */
+    public function testPropertyIdentifier()
+    {
+    }
+
+    /**
+     * Test attribute "is_disabled"
+     */
+    public function testPropertyIsDisabled()
+    {
+    }
+
+    /**
+     * Test attribute "metadata"
+     */
+    public function testPropertyMetadata()
     {
     }
 }

@@ -44,7 +44,10 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'user' => '\atrium\model\UserAttributes'
+        'guid' => 'string',
+        'identifier' => 'string',
+        'is_disabled' => 'bool',
+        'metadata' => 'string'
     ];
 
     /**
@@ -53,7 +56,10 @@ class User implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxFormats = [
-        'user' => null
+        'guid' => null,
+        'identifier' => null,
+        'is_disabled' => null,
+        'metadata' => null
     ];
 
     /**
@@ -83,7 +89,10 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user' => 'user'
+        'guid' => 'guid',
+        'identifier' => 'identifier',
+        'is_disabled' => 'is_disabled',
+        'metadata' => 'metadata'
     ];
 
     /**
@@ -92,7 +101,10 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user' => 'setUser'
+        'guid' => 'setGuid',
+        'identifier' => 'setIdentifier',
+        'is_disabled' => 'setIsDisabled',
+        'metadata' => 'setMetadata'
     ];
 
     /**
@@ -101,7 +113,10 @@ class User implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user' => 'getUser'
+        'guid' => 'getGuid',
+        'identifier' => 'getIdentifier',
+        'is_disabled' => 'getIsDisabled',
+        'metadata' => 'getMetadata'
     ];
 
     /**
@@ -164,7 +179,10 @@ class User implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
+        $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['is_disabled'] = isset($data['is_disabled']) ? $data['is_disabled'] : null;
+        $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
     }
 
     /**
@@ -192,25 +210,97 @@ class User implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets user
+     * Gets guid
      *
-     * @return \atrium\model\UserAttributes
+     * @return string
      */
-    public function getUser()
+    public function getGuid()
     {
-        return $this->container['user'];
+        return $this->container['guid'];
     }
 
     /**
-     * Sets user
+     * Sets guid
      *
-     * @param \atrium\model\UserAttributes $user user
+     * @param string $guid guid
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setGuid($guid)
     {
-        $this->container['user'] = $user;
+        $this->container['guid'] = $guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets identifier
+     *
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return $this->container['identifier'];
+    }
+
+    /**
+     * Sets identifier
+     *
+     * @param string $identifier identifier
+     *
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_disabled
+     *
+     * @return bool
+     */
+    public function getIsDisabled()
+    {
+        return $this->container['is_disabled'];
+    }
+
+    /**
+     * Sets is_disabled
+     *
+     * @param bool $is_disabled is_disabled
+     *
+     * @return $this
+     */
+    public function setIsDisabled($is_disabled)
+    {
+        $this->container['is_disabled'] = $is_disabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return string
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param string $metadata metadata
+     *
+     * @return $this
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }

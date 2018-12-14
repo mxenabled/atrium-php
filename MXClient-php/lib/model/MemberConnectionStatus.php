@@ -44,7 +44,15 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'member' => '\atrium\model\MemberConnectionStatusAttributes'
+        'aggregated_at' => 'string',
+        'challenges' => '\atrium\model\Challenge[]',
+        'connection_status' => 'string',
+        'guid' => 'bool',
+        'has_processed_accounts' => 'bool',
+        'has_processed_transactions' => 'bool',
+        'is_being_aggregated' => 'bool',
+        'status' => 'string',
+        'successfully_aggregated_at' => 'string'
     ];
 
     /**
@@ -53,7 +61,15 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxFormats = [
-        'member' => null
+        'aggregated_at' => null,
+        'challenges' => null,
+        'connection_status' => null,
+        'guid' => null,
+        'has_processed_accounts' => null,
+        'has_processed_transactions' => null,
+        'is_being_aggregated' => null,
+        'status' => null,
+        'successfully_aggregated_at' => null
     ];
 
     /**
@@ -83,7 +99,15 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'member' => 'member'
+        'aggregated_at' => 'aggregated_at',
+        'challenges' => 'challenges',
+        'connection_status' => 'connection_status',
+        'guid' => 'guid',
+        'has_processed_accounts' => 'has_processed_accounts',
+        'has_processed_transactions' => 'has_processed_transactions',
+        'is_being_aggregated' => 'is_being_aggregated',
+        'status' => 'status',
+        'successfully_aggregated_at' => 'successfully_aggregated_at'
     ];
 
     /**
@@ -92,7 +116,15 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'member' => 'setMember'
+        'aggregated_at' => 'setAggregatedAt',
+        'challenges' => 'setChallenges',
+        'connection_status' => 'setConnectionStatus',
+        'guid' => 'setGuid',
+        'has_processed_accounts' => 'setHasProcessedAccounts',
+        'has_processed_transactions' => 'setHasProcessedTransactions',
+        'is_being_aggregated' => 'setIsBeingAggregated',
+        'status' => 'setStatus',
+        'successfully_aggregated_at' => 'setSuccessfullyAggregatedAt'
     ];
 
     /**
@@ -101,7 +133,15 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'member' => 'getMember'
+        'aggregated_at' => 'getAggregatedAt',
+        'challenges' => 'getChallenges',
+        'connection_status' => 'getConnectionStatus',
+        'guid' => 'getGuid',
+        'has_processed_accounts' => 'getHasProcessedAccounts',
+        'has_processed_transactions' => 'getHasProcessedTransactions',
+        'is_being_aggregated' => 'getIsBeingAggregated',
+        'status' => 'getStatus',
+        'successfully_aggregated_at' => 'getSuccessfullyAggregatedAt'
     ];
 
     /**
@@ -164,7 +204,15 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['member'] = isset($data['member']) ? $data['member'] : null;
+        $this->container['aggregated_at'] = isset($data['aggregated_at']) ? $data['aggregated_at'] : null;
+        $this->container['challenges'] = isset($data['challenges']) ? $data['challenges'] : null;
+        $this->container['connection_status'] = isset($data['connection_status']) ? $data['connection_status'] : null;
+        $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
+        $this->container['has_processed_accounts'] = isset($data['has_processed_accounts']) ? $data['has_processed_accounts'] : null;
+        $this->container['has_processed_transactions'] = isset($data['has_processed_transactions']) ? $data['has_processed_transactions'] : null;
+        $this->container['is_being_aggregated'] = isset($data['is_being_aggregated']) ? $data['is_being_aggregated'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['successfully_aggregated_at'] = isset($data['successfully_aggregated_at']) ? $data['successfully_aggregated_at'] : null;
     }
 
     /**
@@ -192,25 +240,217 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets member
+     * Gets aggregated_at
      *
-     * @return \atrium\model\MemberConnectionStatusAttributes
+     * @return string
      */
-    public function getMember()
+    public function getAggregatedAt()
     {
-        return $this->container['member'];
+        return $this->container['aggregated_at'];
     }
 
     /**
-     * Sets member
+     * Sets aggregated_at
      *
-     * @param \atrium\model\MemberConnectionStatusAttributes $member member
+     * @param string $aggregated_at aggregated_at
      *
      * @return $this
      */
-    public function setMember($member)
+    public function setAggregatedAt($aggregated_at)
     {
-        $this->container['member'] = $member;
+        $this->container['aggregated_at'] = $aggregated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets challenges
+     *
+     * @return \atrium\model\Challenge[]
+     */
+    public function getChallenges()
+    {
+        return $this->container['challenges'];
+    }
+
+    /**
+     * Sets challenges
+     *
+     * @param \atrium\model\Challenge[] $challenges challenges
+     *
+     * @return $this
+     */
+    public function setChallenges($challenges)
+    {
+        $this->container['challenges'] = $challenges;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_status
+     *
+     * @return string
+     */
+    public function getConnectionStatus()
+    {
+        return $this->container['connection_status'];
+    }
+
+    /**
+     * Sets connection_status
+     *
+     * @param string $connection_status connection_status
+     *
+     * @return $this
+     */
+    public function setConnectionStatus($connection_status)
+    {
+        $this->container['connection_status'] = $connection_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets guid
+     *
+     * @return bool
+     */
+    public function getGuid()
+    {
+        return $this->container['guid'];
+    }
+
+    /**
+     * Sets guid
+     *
+     * @param bool $guid guid
+     *
+     * @return $this
+     */
+    public function setGuid($guid)
+    {
+        $this->container['guid'] = $guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_processed_accounts
+     *
+     * @return bool
+     */
+    public function getHasProcessedAccounts()
+    {
+        return $this->container['has_processed_accounts'];
+    }
+
+    /**
+     * Sets has_processed_accounts
+     *
+     * @param bool $has_processed_accounts has_processed_accounts
+     *
+     * @return $this
+     */
+    public function setHasProcessedAccounts($has_processed_accounts)
+    {
+        $this->container['has_processed_accounts'] = $has_processed_accounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_processed_transactions
+     *
+     * @return bool
+     */
+    public function getHasProcessedTransactions()
+    {
+        return $this->container['has_processed_transactions'];
+    }
+
+    /**
+     * Sets has_processed_transactions
+     *
+     * @param bool $has_processed_transactions has_processed_transactions
+     *
+     * @return $this
+     */
+    public function setHasProcessedTransactions($has_processed_transactions)
+    {
+        $this->container['has_processed_transactions'] = $has_processed_transactions;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_being_aggregated
+     *
+     * @return bool
+     */
+    public function getIsBeingAggregated()
+    {
+        return $this->container['is_being_aggregated'];
+    }
+
+    /**
+     * Sets is_being_aggregated
+     *
+     * @param bool $is_being_aggregated is_being_aggregated
+     *
+     * @return $this
+     */
+    public function setIsBeingAggregated($is_being_aggregated)
+    {
+        $this->container['is_being_aggregated'] = $is_being_aggregated;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets successfully_aggregated_at
+     *
+     * @return string
+     */
+    public function getSuccessfullyAggregatedAt()
+    {
+        return $this->container['successfully_aggregated_at'];
+    }
+
+    /**
+     * Sets successfully_aggregated_at
+     *
+     * @param string $successfully_aggregated_at successfully_aggregated_at
+     *
+     * @return $this
+     */
+    public function setSuccessfullyAggregatedAt($successfully_aggregated_at)
+    {
+        $this->container['successfully_aggregated_at'] = $successfully_aggregated_at;
 
         return $this;
     }

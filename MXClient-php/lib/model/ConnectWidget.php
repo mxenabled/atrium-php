@@ -44,7 +44,8 @@ class ConnectWidget implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'user' => '\atrium\model\ConnectWidgetAttributes'
+        'connect_widget_url' => 'string',
+        'guid' => 'string'
     ];
 
     /**
@@ -53,7 +54,8 @@ class ConnectWidget implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxFormats = [
-        'user' => null
+        'connect_widget_url' => null,
+        'guid' => null
     ];
 
     /**
@@ -83,7 +85,8 @@ class ConnectWidget implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'user' => 'user'
+        'connect_widget_url' => 'connect_widget_url',
+        'guid' => 'guid'
     ];
 
     /**
@@ -92,7 +95,8 @@ class ConnectWidget implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'user' => 'setUser'
+        'connect_widget_url' => 'setConnectWidgetUrl',
+        'guid' => 'setGuid'
     ];
 
     /**
@@ -101,7 +105,8 @@ class ConnectWidget implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'user' => 'getUser'
+        'connect_widget_url' => 'getConnectWidgetUrl',
+        'guid' => 'getGuid'
     ];
 
     /**
@@ -164,7 +169,8 @@ class ConnectWidget implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['connect_widget_url'] = isset($data['connect_widget_url']) ? $data['connect_widget_url'] : null;
+        $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
     }
 
     /**
@@ -192,25 +198,49 @@ class ConnectWidget implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets user
+     * Gets connect_widget_url
      *
-     * @return \atrium\model\ConnectWidgetAttributes
+     * @return string
      */
-    public function getUser()
+    public function getConnectWidgetUrl()
     {
-        return $this->container['user'];
+        return $this->container['connect_widget_url'];
     }
 
     /**
-     * Sets user
+     * Sets connect_widget_url
      *
-     * @param \atrium\model\ConnectWidgetAttributes $user user
+     * @param string $connect_widget_url connect_widget_url
      *
      * @return $this
      */
-    public function setUser($user)
+    public function setConnectWidgetUrl($connect_widget_url)
     {
-        $this->container['user'] = $user;
+        $this->container['connect_widget_url'] = $connect_widget_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets guid
+     *
+     * @return string
+     */
+    public function getGuid()
+    {
+        return $this->container['guid'];
+    }
+
+    /**
+     * Sets guid
+     *
+     * @param string $guid guid
+     *
+     * @return $this
+     */
+    public function setGuid($guid)
+    {
+        $this->container['guid'] = $guid;
 
         return $this;
     }

@@ -85,7 +85,7 @@ class InstitutionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Institutions
+     * @return \atrium\model\InstitutionsResponseBody
      */
     public function listInstitutions($name = null, $page = null, $records_per_page = null)
     {
@@ -104,11 +104,11 @@ class InstitutionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Institutions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\InstitutionsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listInstitutionsWithHttpInfo($name = null, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Institutions';
+        $returnType = '\atrium\model\InstitutionsResponseBody';
         $request = $this->listInstitutionsRequest($name, $page, $records_per_page);
 
         try {
@@ -160,7 +160,7 @@ class InstitutionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Institutions',
+                        '\atrium\model\InstitutionsResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -206,7 +206,7 @@ class InstitutionsApi
      */
     public function listInstitutionsAsyncWithHttpInfo($name = null, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Institutions';
+        $returnType = '\atrium\model\InstitutionsResponseBody';
         $request = $this->listInstitutionsRequest($name, $page, $records_per_page);
 
         return $this->client
@@ -363,7 +363,7 @@ class InstitutionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Institution
+     * @return \atrium\model\InstitutionResponseBody
      */
     public function readInstitution($institution_code)
     {
@@ -380,11 +380,11 @@ class InstitutionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Institution, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\InstitutionResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function readInstitutionWithHttpInfo($institution_code)
     {
-        $returnType = '\atrium\model\Institution';
+        $returnType = '\atrium\model\InstitutionResponseBody';
         $request = $this->readInstitutionRequest($institution_code);
 
         try {
@@ -436,7 +436,7 @@ class InstitutionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Institution',
+                        '\atrium\model\InstitutionResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -478,7 +478,7 @@ class InstitutionsApi
      */
     public function readInstitutionAsyncWithHttpInfo($institution_code)
     {
-        $returnType = '\atrium\model\Institution';
+        $returnType = '\atrium\model\InstitutionResponseBody';
         $request = $this->readInstitutionRequest($institution_code);
 
         return $this->client
@@ -635,7 +635,7 @@ class InstitutionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Credentials
+     * @return \atrium\model\CredentialsResponseBody
      */
     public function readInstitutionCredentials($institution_code)
     {
@@ -652,11 +652,11 @@ class InstitutionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Credentials, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\CredentialsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function readInstitutionCredentialsWithHttpInfo($institution_code)
     {
-        $returnType = '\atrium\model\Credentials';
+        $returnType = '\atrium\model\CredentialsResponseBody';
         $request = $this->readInstitutionCredentialsRequest($institution_code);
 
         try {
@@ -708,7 +708,7 @@ class InstitutionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Credentials',
+                        '\atrium\model\CredentialsResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -750,7 +750,7 @@ class InstitutionsApi
      */
     public function readInstitutionCredentialsAsyncWithHttpInfo($institution_code)
     {
-        $returnType = '\atrium\model\Credentials';
+        $returnType = '\atrium\model\CredentialsResponseBody';
         $request = $this->readInstitutionCredentialsRequest($institution_code);
 
         return $this->client

@@ -83,7 +83,7 @@ class UsersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\User
+     * @return \atrium\model\UserResponseBody
      */
     public function createUser($body)
     {
@@ -100,11 +100,11 @@ class UsersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\UserResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function createUserWithHttpInfo($body)
     {
-        $returnType = '\atrium\model\User';
+        $returnType = '\atrium\model\UserResponseBody';
         $request = $this->createUserRequest($body);
 
         try {
@@ -156,7 +156,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\User',
+                        '\atrium\model\UserResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -198,7 +198,7 @@ class UsersApi
      */
     public function createUserAsyncWithHttpInfo($body)
     {
-        $returnType = '\atrium\model\User';
+        $returnType = '\atrium\model\UserResponseBody';
         $request = $this->createUserRequest($body);
 
         return $this->client
@@ -586,7 +586,7 @@ class UsersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Users
+     * @return \atrium\model\UsersResponseBody
      */
     public function listUsers($page = null, $records_per_page = null)
     {
@@ -604,11 +604,11 @@ class UsersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Users, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\UsersResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUsersWithHttpInfo($page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Users';
+        $returnType = '\atrium\model\UsersResponseBody';
         $request = $this->listUsersRequest($page, $records_per_page);
 
         try {
@@ -660,7 +660,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Users',
+                        '\atrium\model\UsersResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -704,7 +704,7 @@ class UsersApi
      */
     public function listUsersAsyncWithHttpInfo($page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Users';
+        $returnType = '\atrium\model\UsersResponseBody';
         $request = $this->listUsersRequest($page, $records_per_page);
 
         return $this->client
@@ -856,7 +856,7 @@ class UsersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\User
+     * @return \atrium\model\UserResponseBody
      */
     public function readUser($user_guid)
     {
@@ -873,11 +873,11 @@ class UsersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\UserResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function readUserWithHttpInfo($user_guid)
     {
-        $returnType = '\atrium\model\User';
+        $returnType = '\atrium\model\UserResponseBody';
         $request = $this->readUserRequest($user_guid);
 
         try {
@@ -929,7 +929,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\User',
+                        '\atrium\model\UserResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -971,7 +971,7 @@ class UsersApi
      */
     public function readUserAsyncWithHttpInfo($user_guid)
     {
-        $returnType = '\atrium\model\User';
+        $returnType = '\atrium\model\UserResponseBody';
         $request = $this->readUserRequest($user_guid);
 
         return $this->client
@@ -1129,7 +1129,7 @@ class UsersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\User
+     * @return \atrium\model\UserResponseBody
      */
     public function updateUser($user_guid, $body = null)
     {
@@ -1147,11 +1147,11 @@ class UsersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\UserResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateUserWithHttpInfo($user_guid, $body = null)
     {
-        $returnType = '\atrium\model\User';
+        $returnType = '\atrium\model\UserResponseBody';
         $request = $this->updateUserRequest($user_guid, $body);
 
         try {
@@ -1203,7 +1203,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\User',
+                        '\atrium\model\UserResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1247,7 +1247,7 @@ class UsersApi
      */
     public function updateUserAsyncWithHttpInfo($user_guid, $body = null)
     {
-        $returnType = '\atrium\model\User';
+        $returnType = '\atrium\model\UserResponseBody';
         $request = $this->updateUserRequest($user_guid, $body);
 
         return $this->client

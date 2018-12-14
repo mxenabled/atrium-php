@@ -7,7 +7,7 @@ Method | HTTP request | Description
 
 
 # **identifyMember**
-> \atrium\model\Member identifyMember($member_guid, $user_guid)
+> \atrium\model\MemberResponseBody identifyMember($member_guid, $user_guid)
 
 Identify
 
@@ -51,12 +51,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Member**](../Model/Member.md)
+[**\atrium\model\MemberResponseBody**](../Model/MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAccountOwners**
-> \atrium\model\AccountOwners listAccountOwners($member_guid, $user_guid)
+> \atrium\model\AccountOwnersResponseBody listAccountOwners($member_guid, $user_guid)
 
 List member account owners
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\AccountOwners**](../Model/AccountOwners.md)
+[**\atrium\model\AccountOwnersResponseBody**](../Model/AccountOwnersResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

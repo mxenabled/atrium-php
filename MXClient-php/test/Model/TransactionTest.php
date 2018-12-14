@@ -64,9 +64,219 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "transaction"
+     * Test attribute "account_guid"
      */
-    public function testPropertyTransaction()
+    public function testPropertyAccountGuid()
+    {
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+    }
+
+    /**
+     * Test attribute "category"
+     */
+    public function testPropertyCategory()
+    {
+    }
+
+    /**
+     * Test attribute "check_number"
+     */
+    public function testPropertyCheckNumber()
+    {
+    }
+
+    /**
+     * Test attribute "check_number_string"
+     */
+    public function testPropertyCheckNumberString()
+    {
+    }
+
+    /**
+     * Test attribute "created_at"
+     */
+    public function testPropertyCreatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "currency_code"
+     */
+    public function testPropertyCurrencyCode()
+    {
+    }
+
+    /**
+     * Test attribute "date"
+     */
+    public function testPropertyDate()
+    {
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
+     * Test attribute "guid"
+     */
+    public function testPropertyGuid()
+    {
+    }
+
+    /**
+     * Test attribute "is_bill_pay"
+     */
+    public function testPropertyIsBillPay()
+    {
+    }
+
+    /**
+     * Test attribute "is_direct_deposit"
+     */
+    public function testPropertyIsDirectDeposit()
+    {
+    }
+
+    /**
+     * Test attribute "is_expense"
+     */
+    public function testPropertyIsExpense()
+    {
+    }
+
+    /**
+     * Test attribute "is_fee"
+     */
+    public function testPropertyIsFee()
+    {
+    }
+
+    /**
+     * Test attribute "is_income"
+     */
+    public function testPropertyIsIncome()
+    {
+    }
+
+    /**
+     * Test attribute "is_international"
+     */
+    public function testPropertyIsInternational()
+    {
+    }
+
+    /**
+     * Test attribute "is_overdraft_fee"
+     */
+    public function testPropertyIsOverdraftFee()
+    {
+    }
+
+    /**
+     * Test attribute "is_payroll_advance"
+     */
+    public function testPropertyIsPayrollAdvance()
+    {
+    }
+
+    /**
+     * Test attribute "latitude"
+     */
+    public function testPropertyLatitude()
+    {
+    }
+
+    /**
+     * Test attribute "longitude"
+     */
+    public function testPropertyLongitude()
+    {
+    }
+
+    /**
+     * Test attribute "member_guid"
+     */
+    public function testPropertyMemberGuid()
+    {
+    }
+
+    /**
+     * Test attribute "memo"
+     */
+    public function testPropertyMemo()
+    {
+    }
+
+    /**
+     * Test attribute "merchant_category_code"
+     */
+    public function testPropertyMerchantCategoryCode()
+    {
+    }
+
+    /**
+     * Test attribute "original_description"
+     */
+    public function testPropertyOriginalDescription()
+    {
+    }
+
+    /**
+     * Test attribute "posted_at"
+     */
+    public function testPropertyPostedAt()
+    {
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "top_level_category"
+     */
+    public function testPropertyTopLevelCategory()
+    {
+    }
+
+    /**
+     * Test attribute "transacted_at"
+     */
+    public function testPropertyTransactedAt()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "updated_at"
+     */
+    public function testPropertyUpdatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "user_guid"
+     */
+    public function testPropertyUserGuid()
     {
     }
 }

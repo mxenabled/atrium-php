@@ -64,9 +64,51 @@ class InstitutionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "institution"
+     * Test attribute "code"
      */
-    public function testPropertyInstitution()
+    public function testPropertyCode()
+    {
+    }
+
+    /**
+     * Test attribute "medium_logo_url"
+     */
+    public function testPropertyMediumLogoUrl()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "small_logo_url"
+     */
+    public function testPropertySmallLogoUrl()
+    {
+    }
+
+    /**
+     * Test attribute "supports_account_identification"
+     */
+    public function testPropertySupportsAccountIdentification()
+    {
+    }
+
+    /**
+     * Test attribute "supports_account_verification"
+     */
+    public function testPropertySupportsAccountVerification()
+    {
+    }
+
+    /**
+     * Test attribute "url"
+     */
+    public function testPropertyUrl()
     {
     }
 }

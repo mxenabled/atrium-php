@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **listAccountTransactions**
-> \atrium\model\Transactions listAccountTransactions($account_guid, $user_guid, $from_date, $to_date, $page, $records_per_page)
+> \atrium\model\TransactionsResponseBody listAccountTransactions($account_guid, $user_guid, $from_date, $to_date, $page, $records_per_page)
 
 List account transactions
 
@@ -61,12 +61,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Transactions**](../Model/Transactions.md)
+[**\atrium\model\TransactionsResponseBody**](../Model/TransactionsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listUserAccounts**
-> \atrium\model\Accounts listUserAccounts($user_guid, $page, $records_per_page)
+> \atrium\model\AccountsResponseBody listUserAccounts($user_guid, $page, $records_per_page)
 
 List accounts for a user
 
@@ -112,12 +112,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Accounts**](../Model/Accounts.md)
+[**\atrium\model\AccountsResponseBody**](../Model/AccountsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readAccount**
-> \atrium\model\Account readAccount($account_guid, $user_guid)
+> \atrium\model\AccountResponseBody readAccount($account_guid, $user_guid)
 
 Read an account
 
@@ -161,12 +161,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Account**](../Model/Account.md)
+[**\atrium\model\AccountResponseBody**](../Model/AccountResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readAccountByMemberGUID**
-> \atrium\model\Account readAccountByMemberGUID($account_guid, $member_guid, $user_guid)
+> \atrium\model\AccountResponseBody readAccountByMemberGUID($account_guid, $member_guid, $user_guid)
 
 Read an account
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Account**](../Model/Account.md)
+[**\atrium\model\AccountResponseBody**](../Model/AccountResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

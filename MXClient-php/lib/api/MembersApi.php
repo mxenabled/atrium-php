@@ -84,7 +84,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Member
+     * @return \atrium\model\MemberResponseBody
      */
     public function aggregateMember($member_guid, $user_guid)
     {
@@ -102,11 +102,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Member, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\MemberResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function aggregateMemberWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->aggregateMemberRequest($member_guid, $user_guid);
 
         try {
@@ -158,7 +158,7 @@ class MembersApi
                 case 202:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Member',
+                        '\atrium\model\MemberResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -202,7 +202,7 @@ class MembersApi
      */
     public function aggregateMemberAsyncWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->aggregateMemberRequest($member_guid, $user_guid);
 
         return $this->client
@@ -375,7 +375,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Member
+     * @return \atrium\model\MemberResponseBody
      */
     public function createMember($user_guid, $body)
     {
@@ -393,11 +393,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Member, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\MemberResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function createMemberWithHttpInfo($user_guid, $body)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->createMemberRequest($user_guid, $body);
 
         try {
@@ -449,7 +449,7 @@ class MembersApi
                 case 202:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Member',
+                        '\atrium\model\MemberResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -493,7 +493,7 @@ class MembersApi
      */
     public function createMemberAsyncWithHttpInfo($user_guid, $body)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->createMemberRequest($user_guid, $body);
 
         return $this->client
@@ -917,7 +917,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Accounts
+     * @return \atrium\model\AccountsResponseBody
      */
     public function listMemberAccounts($member_guid, $user_guid, $page = null, $records_per_page = null)
     {
@@ -937,11 +937,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Accounts, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\AccountsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listMemberAccountsWithHttpInfo($member_guid, $user_guid, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Accounts';
+        $returnType = '\atrium\model\AccountsResponseBody';
         $request = $this->listMemberAccountsRequest($member_guid, $user_guid, $page, $records_per_page);
 
         try {
@@ -993,7 +993,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Accounts',
+                        '\atrium\model\AccountsResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1041,7 +1041,7 @@ class MembersApi
      */
     public function listMemberAccountsAsyncWithHttpInfo($member_guid, $user_guid, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Accounts';
+        $returnType = '\atrium\model\AccountsResponseBody';
         $request = $this->listMemberAccountsRequest($member_guid, $user_guid, $page, $records_per_page);
 
         return $this->client
@@ -1224,7 +1224,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Credentials
+     * @return \atrium\model\CredentialsResponseBody
      */
     public function listMemberCredentials($member_guid, $user_guid)
     {
@@ -1242,11 +1242,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Credentials, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\CredentialsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listMemberCredentialsWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Credentials';
+        $returnType = '\atrium\model\CredentialsResponseBody';
         $request = $this->listMemberCredentialsRequest($member_guid, $user_guid);
 
         try {
@@ -1298,7 +1298,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Credentials',
+                        '\atrium\model\CredentialsResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1342,7 +1342,7 @@ class MembersApi
      */
     public function listMemberCredentialsAsyncWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Credentials';
+        $returnType = '\atrium\model\CredentialsResponseBody';
         $request = $this->listMemberCredentialsRequest($member_guid, $user_guid);
 
         return $this->client
@@ -1515,7 +1515,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Challenges
+     * @return \atrium\model\ChallengesResponseBody
      */
     public function listMemberMFAChallenges($member_guid, $user_guid)
     {
@@ -1533,11 +1533,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Challenges, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\ChallengesResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listMemberMFAChallengesWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Challenges';
+        $returnType = '\atrium\model\ChallengesResponseBody';
         $request = $this->listMemberMFAChallengesRequest($member_guid, $user_guid);
 
         try {
@@ -1589,7 +1589,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Challenges',
+                        '\atrium\model\ChallengesResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1633,7 +1633,7 @@ class MembersApi
      */
     public function listMemberMFAChallengesAsyncWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Challenges';
+        $returnType = '\atrium\model\ChallengesResponseBody';
         $request = $this->listMemberMFAChallengesRequest($member_guid, $user_guid);
 
         return $this->client
@@ -1810,7 +1810,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Transactions
+     * @return \atrium\model\TransactionsResponseBody
      */
     public function listMemberTransactions($member_guid, $user_guid, $from_date = null, $to_date = null, $page = null, $records_per_page = null)
     {
@@ -1832,11 +1832,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Transactions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\TransactionsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listMemberTransactionsWithHttpInfo($member_guid, $user_guid, $from_date = null, $to_date = null, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Transactions';
+        $returnType = '\atrium\model\TransactionsResponseBody';
         $request = $this->listMemberTransactionsRequest($member_guid, $user_guid, $from_date, $to_date, $page, $records_per_page);
 
         try {
@@ -1888,7 +1888,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Transactions',
+                        '\atrium\model\TransactionsResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1940,7 +1940,7 @@ class MembersApi
      */
     public function listMemberTransactionsAsyncWithHttpInfo($member_guid, $user_guid, $from_date = null, $to_date = null, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Transactions';
+        $returnType = '\atrium\model\TransactionsResponseBody';
         $request = $this->listMemberTransactionsRequest($member_guid, $user_guid, $from_date, $to_date, $page, $records_per_page);
 
         return $this->client
@@ -2134,7 +2134,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Members
+     * @return \atrium\model\MembersResponseBody
      */
     public function listMembers($user_guid, $page = null, $records_per_page = null)
     {
@@ -2153,11 +2153,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Members, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\MembersResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listMembersWithHttpInfo($user_guid, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Members';
+        $returnType = '\atrium\model\MembersResponseBody';
         $request = $this->listMembersRequest($user_guid, $page, $records_per_page);
 
         try {
@@ -2209,7 +2209,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Members',
+                        '\atrium\model\MembersResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2255,7 +2255,7 @@ class MembersApi
      */
     public function listMembersAsyncWithHttpInfo($user_guid, $page = null, $records_per_page = null)
     {
-        $returnType = '\atrium\model\Members';
+        $returnType = '\atrium\model\MembersResponseBody';
         $request = $this->listMembersRequest($user_guid, $page, $records_per_page);
 
         return $this->client
@@ -2423,7 +2423,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Member
+     * @return \atrium\model\MemberResponseBody
      */
     public function readMember($member_guid, $user_guid)
     {
@@ -2441,11 +2441,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Member, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\MemberResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function readMemberWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->readMemberRequest($member_guid, $user_guid);
 
         try {
@@ -2497,7 +2497,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Member',
+                        '\atrium\model\MemberResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2541,7 +2541,7 @@ class MembersApi
      */
     public function readMemberAsyncWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->readMemberRequest($member_guid, $user_guid);
 
         return $this->client
@@ -2714,7 +2714,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\MemberConnectionStatus
+     * @return \atrium\model\MemberConnectionStatusResponseBody
      */
     public function readMemberStatus($member_guid, $user_guid)
     {
@@ -2732,11 +2732,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\MemberConnectionStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\MemberConnectionStatusResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function readMemberStatusWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\MemberConnectionStatus';
+        $returnType = '\atrium\model\MemberConnectionStatusResponseBody';
         $request = $this->readMemberStatusRequest($member_guid, $user_guid);
 
         try {
@@ -2788,7 +2788,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\MemberConnectionStatus',
+                        '\atrium\model\MemberConnectionStatusResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2832,7 +2832,7 @@ class MembersApi
      */
     public function readMemberStatusAsyncWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\MemberConnectionStatus';
+        $returnType = '\atrium\model\MemberConnectionStatusResponseBody';
         $request = $this->readMemberStatusRequest($member_guid, $user_guid);
 
         return $this->client
@@ -3006,7 +3006,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Member
+     * @return \atrium\model\MemberResponseBody
      */
     public function resumeMember($member_guid, $user_guid, $body)
     {
@@ -3025,11 +3025,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Member, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\MemberResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function resumeMemberWithHttpInfo($member_guid, $user_guid, $body)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->resumeMemberRequest($member_guid, $user_guid, $body);
 
         try {
@@ -3081,7 +3081,7 @@ class MembersApi
                 case 202:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Member',
+                        '\atrium\model\MemberResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3127,7 +3127,7 @@ class MembersApi
      */
     public function resumeMemberAsyncWithHttpInfo($member_guid, $user_guid, $body)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->resumeMemberRequest($member_guid, $user_guid, $body);
 
         return $this->client
@@ -3311,7 +3311,7 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Member
+     * @return \atrium\model\MemberResponseBody
      */
     public function updateMember($member_guid, $user_guid, $body = null)
     {
@@ -3330,11 +3330,11 @@ class MembersApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Member, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\MemberResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateMemberWithHttpInfo($member_guid, $user_guid, $body = null)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->updateMemberRequest($member_guid, $user_guid, $body);
 
         try {
@@ -3386,7 +3386,7 @@ class MembersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Member',
+                        '\atrium\model\MemberResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3432,7 +3432,7 @@ class MembersApi
      */
     public function updateMemberAsyncWithHttpInfo($member_guid, $user_guid, $body = null)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->updateMemberRequest($member_guid, $user_guid, $body);
 
         return $this->client

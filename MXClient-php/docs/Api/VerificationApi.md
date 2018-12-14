@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **listAccountNumbers**
-> \atrium\model\AccountNumbers listAccountNumbers($member_guid, $user_guid)
+> \atrium\model\AccountNumbersResponseBody listAccountNumbers($member_guid, $user_guid)
 
 Read account numbers
 
@@ -52,12 +52,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\AccountNumbers**](../Model/AccountNumbers.md)
+[**\atrium\model\AccountNumbersResponseBody**](../Model/AccountNumbersResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listAccountNumbersByAccount**
-> \atrium\model\AccountNumbers listAccountNumbersByAccount($account_guid, $user_guid)
+> \atrium\model\AccountNumbersResponseBody listAccountNumbersByAccount($account_guid, $user_guid)
 
 Read account numbers by account GUID
 
@@ -101,12 +101,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\AccountNumbers**](../Model/AccountNumbers.md)
+[**\atrium\model\AccountNumbersResponseBody**](../Model/AccountNumbersResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **verifyMember**
-> \atrium\model\Member verifyMember($member_guid, $user_guid)
+> \atrium\model\MemberResponseBody verifyMember($member_guid, $user_guid)
 
 Verify
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Member**](../Model/Member.md)
+[**\atrium\model\MemberResponseBody**](../Model/MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

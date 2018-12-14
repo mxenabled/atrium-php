@@ -83,7 +83,7 @@ class TransactionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\TransactionsCleanseAndCategorize
+     * @return \atrium\model\TransactionsCleanseAndCategorizeResponseBody
      */
     public function cleanseAndCategorizeTransactions($body)
     {
@@ -100,11 +100,11 @@ class TransactionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\TransactionsCleanseAndCategorize, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\TransactionsCleanseAndCategorizeResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function cleanseAndCategorizeTransactionsWithHttpInfo($body)
     {
-        $returnType = '\atrium\model\TransactionsCleanseAndCategorize';
+        $returnType = '\atrium\model\TransactionsCleanseAndCategorizeResponseBody';
         $request = $this->cleanseAndCategorizeTransactionsRequest($body);
 
         try {
@@ -156,7 +156,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\TransactionsCleanseAndCategorize',
+                        '\atrium\model\TransactionsCleanseAndCategorizeResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -198,7 +198,7 @@ class TransactionsApi
      */
     public function cleanseAndCategorizeTransactionsAsyncWithHttpInfo($body)
     {
-        $returnType = '\atrium\model\TransactionsCleanseAndCategorize';
+        $returnType = '\atrium\model\TransactionsCleanseAndCategorizeResponseBody';
         $request = $this->cleanseAndCategorizeTransactionsRequest($body);
 
         return $this->client
@@ -354,7 +354,7 @@ class TransactionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Transactions
+     * @return \atrium\model\TransactionsResponseBody
      */
     public function listUserTransactions($user_guid, $page = null, $from_date = null, $records_per_page = null, $to_date = null)
     {
@@ -375,11 +375,11 @@ class TransactionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Transactions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\TransactionsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUserTransactionsWithHttpInfo($user_guid, $page = null, $from_date = null, $records_per_page = null, $to_date = null)
     {
-        $returnType = '\atrium\model\Transactions';
+        $returnType = '\atrium\model\TransactionsResponseBody';
         $request = $this->listUserTransactionsRequest($user_guid, $page, $from_date, $records_per_page, $to_date);
 
         try {
@@ -431,7 +431,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Transactions',
+                        '\atrium\model\TransactionsResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -481,7 +481,7 @@ class TransactionsApi
      */
     public function listUserTransactionsAsyncWithHttpInfo($user_guid, $page = null, $from_date = null, $records_per_page = null, $to_date = null)
     {
-        $returnType = '\atrium\model\Transactions';
+        $returnType = '\atrium\model\TransactionsResponseBody';
         $request = $this->listUserTransactionsRequest($user_guid, $page, $from_date, $records_per_page, $to_date);
 
         return $this->client
@@ -659,7 +659,7 @@ class TransactionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Transaction
+     * @return \atrium\model\TransactionResponseBody
      */
     public function readTransaction($transaction_guid, $user_guid)
     {
@@ -677,11 +677,11 @@ class TransactionsApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\TransactionResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function readTransactionWithHttpInfo($transaction_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Transaction';
+        $returnType = '\atrium\model\TransactionResponseBody';
         $request = $this->readTransactionRequest($transaction_guid, $user_guid);
 
         try {
@@ -733,7 +733,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Transaction',
+                        '\atrium\model\TransactionResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -777,7 +777,7 @@ class TransactionsApi
      */
     public function readTransactionAsyncWithHttpInfo($transaction_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Transaction';
+        $returnType = '\atrium\model\TransactionResponseBody';
         $request = $this->readTransactionRequest($transaction_guid, $user_guid);
 
         return $this->client

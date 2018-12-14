@@ -84,7 +84,7 @@ class IdentityApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\Member
+     * @return \atrium\model\MemberResponseBody
      */
     public function identifyMember($member_guid, $user_guid)
     {
@@ -102,11 +102,11 @@ class IdentityApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\Member, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\MemberResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function identifyMemberWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->identifyMemberRequest($member_guid, $user_guid);
 
         try {
@@ -158,7 +158,7 @@ class IdentityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\Member',
+                        '\atrium\model\MemberResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -202,7 +202,7 @@ class IdentityApi
      */
     public function identifyMemberAsyncWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\Member';
+        $returnType = '\atrium\model\MemberResponseBody';
         $request = $this->identifyMemberRequest($member_guid, $user_guid);
 
         return $this->client
@@ -375,7 +375,7 @@ class IdentityApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \atrium\model\AccountOwners
+     * @return \atrium\model\AccountOwnersResponseBody
      */
     public function listAccountOwners($member_guid, $user_guid)
     {
@@ -393,11 +393,11 @@ class IdentityApi
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \atrium\model\AccountOwners, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \atrium\model\AccountOwnersResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
     public function listAccountOwnersWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\AccountOwners';
+        $returnType = '\atrium\model\AccountOwnersResponseBody';
         $request = $this->listAccountOwnersRequest($member_guid, $user_guid);
 
         try {
@@ -449,7 +449,7 @@ class IdentityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\atrium\model\AccountOwners',
+                        '\atrium\model\AccountOwnersResponseBody',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -493,7 +493,7 @@ class IdentityApi
      */
     public function listAccountOwnersAsyncWithHttpInfo($member_guid, $user_guid)
     {
-        $returnType = '\atrium\model\AccountOwners';
+        $returnType = '\atrium\model\AccountOwnersResponseBody';
         $request = $this->listAccountOwnersRequest($member_guid, $user_guid);
 
         return $this->client

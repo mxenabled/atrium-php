@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **listInstitutions**
-> \atrium\model\Institutions listInstitutions($name, $page, $records_per_page)
+> \atrium\model\InstitutionsResponseBody listInstitutions($name, $page, $records_per_page)
 
 List institutions
 
@@ -54,12 +54,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Institutions**](../Model/Institutions.md)
+[**\atrium\model\InstitutionsResponseBody**](../Model/InstitutionsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readInstitution**
-> \atrium\model\Institution readInstitution($institution_code)
+> \atrium\model\InstitutionResponseBody readInstitution($institution_code)
 
 Read institution
 
@@ -101,12 +101,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Institution**](../Model/Institution.md)
+[**\atrium\model\InstitutionResponseBody**](../Model/InstitutionResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readInstitutionCredentials**
-> \atrium\model\Credentials readInstitutionCredentials($institution_code)
+> \atrium\model\CredentialsResponseBody readInstitutionCredentials($institution_code)
 
 Read institution credentials
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Credentials**](../Model/Credentials.md)
+[**\atrium\model\CredentialsResponseBody**](../Model/CredentialsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

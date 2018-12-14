@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **cleanseAndCategorizeTransactions**
-> \atrium\model\TransactionsCleanseAndCategorize cleanseAndCategorizeTransactions($body)
+> \atrium\model\TransactionsCleanseAndCategorizeResponseBody cleanseAndCategorizeTransactions($body)
 
 Categorize transactions
 
@@ -50,12 +50,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\TransactionsCleanseAndCategorize**](../Model/TransactionsCleanseAndCategorize.md)
+[**\atrium\model\TransactionsCleanseAndCategorizeResponseBody**](../Model/TransactionsCleanseAndCategorizeResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listUserTransactions**
-> \atrium\model\Transactions listUserTransactions($user_guid, $page, $from_date, $records_per_page, $to_date)
+> \atrium\model\TransactionsResponseBody listUserTransactions($user_guid, $page, $from_date, $records_per_page, $to_date)
 
 List transactions for a user
 
@@ -105,12 +105,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Transactions**](../Model/Transactions.md)
+[**\atrium\model\TransactionsResponseBody**](../Model/TransactionsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readTransaction**
-> \atrium\model\Transaction readTransaction($transaction_guid, $user_guid)
+> \atrium\model\TransactionResponseBody readTransaction($transaction_guid, $user_guid)
 
 Read a transaction
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Transaction**](../Model/Transaction.md)
+[**\atrium\model\TransactionResponseBody**](../Model/TransactionResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

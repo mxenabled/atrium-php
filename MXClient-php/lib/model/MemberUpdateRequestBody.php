@@ -44,7 +44,7 @@ class MemberUpdateRequestBody implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'member' => '\atrium\model\MemberUpdateRequestBodyAttributes'
+        'member' => '\atrium\model\MemberUpdateRequest'
     ];
 
     /**
@@ -194,7 +194,7 @@ class MemberUpdateRequestBody implements ModelInterface, ArrayAccess
     /**
      * Gets member
      *
-     * @return \atrium\model\MemberUpdateRequestBodyAttributes
+     * @return \atrium\model\MemberUpdateRequest
      */
     public function getMember()
     {
@@ -204,7 +204,7 @@ class MemberUpdateRequestBody implements ModelInterface, ArrayAccess
     /**
      * Sets member
      *
-     * @param \atrium\model\MemberUpdateRequestBodyAttributes $member member
+     * @param \atrium\model\MemberUpdateRequest $member member
      *
      * @return $this
      */

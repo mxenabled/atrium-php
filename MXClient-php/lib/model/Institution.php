@@ -44,7 +44,13 @@ class Institution implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'institution' => '\atrium\model\InstitutionAttributes'
+        'code' => 'string',
+        'medium_logo_url' => 'string',
+        'name' => 'string',
+        'small_logo_url' => 'string',
+        'supports_account_identification' => 'bool',
+        'supports_account_verification' => 'bool',
+        'url' => 'string'
     ];
 
     /**
@@ -53,7 +59,13 @@ class Institution implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxFormats = [
-        'institution' => null
+        'code' => null,
+        'medium_logo_url' => null,
+        'name' => null,
+        'small_logo_url' => null,
+        'supports_account_identification' => null,
+        'supports_account_verification' => null,
+        'url' => null
     ];
 
     /**
@@ -83,7 +95,13 @@ class Institution implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'institution' => 'institution'
+        'code' => 'code',
+        'medium_logo_url' => 'medium_logo_url',
+        'name' => 'name',
+        'small_logo_url' => 'small_logo_url',
+        'supports_account_identification' => 'supports_account_identification',
+        'supports_account_verification' => 'supports_account_verification',
+        'url' => 'url'
     ];
 
     /**
@@ -92,7 +110,13 @@ class Institution implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'institution' => 'setInstitution'
+        'code' => 'setCode',
+        'medium_logo_url' => 'setMediumLogoUrl',
+        'name' => 'setName',
+        'small_logo_url' => 'setSmallLogoUrl',
+        'supports_account_identification' => 'setSupportsAccountIdentification',
+        'supports_account_verification' => 'setSupportsAccountVerification',
+        'url' => 'setUrl'
     ];
 
     /**
@@ -101,7 +125,13 @@ class Institution implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'institution' => 'getInstitution'
+        'code' => 'getCode',
+        'medium_logo_url' => 'getMediumLogoUrl',
+        'name' => 'getName',
+        'small_logo_url' => 'getSmallLogoUrl',
+        'supports_account_identification' => 'getSupportsAccountIdentification',
+        'supports_account_verification' => 'getSupportsAccountVerification',
+        'url' => 'getUrl'
     ];
 
     /**
@@ -164,7 +194,13 @@ class Institution implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['institution'] = isset($data['institution']) ? $data['institution'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['medium_logo_url'] = isset($data['medium_logo_url']) ? $data['medium_logo_url'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['small_logo_url'] = isset($data['small_logo_url']) ? $data['small_logo_url'] : null;
+        $this->container['supports_account_identification'] = isset($data['supports_account_identification']) ? $data['supports_account_identification'] : null;
+        $this->container['supports_account_verification'] = isset($data['supports_account_verification']) ? $data['supports_account_verification'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
 
     /**
@@ -192,25 +228,169 @@ class Institution implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets institution
+     * Gets code
      *
-     * @return \atrium\model\InstitutionAttributes
+     * @return string
      */
-    public function getInstitution()
+    public function getCode()
     {
-        return $this->container['institution'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets institution
+     * Sets code
      *
-     * @param \atrium\model\InstitutionAttributes $institution institution
+     * @param string $code code
      *
      * @return $this
      */
-    public function setInstitution($institution)
+    public function setCode($code)
     {
-        $this->container['institution'] = $institution;
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets medium_logo_url
+     *
+     * @return string
+     */
+    public function getMediumLogoUrl()
+    {
+        return $this->container['medium_logo_url'];
+    }
+
+    /**
+     * Sets medium_logo_url
+     *
+     * @param string $medium_logo_url medium_logo_url
+     *
+     * @return $this
+     */
+    public function setMediumLogoUrl($medium_logo_url)
+    {
+        $this->container['medium_logo_url'] = $medium_logo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets small_logo_url
+     *
+     * @return string
+     */
+    public function getSmallLogoUrl()
+    {
+        return $this->container['small_logo_url'];
+    }
+
+    /**
+     * Sets small_logo_url
+     *
+     * @param string $small_logo_url small_logo_url
+     *
+     * @return $this
+     */
+    public function setSmallLogoUrl($small_logo_url)
+    {
+        $this->container['small_logo_url'] = $small_logo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets supports_account_identification
+     *
+     * @return bool
+     */
+    public function getSupportsAccountIdentification()
+    {
+        return $this->container['supports_account_identification'];
+    }
+
+    /**
+     * Sets supports_account_identification
+     *
+     * @param bool $supports_account_identification supports_account_identification
+     *
+     * @return $this
+     */
+    public function setSupportsAccountIdentification($supports_account_identification)
+    {
+        $this->container['supports_account_identification'] = $supports_account_identification;
+
+        return $this;
+    }
+
+    /**
+     * Gets supports_account_verification
+     *
+     * @return bool
+     */
+    public function getSupportsAccountVerification()
+    {
+        return $this->container['supports_account_verification'];
+    }
+
+    /**
+     * Sets supports_account_verification
+     *
+     * @param bool $supports_account_verification supports_account_verification
+     *
+     * @return $this
+     */
+    public function setSupportsAccountVerification($supports_account_verification)
+    {
+        $this->container['supports_account_verification'] = $supports_account_verification;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string $url url
+     *
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
 
         return $this;
     }

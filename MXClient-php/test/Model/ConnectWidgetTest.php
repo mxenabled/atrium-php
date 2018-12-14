@@ -64,9 +64,16 @@ class ConnectWidgetTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user"
+     * Test attribute "connect_widget_url"
      */
-    public function testPropertyUser()
+    public function testPropertyConnectWidgetUrl()
+    {
+    }
+
+    /**
+     * Test attribute "guid"
+     */
+    public function testPropertyGuid()
     {
     }
 }

@@ -44,7 +44,7 @@ class UserCreateRequestBody implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'user' => '\atrium\model\UserAttributes'
+        'user' => '\atrium\model\User'
     ];
 
     /**
@@ -194,7 +194,7 @@ class UserCreateRequestBody implements ModelInterface, ArrayAccess
     /**
      * Gets user
      *
-     * @return \atrium\model\UserAttributes
+     * @return \atrium\model\User
      */
     public function getUser()
     {
@@ -204,7 +204,7 @@ class UserCreateRequestBody implements ModelInterface, ArrayAccess
     /**
      * Sets user
      *
-     * @param \atrium\model\UserAttributes $user user
+     * @param \atrium\model\User $user user
      *
      * @return $this
      */

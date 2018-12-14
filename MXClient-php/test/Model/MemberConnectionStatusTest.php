@@ -64,9 +64,65 @@ class MemberConnectionStatusTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "member"
+     * Test attribute "aggregated_at"
      */
-    public function testPropertyMember()
+    public function testPropertyAggregatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "challenges"
+     */
+    public function testPropertyChallenges()
+    {
+    }
+
+    /**
+     * Test attribute "connection_status"
+     */
+    public function testPropertyConnectionStatus()
+    {
+    }
+
+    /**
+     * Test attribute "guid"
+     */
+    public function testPropertyGuid()
+    {
+    }
+
+    /**
+     * Test attribute "has_processed_accounts"
+     */
+    public function testPropertyHasProcessedAccounts()
+    {
+    }
+
+    /**
+     * Test attribute "has_processed_transactions"
+     */
+    public function testPropertyHasProcessedTransactions()
+    {
+    }
+
+    /**
+     * Test attribute "is_being_aggregated"
+     */
+    public function testPropertyIsBeingAggregated()
+    {
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "successfully_aggregated_at"
+     */
+    public function testPropertySuccessfullyAggregatedAt()
     {
     }
 }

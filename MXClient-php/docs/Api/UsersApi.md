@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **createUser**
-> \atrium\model\User createUser($body)
+> \atrium\model\UserResponseBody createUser($body)
 
 Create user
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\User**](../Model/User.md)
+[**\atrium\model\UserResponseBody**](../Model/UserResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -103,7 +103,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listUsers**
-> \atrium\model\Users listUsers($page, $records_per_page)
+> \atrium\model\UsersResponseBody listUsers($page, $records_per_page)
 
 List users
 
@@ -147,12 +147,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\Users**](../Model/Users.md)
+[**\atrium\model\UsersResponseBody**](../Model/UsersResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **readUser**
-> \atrium\model\User readUser($user_guid)
+> \atrium\model\UserResponseBody readUser($user_guid)
 
 Read user
 
@@ -194,12 +194,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\User**](../Model/User.md)
+[**\atrium\model\UserResponseBody**](../Model/UserResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateUser**
-> \atrium\model\User updateUser($user_guid, $body)
+> \atrium\model\UserResponseBody updateUser($user_guid, $body)
 
 Update user
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\atrium\model\User**](../Model/User.md)
+[**\atrium\model\UserResponseBody**](../Model/UserResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
