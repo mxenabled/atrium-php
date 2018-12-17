@@ -33,8 +33,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $result = $client->members->aggregateMember($member_guid, $user_guid);
@@ -75,7 +76,8 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 $body = new \atrium\model\MemberCreateRequestBody(); // \atrium\model\MemberCreateRequestBody | Member object to be created with optional parameters (identifier and metadata) and required parameters (credentials and institution_code)
 
 try {
@@ -117,8 +119,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $client->members->deleteMember($member_guid, $user_guid);
@@ -158,9 +161,10 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
-$page = 12; // int | Specify current page.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
+$page = 1; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
@@ -204,8 +208,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $result = $client->members->listMemberCredentials($member_guid, $user_guid);
@@ -246,8 +251,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $result = $client->members->listMemberMFAChallenges($member_guid, $user_guid);
@@ -288,11 +294,12 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
-$from_date = "from_date_example"; // string | Filter transactions from this date.
-$to_date = "to_date_example"; // string | Filter transactions to this date.
-$page = 12; // int | Specify current page.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
+$from_date = "2016-09-20"; // string | Filter transactions from this date.
+$to_date = "2016-10-20"; // string | Filter transactions to this date.
+$page = 1; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
@@ -338,8 +345,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
-$page = 12; // int | Specify current page.
+
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
+$page = 1; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
@@ -382,8 +390,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $result = $client->members->readMember($member_guid, $user_guid);
@@ -424,8 +433,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $result = $client->members->readMemberStatus($member_guid, $user_guid);
@@ -466,8 +476,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 $body = new \atrium\model\MemberResumeRequestBody(); // \atrium\model\MemberResumeRequestBody | Member object with MFA challenge answers
 
 try {
@@ -510,8 +521,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 $body = new \atrium\model\MemberUpdateRequestBody(); // \atrium\model\MemberUpdateRequestBody | Member object to be updated with optional parameters (credentials, identifier, metadata)
 
 try {

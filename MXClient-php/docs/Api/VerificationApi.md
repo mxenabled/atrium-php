@@ -24,8 +24,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $result = $client->verification->listAccountNumbers($member_guid, $user_guid);
@@ -66,8 +67,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$account_guid = "account_guid_example"; // string | The unique identifier for an `account`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$account_guid = "ACT-123"; // string | The unique identifier for an `account`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $result = $client->verification->listAccountNumbersByAccount($account_guid, $user_guid);
@@ -108,8 +110,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$member_guid = "member_guid_example"; // string | The unique identifier for a `member`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $result = $client->verification->verifyMember($member_guid, $user_guid);

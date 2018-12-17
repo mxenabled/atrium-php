@@ -26,6 +26,7 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
+
 $body = new \atrium\model\UserCreateRequestBody(); // \atrium\model\UserCreateRequestBody | User object to be created with optional parameters (identifier, is_disabled, metadata)
 
 try {
@@ -66,7 +67,8 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $client->users->deleteUser($user_guid);
@@ -105,7 +107,8 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$page = 12; // int | Specify current page.
+
+$page = 1; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
@@ -147,7 +150,8 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $result = $client->users->readUser($user_guid);
@@ -187,7 +191,8 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 $body = new \atrium\model\UserUpdateRequestBody(); // \atrium\model\UserUpdateRequestBody | User object to be updated with optional parameters (identifier, is_disabled, metadata)
 
 try {

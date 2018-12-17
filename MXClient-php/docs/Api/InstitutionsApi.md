@@ -24,8 +24,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$name = "name_example"; // string | This will list only institutions in which the appended string appears.
-$page = 12; // int | Specify current page.
+
+$name = name_example; // string | This will list only institutions in which the appended string appears.
+$page = 1; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
@@ -68,7 +69,8 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$institution_code = "institution_code_example"; // string | The institution_code of the institution.
+
+$institution_code = "example_institution_code"; // string | The institution_code of the institution.
 
 try {
     $result = $client->institutions->readInstitution($institution_code);
@@ -108,7 +110,8 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$institution_code = "institution_code_example"; // string | The institution_code of the institution.
+
+$institution_code = "example_institution_code"; // string | The institution_code of the institution.
 
 try {
     $result = $client->institutions->readInstitutionCredentials($institution_code);

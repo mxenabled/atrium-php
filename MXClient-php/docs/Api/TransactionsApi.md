@@ -24,6 +24,7 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
+
 $body = new \atrium\model\TransactionsCleanseAndCategorizeRequestBody(); // \atrium\model\TransactionsCleanseAndCategorizeRequestBody | User object to be created with optional parameters (amount, type) amd required parameters (description, identifier)
 
 try {
@@ -64,11 +65,12 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
-$page = 12; // int | Specify current page.
-$from_date = "from_date_example"; // string | Filter transactions from this date.
+
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
+$page = 1; // int | Specify current page.
+$from_date = "2016-09-20"; // string | Filter transactions from this date.
 $records_per_page = 12; // int | Specify records per page.
-$to_date = "to_date_example"; // string | Filter transactions to this date.
+$to_date = "2016-10-20"; // string | Filter transactions to this date.
 
 try {
     $result = $client->transactions->listUserTransactions($user_guid, $page, $from_date, $records_per_page, $to_date);
@@ -112,8 +114,9 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$transaction_guid = "transaction_guid_example"; // string | The unique identifier for a `transaction`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
+
+$transaction_guid = "TRN-123"; // string | The unique identifier for a `transaction`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
 
 try {
     $result = $client->transactions->readTransaction($transaction_guid, $user_guid);

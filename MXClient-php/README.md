@@ -47,11 +47,12 @@ $client = new atrium\Api\AtriumClient(
     "YOUR_CLIENT_ID",
     new GuzzleHttp\Client()
 );
-$account_guid = "account_guid_example"; // string | The unique identifier for an `account`.
-$user_guid = "user_guid_example"; // string | The unique identifier for a `user`.
-$from_date = "from_date_example"; // string | Filter transactions from this date.
-$to_date = "to_date_example"; // string | Filter transactions to this date.
-$page = 12; // int | Specify current page.
+
+$account_guid = "ACT-123"; // string | The unique identifier for an `account`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
+$from_date = "2016-09-20"; // string | Filter transactions from this date.
+$to_date = "2016-10-20"; // string | Filter transactions to this date.
+$page = 1; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
 
 try {
