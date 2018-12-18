@@ -74,6 +74,10 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**readAccount**](docs/Api/AccountsApi.md#readaccount) | **GET** /users/{user_guid}/accounts/{account_guid} | Read an account
 *AccountsApi* | [**readAccountByMemberGUID**](docs/Api/AccountsApi.md#readaccountbymemberguid) | **GET** /users/{user_guid}/members/{member_guid}/accounts/{account_guid} | Read an account
 *ConnectWidgetApi* | [**getConnectWidget**](docs/Api/ConnectWidgetApi.md#getconnectwidget) | **POST** /users/{user_guid}/connect_widget_url | Embedding in a website
+*HoldingsApi* | [**listHoldings**](docs/Api/HoldingsApi.md#listholdings) | **GET** /users/{user_guid}/holdings | List holdings
+*HoldingsApi* | [**listHoldingsByAccount**](docs/Api/HoldingsApi.md#listholdingsbyaccount) | **GET** /users/{user_guid}/accounts/{account_guid}/holdings | List holdings by account
+*HoldingsApi* | [**listHoldingsByMember**](docs/Api/HoldingsApi.md#listholdingsbymember) | **GET** /users/{user_guid}/members/{member_guid}/holdings | List holdings by member
+*HoldingsApi* | [**readHolding**](docs/Api/HoldingsApi.md#readholding) | **GET** /users/{user_guid}/holdings/{holding_guid} | Read holding
 *IdentityApi* | [**identifyMember**](docs/Api/IdentityApi.md#identifymember) | **POST** /users/{user_guid}/members/{member_guid}/identify | Identify
 *IdentityApi* | [**listAccountOwners**](docs/Api/IdentityApi.md#listaccountowners) | **GET** /users/{user_guid}/members/{member_guid}/account_owners | List member account owners
 *InstitutionsApi* | [**listInstitutions**](docs/Api/InstitutionsApi.md#listinstitutions) | **GET** /institutions | List institutions
@@ -124,6 +128,9 @@ Class | Method | HTTP request | Description
  - [CredentialRequest](docs/Model/CredentialRequest.md)
  - [CredentialResponse](docs/Model/CredentialResponse.md)
  - [CredentialsResponseBody](docs/Model/CredentialsResponseBody.md)
+ - [Holding](docs/Model/Holding.md)
+ - [HoldingResponseBody](docs/Model/HoldingResponseBody.md)
+ - [HoldingsResponseBody](docs/Model/HoldingsResponseBody.md)
  - [Institution](docs/Model/Institution.md)
  - [InstitutionResponseBody](docs/Model/InstitutionResponseBody.md)
  - [InstitutionsResponseBody](docs/Model/InstitutionsResponseBody.md)

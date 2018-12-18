@@ -29,6 +29,7 @@ use atrium\HeaderSelector;
 use atrium\ObjectSerializer;
 use atrium\api\AccountsApi;
 use atrium\api\ConnectWidgetApi;
+use atrium\api\HoldingsApi;
 use atrium\api\IdentityApi;
 use atrium\api\InstitutionsApi;
 use atrium\api\MembersApi;
@@ -48,6 +49,7 @@ class AtriumClient
   
   public $accounts;
   public $connectWidget;
+  public $holdings;
   public $identity;
   public $institutions;
   public $members;
@@ -63,6 +65,7 @@ class AtriumClient
     
     $this->accounts = new AccountsApi($httpClient, $config);
     $this->connectWidget = new ConnectWidgetApi($httpClient, $config);
+    $this->holdings = new HoldingsApi($httpClient, $config);
     $this->identity = new IdentityApi($httpClient, $config);
     $this->institutions = new InstitutionsApi($httpClient, $config);
     $this->members = new MembersApi($httpClient, $config);
