@@ -1,13 +1,13 @@
 {
-    "name": "GIT_USER_ID/GIT_REPO_ID",
-    "description": "",
+    "name": "mxenabled/atrium-php",
+    "description": "A PHP wrapper for the MX API.",
     "keywords": [
         "php",
         "sdk",
         "api"
     ],
     "homepage": "http://atrium.mx.com",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "MX",
