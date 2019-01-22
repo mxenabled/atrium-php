@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **aggregated_at** | **string** |  | [optional] 
 **challenges** | [**\atrium\model\Challenge[]**](Challenge.md) |  | [optional] 
 **connection_status** | **string** |  | [optional] 
-**guid** | **bool** |  | [optional] 
+**guid** | **string** |  | [optional] 
 **has_processed_accounts** | **bool** |  | [optional] 
 **has_processed_transactions** | **bool** |  | [optional] 
 **is_being_aggregated** | **bool** |  | [optional] 

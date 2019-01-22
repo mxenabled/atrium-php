@@ -46,7 +46,7 @@ class Member implements ModelInterface, ArrayAccess
     protected static $mxTypes = [
         'aggregated_at' => 'string',
         'connection_status' => 'string',
-        'guid' => 'bool',
+        'guid' => 'string',
         'identifier' => 'string',
         'institution_code' => 'string',
         'is_being_aggregated' => 'bool',
@@ -302,7 +302,7 @@ class Member implements ModelInterface, ArrayAccess
     /**
      * Gets guid
      *
-     * @return bool
+     * @return string
      */
     public function getGuid()
     {
@@ -312,7 +312,7 @@ class Member implements ModelInterface, ArrayAccess
     /**
      * Sets guid
      *
-     * @param bool $guid guid
+     * @param string $guid guid
      *
      * @return $this
      */

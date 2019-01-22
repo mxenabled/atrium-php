@@ -47,7 +47,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
         'aggregated_at' => 'string',
         'challenges' => '\atrium\model\Challenge[]',
         'connection_status' => 'string',
-        'guid' => 'bool',
+        'guid' => 'string',
         'has_processed_accounts' => 'bool',
         'has_processed_transactions' => 'bool',
         'is_being_aggregated' => 'bool',
@@ -314,7 +314,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
     /**
      * Gets guid
      *
-     * @return bool
+     * @return string
      */
     public function getGuid()
     {
@@ -324,7 +324,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
     /**
      * Sets guid
      *
-     * @param bool $guid guid
+     * @param string $guid guid
      *
      * @return $this
      */

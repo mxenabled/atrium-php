@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregated_at** | **string** |  | [optional] 
 **connection_status** | **string** |  | [optional] 
-**guid** | **bool** |  | [optional] 
+**guid** | **string** |  | [optional] 
 **identifier** | **string** |  | [optional] 
 **institution_code** | **string** |  | [optional] 
 **is_being_aggregated** | **bool** |  | [optional] 
