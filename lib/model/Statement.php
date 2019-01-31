@@ -1,6 +1,6 @@
 <?php
 /**
- * Institution
+ * Statement
  *
  * PHP version 5
  *
@@ -22,12 +22,12 @@ use \ArrayAccess;
 use \atrium\ObjectSerializer;
 
 /**
- * Institution Class Doc Comment
+ * Statement Class Doc Comment
  *
  * @category Class
  * @package  atrium
  */
-class Institution implements ModelInterface, ArrayAccess
+class Statement implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class Institution implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $mxModelName = 'Institution';
+    protected static $mxModelName = 'Statement';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -44,15 +44,15 @@ class Institution implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'code' => 'string',
-        'medium_logo_url' => 'string',
-        'name' => 'string',
-        'small_logo_url' => 'string',
-        'supports_account_identification' => 'bool',
-        'supports_account_statement' => 'bool',
-        'supports_account_verification' => 'bool',
-        'supports_transaction_history' => 'bool',
-        'url' => 'string'
+        'account_guid' => 'string',
+        'created_at' => 'string',
+        'content_hash' => 'string',
+        'deleted_at' => 'string',
+        'guid' => 'string',
+        'is_deleted' => 'bool',
+        'updated_at' => 'string',
+        'uri' => 'string',
+        'user_guid' => 'string'
     ];
 
     /**
@@ -61,15 +61,15 @@ class Institution implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxFormats = [
-        'code' => null,
-        'medium_logo_url' => null,
-        'name' => null,
-        'small_logo_url' => null,
-        'supports_account_identification' => null,
-        'supports_account_statement' => null,
-        'supports_account_verification' => null,
-        'supports_transaction_history' => null,
-        'url' => null
+        'account_guid' => null,
+        'created_at' => null,
+        'content_hash' => null,
+        'deleted_at' => null,
+        'guid' => null,
+        'is_deleted' => null,
+        'updated_at' => null,
+        'uri' => null,
+        'user_guid' => null
     ];
 
     /**
@@ -99,15 +99,15 @@ class Institution implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'medium_logo_url' => 'medium_logo_url',
-        'name' => 'name',
-        'small_logo_url' => 'small_logo_url',
-        'supports_account_identification' => 'supports_account_identification',
-        'supports_account_statement' => 'supports_account_statement',
-        'supports_account_verification' => 'supports_account_verification',
-        'supports_transaction_history' => 'supports_transaction_history',
-        'url' => 'url'
+        'account_guid' => 'account_guid',
+        'created_at' => 'created_at',
+        'content_hash' => 'content_hash',
+        'deleted_at' => 'deleted_at',
+        'guid' => 'guid',
+        'is_deleted' => 'is_deleted',
+        'updated_at' => 'updated_at',
+        'uri' => 'uri',
+        'user_guid' => 'user_guid'
     ];
 
     /**
@@ -116,15 +116,15 @@ class Institution implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'medium_logo_url' => 'setMediumLogoUrl',
-        'name' => 'setName',
-        'small_logo_url' => 'setSmallLogoUrl',
-        'supports_account_identification' => 'setSupportsAccountIdentification',
-        'supports_account_statement' => 'setSupportsAccountStatement',
-        'supports_account_verification' => 'setSupportsAccountVerification',
-        'supports_transaction_history' => 'setSupportsTransactionHistory',
-        'url' => 'setUrl'
+        'account_guid' => 'setAccountGuid',
+        'created_at' => 'setCreatedAt',
+        'content_hash' => 'setContentHash',
+        'deleted_at' => 'setDeletedAt',
+        'guid' => 'setGuid',
+        'is_deleted' => 'setIsDeleted',
+        'updated_at' => 'setUpdatedAt',
+        'uri' => 'setUri',
+        'user_guid' => 'setUserGuid'
     ];
 
     /**
@@ -133,15 +133,15 @@ class Institution implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'medium_logo_url' => 'getMediumLogoUrl',
-        'name' => 'getName',
-        'small_logo_url' => 'getSmallLogoUrl',
-        'supports_account_identification' => 'getSupportsAccountIdentification',
-        'supports_account_statement' => 'getSupportsAccountStatement',
-        'supports_account_verification' => 'getSupportsAccountVerification',
-        'supports_transaction_history' => 'getSupportsTransactionHistory',
-        'url' => 'getUrl'
+        'account_guid' => 'getAccountGuid',
+        'created_at' => 'getCreatedAt',
+        'content_hash' => 'getContentHash',
+        'deleted_at' => 'getDeletedAt',
+        'guid' => 'getGuid',
+        'is_deleted' => 'getIsDeleted',
+        'updated_at' => 'getUpdatedAt',
+        'uri' => 'getUri',
+        'user_guid' => 'getUserGuid'
     ];
 
     /**
@@ -204,15 +204,15 @@ class Institution implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['medium_logo_url'] = isset($data['medium_logo_url']) ? $data['medium_logo_url'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['small_logo_url'] = isset($data['small_logo_url']) ? $data['small_logo_url'] : null;
-        $this->container['supports_account_identification'] = isset($data['supports_account_identification']) ? $data['supports_account_identification'] : null;
-        $this->container['supports_account_statement'] = isset($data['supports_account_statement']) ? $data['supports_account_statement'] : null;
-        $this->container['supports_account_verification'] = isset($data['supports_account_verification']) ? $data['supports_account_verification'] : null;
-        $this->container['supports_transaction_history'] = isset($data['supports_transaction_history']) ? $data['supports_transaction_history'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
+        $this->container['account_guid'] = isset($data['account_guid']) ? $data['account_guid'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['content_hash'] = isset($data['content_hash']) ? $data['content_hash'] : null;
+        $this->container['deleted_at'] = isset($data['deleted_at']) ? $data['deleted_at'] : null;
+        $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
+        $this->container['is_deleted'] = isset($data['is_deleted']) ? $data['is_deleted'] : null;
+        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['uri'] = isset($data['uri']) ? $data['uri'] : null;
+        $this->container['user_guid'] = isset($data['user_guid']) ? $data['user_guid'] : null;
     }
 
     /**
@@ -240,217 +240,217 @@ class Institution implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets account_guid
      *
      * @return string
      */
-    public function getCode()
+    public function getAccountGuid()
     {
-        return $this->container['code'];
+        return $this->container['account_guid'];
     }
 
     /**
-     * Sets code
+     * Sets account_guid
      *
-     * @param string $code code
+     * @param string $account_guid The unique identifier for the `account` associated with the `statement`. Defined by MX.
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setAccountGuid($account_guid)
     {
-        $this->container['code'] = $code;
+        $this->container['account_guid'] = $account_guid;
 
         return $this;
     }
 
     /**
-     * Gets medium_logo_url
+     * Gets created_at
      *
      * @return string
      */
-    public function getMediumLogoUrl()
+    public function getCreatedAt()
     {
-        return $this->container['medium_logo_url'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets medium_logo_url
+     * Sets created_at
      *
-     * @param string $medium_logo_url medium_logo_url
+     * @param string $created_at The date and time the `statement` was created.
      *
      * @return $this
      */
-    public function setMediumLogoUrl($medium_logo_url)
+    public function setCreatedAt($created_at)
     {
-        $this->container['medium_logo_url'] = $medium_logo_url;
+        $this->container['created_at'] = $created_at;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets content_hash
      *
      * @return string
      */
-    public function getName()
+    public function getContentHash()
     {
-        return $this->container['name'];
+        return $this->container['content_hash'];
     }
 
     /**
-     * Sets name
+     * Sets content_hash
      *
-     * @param string $name name
+     * @param string $content_hash An SHA-256 hash value of the statement's byte payload, used as a unique identifier.
      *
      * @return $this
      */
-    public function setName($name)
+    public function setContentHash($content_hash)
     {
-        $this->container['name'] = $name;
+        $this->container['content_hash'] = $content_hash;
 
         return $this;
     }
 
     /**
-     * Gets small_logo_url
+     * Gets deleted_at
      *
      * @return string
      */
-    public function getSmallLogoUrl()
+    public function getDeletedAt()
     {
-        return $this->container['small_logo_url'];
+        return $this->container['deleted_at'];
     }
 
     /**
-     * Sets small_logo_url
+     * Sets deleted_at
      *
-     * @param string $small_logo_url small_logo_url
+     * @param string $deleted_at The date and time the `statement` was deleted. Statements are automatically deleted when an `account` is deleted.
      *
      * @return $this
      */
-    public function setSmallLogoUrl($small_logo_url)
+    public function setDeletedAt($deleted_at)
     {
-        $this->container['small_logo_url'] = $small_logo_url;
+        $this->container['deleted_at'] = $deleted_at;
 
         return $this;
     }
 
     /**
-     * Gets supports_account_identification
+     * Gets guid
+     *
+     * @return string
+     */
+    public function getGuid()
+    {
+        return $this->container['guid'];
+    }
+
+    /**
+     * Sets guid
+     *
+     * @param string $guid The unique identifier for the `statement`. Defined by MX.
+     *
+     * @return $this
+     */
+    public function setGuid($guid)
+    {
+        $this->container['guid'] = $guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_deleted
      *
      * @return bool
      */
-    public function getSupportsAccountIdentification()
+    public function getIsDeleted()
     {
-        return $this->container['supports_account_identification'];
+        return $this->container['is_deleted'];
     }
 
     /**
-     * Sets supports_account_identification
+     * Sets is_deleted
      *
-     * @param bool $supports_account_identification supports_account_identification
+     * @param bool $is_deleted This indicates whether the `statement` has been deleted. Statements are automatically deleted when an `account` is deleted.
      *
      * @return $this
      */
-    public function setSupportsAccountIdentification($supports_account_identification)
+    public function setIsDeleted($is_deleted)
     {
-        $this->container['supports_account_identification'] = $supports_account_identification;
+        $this->container['is_deleted'] = $is_deleted;
 
         return $this;
     }
 
     /**
-     * Gets supports_account_statement
-     *
-     * @return bool
-     */
-    public function getSupportsAccountStatement()
-    {
-        return $this->container['supports_account_statement'];
-    }
-
-    /**
-     * Sets supports_account_statement
-     *
-     * @param bool $supports_account_statement supports_account_statement
-     *
-     * @return $this
-     */
-    public function setSupportsAccountStatement($supports_account_statement)
-    {
-        $this->container['supports_account_statement'] = $supports_account_statement;
-
-        return $this;
-    }
-
-    /**
-     * Gets supports_account_verification
-     *
-     * @return bool
-     */
-    public function getSupportsAccountVerification()
-    {
-        return $this->container['supports_account_verification'];
-    }
-
-    /**
-     * Sets supports_account_verification
-     *
-     * @param bool $supports_account_verification supports_account_verification
-     *
-     * @return $this
-     */
-    public function setSupportsAccountVerification($supports_account_verification)
-    {
-        $this->container['supports_account_verification'] = $supports_account_verification;
-
-        return $this;
-    }
-
-    /**
-     * Gets supports_transaction_history
-     *
-     * @return bool
-     */
-    public function getSupportsTransactionHistory()
-    {
-        return $this->container['supports_transaction_history'];
-    }
-
-    /**
-     * Sets supports_transaction_history
-     *
-     * @param bool $supports_transaction_history supports_transaction_history
-     *
-     * @return $this
-     */
-    public function setSupportsTransactionHistory($supports_transaction_history)
-    {
-        $this->container['supports_transaction_history'] = $supports_transaction_history;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
+     * Gets updated_at
      *
      * @return string
      */
-    public function getUrl()
+    public function getUpdatedAt()
     {
-        return $this->container['url'];
+        return $this->container['updated_at'];
     }
 
     /**
-     * Sets url
+     * Sets updated_at
      *
-     * @param string $url url
+     * @param string $updated_at The date and time at which the `statement` was last updated.
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setUpdatedAt($updated_at)
     {
-        $this->container['url'] = $url;
+        $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets uri
+     *
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->container['uri'];
+    }
+
+    /**
+     * Sets uri
+     *
+     * @param string $uri A URI for accessing the byte payload of the `statement`.
+     *
+     * @return $this
+     */
+    public function setUri($uri)
+    {
+        $this->container['uri'] = $uri;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_guid
+     *
+     * @return string
+     */
+    public function getUserGuid()
+    {
+        return $this->container['user_guid'];
+    }
+
+    /**
+     * Sets user_guid
+     *
+     * @param string $user_guid The unique identifier for the `user` associated with the `statement`.  Defined by MX.
+     *
+     * @return $this
+     */
+    public function setUserGuid($user_guid)
+    {
+        $this->container['user_guid'] = $user_guid;
 
         return $this;
     }

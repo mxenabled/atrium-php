@@ -1,6 +1,6 @@
 <?php
 /**
- * InstitutionTest
+ * StatementTest
  *
  * PHP version 5
  *
@@ -19,13 +19,13 @@
 namespace atrium;
 
 /**
- * InstitutionTest Class Doc Comment
+ * StatementTest Class Doc Comment
  *
  * @category    Class
- * @description Institution
+ * @description Statement
  * @package     atrium
  */
-class InstitutionTest extends \PHPUnit_Framework_TestCase
+class StatementTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -57,72 +57,72 @@ class InstitutionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Institution"
+     * Test "Statement"
      */
-    public function testInstitution()
+    public function testStatement()
     {
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "account_guid"
      */
-    public function testPropertyCode()
+    public function testPropertyAccountGuid()
     {
     }
 
     /**
-     * Test attribute "medium_logo_url"
+     * Test attribute "created_at"
      */
-    public function testPropertyMediumLogoUrl()
+    public function testPropertyCreatedAt()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "content_hash"
      */
-    public function testPropertyName()
+    public function testPropertyContentHash()
     {
     }
 
     /**
-     * Test attribute "small_logo_url"
+     * Test attribute "deleted_at"
      */
-    public function testPropertySmallLogoUrl()
+    public function testPropertyDeletedAt()
     {
     }
 
     /**
-     * Test attribute "supports_account_identification"
+     * Test attribute "guid"
      */
-    public function testPropertySupportsAccountIdentification()
+    public function testPropertyGuid()
     {
     }
 
     /**
-     * Test attribute "supports_account_statement"
+     * Test attribute "is_deleted"
      */
-    public function testPropertySupportsAccountStatement()
+    public function testPropertyIsDeleted()
     {
     }
 
     /**
-     * Test attribute "supports_account_verification"
+     * Test attribute "updated_at"
      */
-    public function testPropertySupportsAccountVerification()
+    public function testPropertyUpdatedAt()
     {
     }
 
     /**
-     * Test attribute "supports_transaction_history"
+     * Test attribute "uri"
      */
-    public function testPropertySupportsTransactionHistory()
+    public function testPropertyUri()
     {
     }
 
     /**
-     * Test attribute "url"
+     * Test attribute "user_guid"
      */
-    public function testPropertyUrl()
+    public function testPropertyUserGuid()
     {
     }
 }

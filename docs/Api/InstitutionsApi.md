@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **listInstitutions**
-> \atrium\model\InstitutionsResponseBody listInstitutions($name, $page, $records_per_page)
+> \atrium\model\InstitutionsResponseBody listInstitutions($name, $page, $records_per_page, $supports_account_identification, $supports_account_statement, $supports_account_verification, $supports_transaction_history)
 
 List institutions
 
@@ -28,9 +28,13 @@ $client = new atrium\Api\AtriumClient(
 $name = name_example; // string | This will list only institutions in which the appended string appears.
 $page = 1; // int | Specify current page.
 $records_per_page = 12; // int | Specify records per page.
+$supports_account_identification = true; // bool | Filter only institutions which support account identification.
+$supports_account_statement = true; // bool | Filter only institutions which support account statements.
+$supports_account_verification = true; // bool | Filter only institutions which support account verification.
+$supports_transaction_history = true; // bool | Filter only institutions which support extended transaction history.
 
 try {
-    $result = $client->institutions->listInstitutions($name, $page, $records_per_page);
+    $result = $client->institutions->listInstitutions($name, $page, $records_per_page, $supports_account_identification, $supports_account_statement, $supports_account_verification, $supports_transaction_history);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InstitutionsApi->listInstitutions: ', $e->getMessage(), PHP_EOL;
@@ -45,6 +49,10 @@ Name | Type | Description  | Notes
  **name** | **string**| This will list only institutions in which the appended string appears. | [optional]
  **page** | **int**| Specify current page. | [optional]
  **records_per_page** | **int**| Specify records per page. | [optional]
+ **supports_account_identification** | **bool**| Filter only institutions which support account identification. | [optional]
+ **supports_account_statement** | **bool**| Filter only institutions which support account statements. | [optional]
+ **supports_account_verification** | **bool**| Filter only institutions which support account verification. | [optional]
+ **supports_transaction_history** | **bool**| Filter only institutions which support extended transaction history. | [optional]
 
 ### Return type
 

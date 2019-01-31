@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**listMemberAccounts**](docs/Api/MembersApi.md#listmemberaccounts) | **GET** /users/{user_guid}/members/{member_guid}/accounts | List member accounts
 *MembersApi* | [**listMemberCredentials**](docs/Api/MembersApi.md#listmembercredentials) | **GET** /users/{user_guid}/members/{member_guid}/credentials | List member credentials
 *MembersApi* | [**listMemberMFAChallenges**](docs/Api/MembersApi.md#listmembermfachallenges) | **GET** /users/{user_guid}/members/{member_guid}/challenges | List member MFA challenges
+*MembersApi* | [**listMemberStatements**](docs/Api/MembersApi.md#listmemberstatements) | **GET** /users/{user_guid}/members/{member_guid}/statements | List member statements
 *MembersApi* | [**listMemberTransactions**](docs/Api/MembersApi.md#listmembertransactions) | **GET** /users/{user_guid}/members/{member_guid}/transactions | List member transactions
 *MembersApi* | [**listMembers**](docs/Api/MembersApi.md#listmembers) | **GET** /users/{user_guid}/members | List members
 *MembersApi* | [**readMember**](docs/Api/MembersApi.md#readmember) | **GET** /users/{user_guid}/members/{member_guid} | Read member
@@ -148,6 +149,8 @@ Class | Method | HTTP request | Description
  - [Merchant](docs/Model/Merchant.md)
  - [MerchantResponseBody](docs/Model/MerchantResponseBody.md)
  - [Pagination](docs/Model/Pagination.md)
+ - [Statement](docs/Model/Statement.md)
+ - [StatementsResponseBody](docs/Model/StatementsResponseBody.md)
  - [Transaction](docs/Model/Transaction.md)
  - [TransactionCleanseAndCategorizeRequest](docs/Model/TransactionCleanseAndCategorizeRequest.md)
  - [TransactionCleanseAndCategorizeResponse](docs/Model/TransactionCleanseAndCategorizeResponse.md)

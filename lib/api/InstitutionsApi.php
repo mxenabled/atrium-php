@@ -82,14 +82,18 @@ class InstitutionsApi
      * @param  string $name This will list only institutions in which the appended string appears. (optional)
      * @param  int $page Specify current page. (optional)
      * @param  int $records_per_page Specify records per page. (optional)
+     * @param  bool $supports_account_identification Filter only institutions which support account identification. (optional)
+     * @param  bool $supports_account_statement Filter only institutions which support account statements. (optional)
+     * @param  bool $supports_account_verification Filter only institutions which support account verification. (optional)
+     * @param  bool $supports_transaction_history Filter only institutions which support extended transaction history. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \atrium\model\InstitutionsResponseBody
      */
-    public function listInstitutions($name = null, $page = null, $records_per_page = null)
+    public function listInstitutions($name = null, $page = null, $records_per_page = null, $supports_account_identification = null, $supports_account_statement = null, $supports_account_verification = null, $supports_transaction_history = null)
     {
-        list($response) = $this->listInstitutionsWithHttpInfo($name, $page, $records_per_page);
+        list($response) = $this->listInstitutionsWithHttpInfo($name, $page, $records_per_page, $supports_account_identification, $supports_account_statement, $supports_account_verification, $supports_transaction_history);
         return $response;
     }
 
@@ -101,15 +105,19 @@ class InstitutionsApi
      * @param  string $name This will list only institutions in which the appended string appears. (optional)
      * @param  int $page Specify current page. (optional)
      * @param  int $records_per_page Specify records per page. (optional)
+     * @param  bool $supports_account_identification Filter only institutions which support account identification. (optional)
+     * @param  bool $supports_account_statement Filter only institutions which support account statements. (optional)
+     * @param  bool $supports_account_verification Filter only institutions which support account verification. (optional)
+     * @param  bool $supports_transaction_history Filter only institutions which support extended transaction history. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \atrium\model\InstitutionsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listInstitutionsWithHttpInfo($name = null, $page = null, $records_per_page = null)
+    public function listInstitutionsWithHttpInfo($name = null, $page = null, $records_per_page = null, $supports_account_identification = null, $supports_account_statement = null, $supports_account_verification = null, $supports_transaction_history = null)
     {
         $returnType = '\atrium\model\InstitutionsResponseBody';
-        $request = $this->listInstitutionsRequest($name, $page, $records_per_page);
+        $request = $this->listInstitutionsRequest($name, $page, $records_per_page, $supports_account_identification, $supports_account_statement, $supports_account_verification, $supports_transaction_history);
 
         try {
             $options = $this->createHttpClientOption();
@@ -178,13 +186,17 @@ class InstitutionsApi
      * @param  string $name This will list only institutions in which the appended string appears. (optional)
      * @param  int $page Specify current page. (optional)
      * @param  int $records_per_page Specify records per page. (optional)
+     * @param  bool $supports_account_identification Filter only institutions which support account identification. (optional)
+     * @param  bool $supports_account_statement Filter only institutions which support account statements. (optional)
+     * @param  bool $supports_account_verification Filter only institutions which support account verification. (optional)
+     * @param  bool $supports_transaction_history Filter only institutions which support extended transaction history. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listInstitutionsAsync($name = null, $page = null, $records_per_page = null)
+    public function listInstitutionsAsync($name = null, $page = null, $records_per_page = null, $supports_account_identification = null, $supports_account_statement = null, $supports_account_verification = null, $supports_transaction_history = null)
     {
-        return $this->listInstitutionsAsyncWithHttpInfo($name, $page, $records_per_page)
+        return $this->listInstitutionsAsyncWithHttpInfo($name, $page, $records_per_page, $supports_account_identification, $supports_account_statement, $supports_account_verification, $supports_transaction_history)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -200,14 +212,18 @@ class InstitutionsApi
      * @param  string $name This will list only institutions in which the appended string appears. (optional)
      * @param  int $page Specify current page. (optional)
      * @param  int $records_per_page Specify records per page. (optional)
+     * @param  bool $supports_account_identification Filter only institutions which support account identification. (optional)
+     * @param  bool $supports_account_statement Filter only institutions which support account statements. (optional)
+     * @param  bool $supports_account_verification Filter only institutions which support account verification. (optional)
+     * @param  bool $supports_transaction_history Filter only institutions which support extended transaction history. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listInstitutionsAsyncWithHttpInfo($name = null, $page = null, $records_per_page = null)
+    public function listInstitutionsAsyncWithHttpInfo($name = null, $page = null, $records_per_page = null, $supports_account_identification = null, $supports_account_statement = null, $supports_account_verification = null, $supports_transaction_history = null)
     {
         $returnType = '\atrium\model\InstitutionsResponseBody';
-        $request = $this->listInstitutionsRequest($name, $page, $records_per_page);
+        $request = $this->listInstitutionsRequest($name, $page, $records_per_page, $supports_account_identification, $supports_account_statement, $supports_account_verification, $supports_transaction_history);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -252,11 +268,15 @@ class InstitutionsApi
      * @param  string $name This will list only institutions in which the appended string appears. (optional)
      * @param  int $page Specify current page. (optional)
      * @param  int $records_per_page Specify records per page. (optional)
+     * @param  bool $supports_account_identification Filter only institutions which support account identification. (optional)
+     * @param  bool $supports_account_statement Filter only institutions which support account statements. (optional)
+     * @param  bool $supports_account_verification Filter only institutions which support account verification. (optional)
+     * @param  bool $supports_transaction_history Filter only institutions which support extended transaction history. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listInstitutionsRequest($name = null, $page = null, $records_per_page = null)
+    protected function listInstitutionsRequest($name = null, $page = null, $records_per_page = null, $supports_account_identification = null, $supports_account_statement = null, $supports_account_verification = null, $supports_transaction_history = null)
     {
 
         $resourcePath = '/institutions';
@@ -277,6 +297,22 @@ class InstitutionsApi
         // query params
         if ($records_per_page !== null) {
             $queryParams['records_per_page'] = ObjectSerializer::toQueryValue($records_per_page);
+        }
+        // query params
+        if ($supports_account_identification !== null) {
+            $queryParams['supports_account_identification'] = ObjectSerializer::toQueryValue($supports_account_identification);
+        }
+        // query params
+        if ($supports_account_statement !== null) {
+            $queryParams['supports_account_statement'] = ObjectSerializer::toQueryValue($supports_account_statement);
+        }
+        // query params
+        if ($supports_account_verification !== null) {
+            $queryParams['supports_account_verification'] = ObjectSerializer::toQueryValue($supports_account_verification);
+        }
+        // query params
+        if ($supports_transaction_history !== null) {
+            $queryParams['supports_transaction_history'] = ObjectSerializer::toQueryValue($supports_transaction_history);
         }
 
 

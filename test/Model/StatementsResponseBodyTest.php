@@ -1,6 +1,6 @@
 <?php
 /**
- * InstitutionTest
+ * StatementsResponseBodyTest
  *
  * PHP version 5
  *
@@ -19,13 +19,13 @@
 namespace atrium;
 
 /**
- * InstitutionTest Class Doc Comment
+ * StatementsResponseBodyTest Class Doc Comment
  *
  * @category    Class
- * @description Institution
+ * @description StatementsResponseBody
  * @package     atrium
  */
-class InstitutionTest extends \PHPUnit_Framework_TestCase
+class StatementsResponseBodyTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -57,72 +57,23 @@ class InstitutionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Institution"
+     * Test "StatementsResponseBody"
      */
-    public function testInstitution()
+    public function testStatementsResponseBody()
     {
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "statements"
      */
-    public function testPropertyCode()
+    public function testPropertyStatements()
     {
     }
 
     /**
-     * Test attribute "medium_logo_url"
+     * Test attribute "pagination"
      */
-    public function testPropertyMediumLogoUrl()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-    }
-
-    /**
-     * Test attribute "small_logo_url"
-     */
-    public function testPropertySmallLogoUrl()
-    {
-    }
-
-    /**
-     * Test attribute "supports_account_identification"
-     */
-    public function testPropertySupportsAccountIdentification()
-    {
-    }
-
-    /**
-     * Test attribute "supports_account_statement"
-     */
-    public function testPropertySupportsAccountStatement()
-    {
-    }
-
-    /**
-     * Test attribute "supports_account_verification"
-     */
-    public function testPropertySupportsAccountVerification()
-    {
-    }
-
-    /**
-     * Test attribute "supports_transaction_history"
-     */
-    public function testPropertySupportsTransactionHistory()
-    {
-    }
-
-    /**
-     * Test attribute "url"
-     */
-    public function testPropertyUrl()
+    public function testPropertyPagination()
     {
     }
 }
