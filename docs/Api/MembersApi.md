@@ -5,10 +5,10 @@ Method | HTTP request | Description
 [**aggregateMember**](MembersApi.md#aggregateMember) | **POST** /users/{user_guid}/members/{member_guid}/aggregate | Aggregate member
 [**createMember**](MembersApi.md#createMember) | **POST** /users/{user_guid}/members | Create member
 [**deleteMember**](MembersApi.md#deleteMember) | **DELETE** /users/{user_guid}/members/{member_guid} | Delete member
+[**extendHistory**](MembersApi.md#extendHistory) | **POST** /users/{user_guid}/members/{member_guid}/extend_history | Extend history
 [**listMemberAccounts**](MembersApi.md#listMemberAccounts) | **GET** /users/{user_guid}/members/{member_guid}/accounts | List member accounts
 [**listMemberCredentials**](MembersApi.md#listMemberCredentials) | **GET** /users/{user_guid}/members/{member_guid}/credentials | List member credentials
 [**listMemberMFAChallenges**](MembersApi.md#listMemberMFAChallenges) | **GET** /users/{user_guid}/members/{member_guid}/challenges | List member MFA challenges
-[**listMemberStatements**](MembersApi.md#listMemberStatements) | **GET** /users/{user_guid}/members/{member_guid}/statements | List member statements
 [**listMemberTransactions**](MembersApi.md#listMemberTransactions) | **GET** /users/{user_guid}/members/{member_guid}/transactions | List member transactions
 [**listMembers**](MembersApi.md#listMembers) | **GET** /users/{user_guid}/members | List members
 [**readMember**](MembersApi.md#readMember) | **GET** /users/{user_guid}/members/{member_guid} | Read member
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **aggregateMember**
-> \atrium\model\MemberResponseBody aggregateMember($member_guid, $user_guid, $type)
+> \atrium\model\MemberResponseBody aggregateMember($member_guid, $user_guid)
 
 Aggregate member
 
@@ -37,10 +37,9 @@ $client = new atrium\Api\AtriumClient(
 
 $member_guid = "MBR-123"; // string | The unique identifier for a `member`.
 $user_guid = "USR-123"; // string | The unique identifier for a `user`.
-$type = "history"; // string | An optional parameter which determines the type of aggregation to be peformed. Possible values are `statement` and `history`.
 
 try {
-    $result = $client->members->aggregateMember($member_guid, $user_guid, $type);
+    $result = $client->members->aggregateMember($member_guid, $user_guid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MembersApi->aggregateMember: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +53,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **member_guid** | **string**| The unique identifier for a &#x60;member&#x60;. |
  **user_guid** | **string**| The unique identifier for a &#x60;user&#x60;. |
- **type** | **string**| An optional parameter which determines the type of aggregation to be peformed. Possible values are &#x60;statement&#x60; and &#x60;history&#x60;. | [optional]
 
 ### Return type
 
@@ -144,6 +142,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **extendHistory**
+> \atrium\model\MemberResponseBody extendHistory($member_guid, $user_guid)
+
+Extend history
+
+The extend_history endpoint begins the process of fetching up to 24 months of data associated with a particular `member`.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$client = new atrium\Api\AtriumClient(
+    "YOUR_API_KEY",
+    "YOUR_CLIENT_ID",
+    new GuzzleHttp\Client()
+);
+
+$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
+$user_guid = "USR-123"; // string | The unique identifier for a `user`.
+
+try {
+    $result = $client->members->extendHistory($member_guid, $user_guid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MembersApi->extendHistory: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **member_guid** | **string**| The unique identifier for a &#x60;member&#x60;. |
+ **user_guid** | **string**| The unique identifier for a &#x60;user&#x60;. |
+
+### Return type
+
+[**\atrium\model\MemberResponseBody**](../Model/MemberResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -277,53 +318,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\atrium\model\ChallengesResponseBody**](../Model/ChallengesResponseBody.md)
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **listMemberStatements**
-> \atrium\model\StatementsResponseBody listMemberStatements($member_guid, $user_guid, $page, $records_per_page)
-
-List member statements
-
-Certain institutions in Atrium allow developers to access account statements associated with a particular `member`. Use this endpoint to get an array of available statements.  Before this endpoint can be used, an aggregation of type `statement` should be performed on the relevant `member`.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$client = new atrium\Api\AtriumClient(
-    "YOUR_API_KEY",
-    "YOUR_CLIENT_ID",
-    new GuzzleHttp\Client()
-);
-
-$member_guid = "MBR-123"; // string | The unique identifier for a `member`.
-$user_guid = "USR-123"; // string | The unique identifier for a `user`.
-$page = 1; // int | Specify current page.
-$records_per_page = 12; // int | Specify records per page.
-
-try {
-    $result = $client->members->listMemberStatements($member_guid, $user_guid, $page, $records_per_page);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MembersApi->listMemberStatements: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **member_guid** | **string**| The unique identifier for a &#x60;member&#x60;. |
- **user_guid** | **string**| The unique identifier for a &#x60;user&#x60;. |
- **page** | **int**| Specify current page. | [optional]
- **records_per_page** | **int**| Specify records per page. | [optional]
-
-### Return type
-
-[**\atrium\model\StatementsResponseBody**](../Model/StatementsResponseBody.md)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

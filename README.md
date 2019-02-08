@@ -86,10 +86,10 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**aggregateMember**](docs/Api/MembersApi.md#aggregatemember) | **POST** /users/{user_guid}/members/{member_guid}/aggregate | Aggregate member
 *MembersApi* | [**createMember**](docs/Api/MembersApi.md#createmember) | **POST** /users/{user_guid}/members | Create member
 *MembersApi* | [**deleteMember**](docs/Api/MembersApi.md#deletemember) | **DELETE** /users/{user_guid}/members/{member_guid} | Delete member
+*MembersApi* | [**extendHistory**](docs/Api/MembersApi.md#extendhistory) | **POST** /users/{user_guid}/members/{member_guid}/extend_history | Extend history
 *MembersApi* | [**listMemberAccounts**](docs/Api/MembersApi.md#listmemberaccounts) | **GET** /users/{user_guid}/members/{member_guid}/accounts | List member accounts
 *MembersApi* | [**listMemberCredentials**](docs/Api/MembersApi.md#listmembercredentials) | **GET** /users/{user_guid}/members/{member_guid}/credentials | List member credentials
 *MembersApi* | [**listMemberMFAChallenges**](docs/Api/MembersApi.md#listmembermfachallenges) | **GET** /users/{user_guid}/members/{member_guid}/challenges | List member MFA challenges
-*MembersApi* | [**listMemberStatements**](docs/Api/MembersApi.md#listmemberstatements) | **GET** /users/{user_guid}/members/{member_guid}/statements | List member statements
 *MembersApi* | [**listMemberTransactions**](docs/Api/MembersApi.md#listmembertransactions) | **GET** /users/{user_guid}/members/{member_guid}/transactions | List member transactions
 *MembersApi* | [**listMembers**](docs/Api/MembersApi.md#listmembers) | **GET** /users/{user_guid}/members | List members
 *MembersApi* | [**readMember**](docs/Api/MembersApi.md#readmember) | **GET** /users/{user_guid}/members/{member_guid} | Read member
@@ -97,6 +97,8 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**resumeMember**](docs/Api/MembersApi.md#resumemember) | **PUT** /users/{user_guid}/members/{member_guid}/resume | Resume aggregation from MFA
 *MembersApi* | [**updateMember**](docs/Api/MembersApi.md#updatemember) | **PUT** /users/{user_guid}/members/{member_guid} | Update member
 *MerchantsApi* | [**readMerchant**](docs/Api/MerchantsApi.md#readmerchant) | **GET** /merchants/{merchant_guid} | Read merchant
+*StatementsApi* | [**fetchStatements**](docs/Api/StatementsApi.md#fetchstatements) | **POST** /users/{user_guid}/members/{member_guid}/fetch_statements | Fetch statements
+*StatementsApi* | [**listMemberStatements**](docs/Api/StatementsApi.md#listmemberstatements) | **GET** /users/{user_guid}/members/{member_guid}/statements | List member statements
 *TransactionsApi* | [**cleanseAndCategorizeTransactions**](docs/Api/TransactionsApi.md#cleanseandcategorizetransactions) | **POST** /cleanse_and_categorize | Categorize transactions
 *TransactionsApi* | [**listUserTransactions**](docs/Api/TransactionsApi.md#listusertransactions) | **GET** /users/{user_guid}/transactions | List transactions for a user
 *TransactionsApi* | [**readTransaction**](docs/Api/TransactionsApi.md#readtransaction) | **GET** /users/{user_guid}/transactions/{transaction_guid} | Read a transaction

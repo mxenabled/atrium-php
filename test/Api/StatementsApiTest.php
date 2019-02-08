@@ -1,7 +1,6 @@
 <?php
 /**
- * StatementTest
- *
+ * StatementsApiTest
  * PHP version 5
  *
  * @category Class
@@ -18,18 +17,21 @@
 
 namespace atrium;
 
+use \atrium\Configuration;
+use \atrium\ApiException;
+use \atrium\ObjectSerializer;
+
 /**
- * StatementTest Class Doc Comment
+ * StatementsApiTest Class Doc Comment
  *
- * @category    Class
- * @description Statement
- * @package     atrium
+ * @category Class
+ * @package  atrium
  */
-class StatementTest extends \PHPUnit_Framework_TestCase
+class StatementsApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * Setup before running any test case
+     * Setup before running any test cases
      */
     public static function setUpBeforeClass()
     {
@@ -57,58 +59,22 @@ class StatementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Statement"
+     * Test case for fetchStatements
+     *
+     * Fetch statements.
+     *
      */
-    public function testStatement()
+    public function testFetchStatements()
     {
     }
 
     /**
-     * Test attribute "account_guid"
+     * Test case for listMemberStatements
+     *
+     * List member statements.
+     *
      */
-    public function testPropertyAccountGuid()
-    {
-    }
-
-    /**
-     * Test attribute "created_at"
-     */
-    public function testPropertyCreatedAt()
-    {
-    }
-
-    /**
-     * Test attribute "guid"
-     */
-    public function testPropertyGuid()
-    {
-    }
-
-    /**
-     * Test attribute "member_guid"
-     */
-    public function testPropertyMemberGuid()
-    {
-    }
-
-    /**
-     * Test attribute "uri"
-     */
-    public function testPropertyUri()
-    {
-    }
-
-    /**
-     * Test attribute "user_guid"
-     */
-    public function testPropertyUserGuid()
-    {
-    }
-
-    /**
-     * Test attribute "updated_at"
-     */
-    public function testPropertyUpdatedAt()
+    public function testListMemberStatements()
     {
     }
 }

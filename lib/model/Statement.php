@@ -46,13 +46,11 @@ class Statement implements ModelInterface, ArrayAccess
     protected static $mxTypes = [
         'account_guid' => 'string',
         'created_at' => 'string',
-        'content_hash' => 'string',
-        'deleted_at' => 'string',
         'guid' => 'string',
-        'is_deleted' => 'bool',
-        'updated_at' => 'string',
+        'member_guid' => 'string',
         'uri' => 'string',
-        'user_guid' => 'string'
+        'user_guid' => 'string',
+        'updated_at' => 'string'
     ];
 
     /**
@@ -63,13 +61,11 @@ class Statement implements ModelInterface, ArrayAccess
     protected static $mxFormats = [
         'account_guid' => null,
         'created_at' => null,
-        'content_hash' => null,
-        'deleted_at' => null,
         'guid' => null,
-        'is_deleted' => null,
-        'updated_at' => null,
+        'member_guid' => null,
         'uri' => null,
-        'user_guid' => null
+        'user_guid' => null,
+        'updated_at' => null
     ];
 
     /**
@@ -101,13 +97,11 @@ class Statement implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'account_guid' => 'account_guid',
         'created_at' => 'created_at',
-        'content_hash' => 'content_hash',
-        'deleted_at' => 'deleted_at',
         'guid' => 'guid',
-        'is_deleted' => 'is_deleted',
-        'updated_at' => 'updated_at',
+        'member_guid' => 'member_guid',
         'uri' => 'uri',
-        'user_guid' => 'user_guid'
+        'user_guid' => 'user_guid',
+        'updated_at' => 'updated_at'
     ];
 
     /**
@@ -118,13 +112,11 @@ class Statement implements ModelInterface, ArrayAccess
     protected static $setters = [
         'account_guid' => 'setAccountGuid',
         'created_at' => 'setCreatedAt',
-        'content_hash' => 'setContentHash',
-        'deleted_at' => 'setDeletedAt',
         'guid' => 'setGuid',
-        'is_deleted' => 'setIsDeleted',
-        'updated_at' => 'setUpdatedAt',
+        'member_guid' => 'setMemberGuid',
         'uri' => 'setUri',
-        'user_guid' => 'setUserGuid'
+        'user_guid' => 'setUserGuid',
+        'updated_at' => 'setUpdatedAt'
     ];
 
     /**
@@ -135,13 +127,11 @@ class Statement implements ModelInterface, ArrayAccess
     protected static $getters = [
         'account_guid' => 'getAccountGuid',
         'created_at' => 'getCreatedAt',
-        'content_hash' => 'getContentHash',
-        'deleted_at' => 'getDeletedAt',
         'guid' => 'getGuid',
-        'is_deleted' => 'getIsDeleted',
-        'updated_at' => 'getUpdatedAt',
+        'member_guid' => 'getMemberGuid',
         'uri' => 'getUri',
-        'user_guid' => 'getUserGuid'
+        'user_guid' => 'getUserGuid',
+        'updated_at' => 'getUpdatedAt'
     ];
 
     /**
@@ -206,13 +196,11 @@ class Statement implements ModelInterface, ArrayAccess
     {
         $this->container['account_guid'] = isset($data['account_guid']) ? $data['account_guid'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['content_hash'] = isset($data['content_hash']) ? $data['content_hash'] : null;
-        $this->container['deleted_at'] = isset($data['deleted_at']) ? $data['deleted_at'] : null;
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
-        $this->container['is_deleted'] = isset($data['is_deleted']) ? $data['is_deleted'] : null;
-        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
+        $this->container['member_guid'] = isset($data['member_guid']) ? $data['member_guid'] : null;
         $this->container['uri'] = isset($data['uri']) ? $data['uri'] : null;
         $this->container['user_guid'] = isset($data['user_guid']) ? $data['user_guid'] : null;
+        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
     }
 
     /**
@@ -288,54 +276,6 @@ class Statement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets content_hash
-     *
-     * @return string
-     */
-    public function getContentHash()
-    {
-        return $this->container['content_hash'];
-    }
-
-    /**
-     * Sets content_hash
-     *
-     * @param string $content_hash An SHA-256 hash value of the statement's byte payload, used as a unique identifier.
-     *
-     * @return $this
-     */
-    public function setContentHash($content_hash)
-    {
-        $this->container['content_hash'] = $content_hash;
-
-        return $this;
-    }
-
-    /**
-     * Gets deleted_at
-     *
-     * @return string
-     */
-    public function getDeletedAt()
-    {
-        return $this->container['deleted_at'];
-    }
-
-    /**
-     * Sets deleted_at
-     *
-     * @param string $deleted_at The date and time the `statement` was deleted. Statements are automatically deleted when an `account` is deleted.
-     *
-     * @return $this
-     */
-    public function setDeletedAt($deleted_at)
-    {
-        $this->container['deleted_at'] = $deleted_at;
-
-        return $this;
-    }
-
-    /**
      * Gets guid
      *
      * @return string
@@ -360,49 +300,25 @@ class Statement implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets is_deleted
-     *
-     * @return bool
-     */
-    public function getIsDeleted()
-    {
-        return $this->container['is_deleted'];
-    }
-
-    /**
-     * Sets is_deleted
-     *
-     * @param bool $is_deleted This indicates whether the `statement` has been deleted. Statements are automatically deleted when an `account` is deleted.
-     *
-     * @return $this
-     */
-    public function setIsDeleted($is_deleted)
-    {
-        $this->container['is_deleted'] = $is_deleted;
-
-        return $this;
-    }
-
-    /**
-     * Gets updated_at
+     * Gets member_guid
      *
      * @return string
      */
-    public function getUpdatedAt()
+    public function getMemberGuid()
     {
-        return $this->container['updated_at'];
+        return $this->container['member_guid'];
     }
 
     /**
-     * Sets updated_at
+     * Sets member_guid
      *
-     * @param string $updated_at The date and time at which the `statement` was last updated.
+     * @param string $member_guid The unique identifier for the `member` associated with the `statement`.  Defined by MX.
      *
      * @return $this
      */
-    public function setUpdatedAt($updated_at)
+    public function setMemberGuid($member_guid)
     {
-        $this->container['updated_at'] = $updated_at;
+        $this->container['member_guid'] = $member_guid;
 
         return $this;
     }
@@ -451,6 +367,30 @@ class Statement implements ModelInterface, ArrayAccess
     public function setUserGuid($user_guid)
     {
         $this->container['user_guid'] = $user_guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return string
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param string $updated_at The date and time at which the `statement` was last updated.
+     *
+     * @return $this
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

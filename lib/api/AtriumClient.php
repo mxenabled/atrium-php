@@ -34,6 +34,7 @@ use atrium\api\IdentityApi;
 use atrium\api\InstitutionsApi;
 use atrium\api\MembersApi;
 use atrium\api\MerchantsApi;
+use atrium\api\StatementsApi;
 use atrium\api\TransactionsApi;
 use atrium\api\UsersApi;
 use atrium\api\VerificationApi;
@@ -54,6 +55,7 @@ class AtriumClient
   public $institutions;
   public $members;
   public $merchants;
+  public $statements;
   public $transactions;
   public $users;
   public $verification;
@@ -70,6 +72,7 @@ class AtriumClient
     $this->institutions = new InstitutionsApi($httpClient, $config);
     $this->members = new MembersApi($httpClient, $config);
     $this->merchants = new MerchantsApi($httpClient, $config);
+    $this->statements = new StatementsApi($httpClient, $config);
     $this->transactions = new TransactionsApi($httpClient, $config);
     $this->users = new UsersApi($httpClient, $config);
     $this->verification = new VerificationApi($httpClient, $config);

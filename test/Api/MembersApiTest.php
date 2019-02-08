@@ -89,6 +89,16 @@ class MembersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for extendHistory
+     *
+     * Extend history.
+     *
+     */
+    public function testExtendHistory()
+    {
+    }
+
+    /**
      * Test case for listMemberAccounts
      *
      * List member accounts.
@@ -115,16 +125,6 @@ class MembersApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testListMemberMFAChallenges()
-    {
-    }
-
-    /**
-     * Test case for listMemberStatements
-     *
-     * List member statements.
-     *
-     */
-    public function testListMemberStatements()
     {
     }
 
