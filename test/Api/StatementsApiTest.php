@@ -59,6 +59,16 @@ class StatementsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for downloadStatementPdf
+     *
+     * Download statement PDF.
+     *
+     */
+    public function testDownloadStatementPdf()
+    {
+    }
+
+    /**
      * Test case for fetchStatements
      *
      * Fetch statements.
@@ -75,6 +85,16 @@ class StatementsApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testListMemberStatements()
+    {
+    }
+
+    /**
+     * Test case for readMemberStatement
+     *
+     * Read statement JSON.
+     *
+     */
+    public function testReadMemberStatement()
     {
     }
 }

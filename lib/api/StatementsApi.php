@@ -75,6 +75,316 @@ class StatementsApi
     }
 
     /**
+     * Operation downloadStatementPdf
+     *
+     * Download statement PDF
+     *
+     * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
+     * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  string $statement_guid The unique identifier for an &#x60;statement&#x60;. (required)
+     *
+     * @throws \atrium\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SplFileObject
+     */
+    public function downloadStatementPdf($member_guid, $user_guid, $statement_guid)
+    {
+        list($response) = $this->downloadStatementPdfWithHttpInfo($member_guid, $user_guid, $statement_guid);
+        return $response;
+    }
+
+    /**
+     * Operation downloadStatementPdfWithHttpInfo
+     *
+     * Download statement PDF
+     *
+     * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
+     * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  string $statement_guid The unique identifier for an &#x60;statement&#x60;. (required)
+     *
+     * @throws \atrium\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function downloadStatementPdfWithHttpInfo($member_guid, $user_guid, $statement_guid)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->downloadStatementPdfRequest($member_guid, $user_guid, $statement_guid);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SplFileObject',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation downloadStatementPdfAsync
+     *
+     * Download statement PDF
+     *
+     * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
+     * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  string $statement_guid The unique identifier for an &#x60;statement&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function downloadStatementPdfAsync($member_guid, $user_guid, $statement_guid)
+    {
+        return $this->downloadStatementPdfAsyncWithHttpInfo($member_guid, $user_guid, $statement_guid)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation downloadStatementPdfAsyncWithHttpInfo
+     *
+     * Download statement PDF
+     *
+     * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
+     * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  string $statement_guid The unique identifier for an &#x60;statement&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function downloadStatementPdfAsyncWithHttpInfo($member_guid, $user_guid, $statement_guid)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->downloadStatementPdfRequest($member_guid, $user_guid, $statement_guid);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'downloadStatementPdf'
+     *
+     * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
+     * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  string $statement_guid The unique identifier for an &#x60;statement&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function downloadStatementPdfRequest($member_guid, $user_guid, $statement_guid)
+    {
+        // verify the required parameter 'member_guid' is set
+        if ($member_guid === null || (is_array($member_guid) && count($member_guid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $member_guid when calling downloadStatementPdf'
+            );
+        }
+        // verify the required parameter 'user_guid' is set
+        if ($user_guid === null || (is_array($user_guid) && count($user_guid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $user_guid when calling downloadStatementPdf'
+            );
+        }
+        // verify the required parameter 'statement_guid' is set
+        if ($statement_guid === null || (is_array($statement_guid) && count($statement_guid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $statement_guid when calling downloadStatementPdf'
+            );
+        }
+
+        $resourcePath = '/users/{user_guid}/members/{member_guid}/statements/{statement_guid}.pdf';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($member_guid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'member_guid' . '}',
+                ObjectSerializer::toPathValue($member_guid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($user_guid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'user_guid' . '}',
+                ObjectSerializer::toPathValue($user_guid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($statement_guid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'statement_guid' . '}',
+                ObjectSerializer::toPathValue($statement_guid),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/vnd.mx.atrium.v1+pdf']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/vnd.mx.atrium.v1+pdf'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('MX-API-Key');
+        if ($apiKey !== null) {
+            $headers['MX-API-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('MX-Client-ID');
+        if ($apiKey !== null) {
+            $headers['MX-Client-ID'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation fetchStatements
      *
      * Fetch statements
@@ -596,6 +906,316 @@ class StatementsApi
             $resourcePath = str_replace(
                 '{' . 'user_guid' . '}',
                 ObjectSerializer::toPathValue($user_guid),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/vnd.mx.atrium.v1+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/vnd.mx.atrium.v1+json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('MX-API-Key');
+        if ($apiKey !== null) {
+            $headers['MX-API-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('MX-Client-ID');
+        if ($apiKey !== null) {
+            $headers['MX-Client-ID'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation readMemberStatement
+     *
+     * Read statement JSON
+     *
+     * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
+     * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  string $statement_guid The unique identifier for an &#x60;statement&#x60;. (required)
+     *
+     * @throws \atrium\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \atrium\model\StatementResponseBody
+     */
+    public function readMemberStatement($member_guid, $user_guid, $statement_guid)
+    {
+        list($response) = $this->readMemberStatementWithHttpInfo($member_guid, $user_guid, $statement_guid);
+        return $response;
+    }
+
+    /**
+     * Operation readMemberStatementWithHttpInfo
+     *
+     * Read statement JSON
+     *
+     * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
+     * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  string $statement_guid The unique identifier for an &#x60;statement&#x60;. (required)
+     *
+     * @throws \atrium\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \atrium\model\StatementResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function readMemberStatementWithHttpInfo($member_guid, $user_guid, $statement_guid)
+    {
+        $returnType = '\atrium\model\StatementResponseBody';
+        $request = $this->readMemberStatementRequest($member_guid, $user_guid, $statement_guid);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\atrium\model\StatementResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation readMemberStatementAsync
+     *
+     * Read statement JSON
+     *
+     * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
+     * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  string $statement_guid The unique identifier for an &#x60;statement&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function readMemberStatementAsync($member_guid, $user_guid, $statement_guid)
+    {
+        return $this->readMemberStatementAsyncWithHttpInfo($member_guid, $user_guid, $statement_guid)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation readMemberStatementAsyncWithHttpInfo
+     *
+     * Read statement JSON
+     *
+     * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
+     * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  string $statement_guid The unique identifier for an &#x60;statement&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function readMemberStatementAsyncWithHttpInfo($member_guid, $user_guid, $statement_guid)
+    {
+        $returnType = '\atrium\model\StatementResponseBody';
+        $request = $this->readMemberStatementRequest($member_guid, $user_guid, $statement_guid);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'readMemberStatement'
+     *
+     * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
+     * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  string $statement_guid The unique identifier for an &#x60;statement&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function readMemberStatementRequest($member_guid, $user_guid, $statement_guid)
+    {
+        // verify the required parameter 'member_guid' is set
+        if ($member_guid === null || (is_array($member_guid) && count($member_guid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $member_guid when calling readMemberStatement'
+            );
+        }
+        // verify the required parameter 'user_guid' is set
+        if ($user_guid === null || (is_array($user_guid) && count($user_guid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $user_guid when calling readMemberStatement'
+            );
+        }
+        // verify the required parameter 'statement_guid' is set
+        if ($statement_guid === null || (is_array($statement_guid) && count($statement_guid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $statement_guid when calling readMemberStatement'
+            );
+        }
+
+        $resourcePath = '/users/{user_guid}/members/{member_guid}/statements/{statement_guid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($member_guid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'member_guid' . '}',
+                ObjectSerializer::toPathValue($member_guid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($user_guid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'user_guid' . '}',
+                ObjectSerializer::toPathValue($user_guid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($statement_guid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'statement_guid' . '}',
+                ObjectSerializer::toPathValue($statement_guid),
                 $resourcePath
             );
         }

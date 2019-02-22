@@ -45,6 +45,7 @@ class Statement implements ModelInterface, ArrayAccess
       */
     protected static $mxTypes = [
         'account_guid' => 'string',
+        'content_hash' => 'string',
         'created_at' => 'string',
         'guid' => 'string',
         'member_guid' => 'string',
@@ -60,6 +61,7 @@ class Statement implements ModelInterface, ArrayAccess
       */
     protected static $mxFormats = [
         'account_guid' => null,
+        'content_hash' => null,
         'created_at' => null,
         'guid' => null,
         'member_guid' => null,
@@ -96,6 +98,7 @@ class Statement implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'account_guid' => 'account_guid',
+        'content_hash' => 'content_hash',
         'created_at' => 'created_at',
         'guid' => 'guid',
         'member_guid' => 'member_guid',
@@ -111,6 +114,7 @@ class Statement implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'account_guid' => 'setAccountGuid',
+        'content_hash' => 'setContentHash',
         'created_at' => 'setCreatedAt',
         'guid' => 'setGuid',
         'member_guid' => 'setMemberGuid',
@@ -126,6 +130,7 @@ class Statement implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'account_guid' => 'getAccountGuid',
+        'content_hash' => 'getContentHash',
         'created_at' => 'getCreatedAt',
         'guid' => 'getGuid',
         'member_guid' => 'getMemberGuid',
@@ -195,6 +200,7 @@ class Statement implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['account_guid'] = isset($data['account_guid']) ? $data['account_guid'] : null;
+        $this->container['content_hash'] = isset($data['content_hash']) ? $data['content_hash'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['member_guid'] = isset($data['member_guid']) ? $data['member_guid'] : null;
@@ -247,6 +253,30 @@ class Statement implements ModelInterface, ArrayAccess
     public function setAccountGuid($account_guid)
     {
         $this->container['account_guid'] = $account_guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets content_hash
+     *
+     * @return string
+     */
+    public function getContentHash()
+    {
+        return $this->container['content_hash'];
+    }
+
+    /**
+     * Sets content_hash
+     *
+     * @param string $content_hash SHA256 digest of the pdf payload
+     *
+     * @return $this
+     */
+    public function setContentHash($content_hash)
+    {
+        $this->container['content_hash'] = $content_hash;
 
         return $this;
     }

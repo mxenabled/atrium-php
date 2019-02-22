@@ -97,8 +97,10 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**resumeMember**](docs/Api/MembersApi.md#resumemember) | **PUT** /users/{user_guid}/members/{member_guid}/resume | Resume aggregation from MFA
 *MembersApi* | [**updateMember**](docs/Api/MembersApi.md#updatemember) | **PUT** /users/{user_guid}/members/{member_guid} | Update member
 *MerchantsApi* | [**readMerchant**](docs/Api/MerchantsApi.md#readmerchant) | **GET** /merchants/{merchant_guid} | Read merchant
+*StatementsApi* | [**downloadStatementPdf**](docs/Api/StatementsApi.md#downloadstatementpdf) | **GET** /users/{user_guid}/members/{member_guid}/statements/{statement_guid}.pdf | Download statement PDF
 *StatementsApi* | [**fetchStatements**](docs/Api/StatementsApi.md#fetchstatements) | **POST** /users/{user_guid}/members/{member_guid}/fetch_statements | Fetch statements
 *StatementsApi* | [**listMemberStatements**](docs/Api/StatementsApi.md#listmemberstatements) | **GET** /users/{user_guid}/members/{member_guid}/statements | List member statements
+*StatementsApi* | [**readMemberStatement**](docs/Api/StatementsApi.md#readmemberstatement) | **GET** /users/{user_guid}/members/{member_guid}/statements/{statement_guid} | Read statement JSON
 *TransactionsApi* | [**cleanseAndCategorizeTransactions**](docs/Api/TransactionsApi.md#cleanseandcategorizetransactions) | **POST** /cleanse_and_categorize | Categorize transactions
 *TransactionsApi* | [**listUserTransactions**](docs/Api/TransactionsApi.md#listusertransactions) | **GET** /users/{user_guid}/transactions | List transactions for a user
 *TransactionsApi* | [**readTransaction**](docs/Api/TransactionsApi.md#readtransaction) | **GET** /users/{user_guid}/transactions/{transaction_guid} | Read a transaction
@@ -152,6 +154,7 @@ Class | Method | HTTP request | Description
  - [MerchantResponseBody](docs/Model/MerchantResponseBody.md)
  - [Pagination](docs/Model/Pagination.md)
  - [Statement](docs/Model/Statement.md)
+ - [StatementResponseBody](docs/Model/StatementResponseBody.md)
  - [StatementsResponseBody](docs/Model/StatementsResponseBody.md)
  - [Transaction](docs/Model/Transaction.md)
  - [TransactionCleanseAndCategorizeRequest](docs/Model/TransactionCleanseAndCategorizeRequest.md)

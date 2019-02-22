@@ -1,6 +1,6 @@
 <?php
 /**
- * StatementTest
+ * StatementResponseBodyTest
  *
  * PHP version 5
  *
@@ -19,13 +19,13 @@
 namespace atrium;
 
 /**
- * StatementTest Class Doc Comment
+ * StatementResponseBodyTest Class Doc Comment
  *
  * @category    Class
- * @description Statement
+ * @description StatementResponseBody
  * @package     atrium
  */
-class StatementTest extends \PHPUnit_Framework_TestCase
+class StatementResponseBodyTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -57,65 +57,16 @@ class StatementTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Statement"
+     * Test "StatementResponseBody"
      */
-    public function testStatement()
+    public function testStatementResponseBody()
     {
     }
 
     /**
-     * Test attribute "account_guid"
+     * Test attribute "user"
      */
-    public function testPropertyAccountGuid()
-    {
-    }
-
-    /**
-     * Test attribute "content_hash"
-     */
-    public function testPropertyContentHash()
-    {
-    }
-
-    /**
-     * Test attribute "created_at"
-     */
-    public function testPropertyCreatedAt()
-    {
-    }
-
-    /**
-     * Test attribute "guid"
-     */
-    public function testPropertyGuid()
-    {
-    }
-
-    /**
-     * Test attribute "member_guid"
-     */
-    public function testPropertyMemberGuid()
-    {
-    }
-
-    /**
-     * Test attribute "uri"
-     */
-    public function testPropertyUri()
-    {
-    }
-
-    /**
-     * Test attribute "user_guid"
-     */
-    public function testPropertyUserGuid()
-    {
-    }
-
-    /**
-     * Test attribute "updated_at"
-     */
-    public function testPropertyUpdatedAt()
+    public function testPropertyUser()
     {
     }
 }
