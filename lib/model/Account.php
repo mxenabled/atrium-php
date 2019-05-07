@@ -49,15 +49,20 @@ class Account implements ModelInterface, ArrayAccess
         'available_balance' => 'float',
         'available_credit' => 'float',
         'balance' => 'float',
+        'cash_balance' => 'float',
+        'cash_surrender_value' => 'float',
         'created_at' => 'string',
         'credit_limit' => 'float',
         'currency_code' => 'string',
         'day_payment_is_due' => 'int',
+        'death_benefit' => 'float',
         'guid' => 'string',
+        'holdings_value' => 'float',
         'institution_code' => 'string',
         'interest_rate' => 'float',
         'is_closed' => 'bool',
         'last_payment' => 'float',
+        'loan_amount' => 'float',
         'matures_on' => 'string',
         'member_guid' => 'string',
         'minimum_balance' => 'float',
@@ -85,15 +90,20 @@ class Account implements ModelInterface, ArrayAccess
         'available_balance' => null,
         'available_credit' => null,
         'balance' => null,
+        'cash_balance' => null,
+        'cash_surrender_value' => null,
         'created_at' => null,
         'credit_limit' => null,
         'currency_code' => null,
         'day_payment_is_due' => null,
+        'death_benefit' => null,
         'guid' => null,
+        'holdings_value' => null,
         'institution_code' => null,
         'interest_rate' => null,
         'is_closed' => null,
         'last_payment' => null,
+        'loan_amount' => null,
         'matures_on' => null,
         'member_guid' => null,
         'minimum_balance' => null,
@@ -142,15 +152,20 @@ class Account implements ModelInterface, ArrayAccess
         'available_balance' => 'available_balance',
         'available_credit' => 'available_credit',
         'balance' => 'balance',
+        'cash_balance' => 'cash_balance',
+        'cash_surrender_value' => 'cash_surrender_value',
         'created_at' => 'created_at',
         'credit_limit' => 'credit_limit',
         'currency_code' => 'currency_code',
         'day_payment_is_due' => 'day_payment_is_due',
+        'death_benefit' => 'death_benefit',
         'guid' => 'guid',
+        'holdings_value' => 'holdings_value',
         'institution_code' => 'institution_code',
         'interest_rate' => 'interest_rate',
         'is_closed' => 'is_closed',
         'last_payment' => 'last_payment',
+        'loan_amount' => 'loan_amount',
         'matures_on' => 'matures_on',
         'member_guid' => 'member_guid',
         'minimum_balance' => 'minimum_balance',
@@ -178,15 +193,20 @@ class Account implements ModelInterface, ArrayAccess
         'available_balance' => 'setAvailableBalance',
         'available_credit' => 'setAvailableCredit',
         'balance' => 'setBalance',
+        'cash_balance' => 'setCashBalance',
+        'cash_surrender_value' => 'setCashSurrenderValue',
         'created_at' => 'setCreatedAt',
         'credit_limit' => 'setCreditLimit',
         'currency_code' => 'setCurrencyCode',
         'day_payment_is_due' => 'setDayPaymentIsDue',
+        'death_benefit' => 'setDeathBenefit',
         'guid' => 'setGuid',
+        'holdings_value' => 'setHoldingsValue',
         'institution_code' => 'setInstitutionCode',
         'interest_rate' => 'setInterestRate',
         'is_closed' => 'setIsClosed',
         'last_payment' => 'setLastPayment',
+        'loan_amount' => 'setLoanAmount',
         'matures_on' => 'setMaturesOn',
         'member_guid' => 'setMemberGuid',
         'minimum_balance' => 'setMinimumBalance',
@@ -214,15 +234,20 @@ class Account implements ModelInterface, ArrayAccess
         'available_balance' => 'getAvailableBalance',
         'available_credit' => 'getAvailableCredit',
         'balance' => 'getBalance',
+        'cash_balance' => 'getCashBalance',
+        'cash_surrender_value' => 'getCashSurrenderValue',
         'created_at' => 'getCreatedAt',
         'credit_limit' => 'getCreditLimit',
         'currency_code' => 'getCurrencyCode',
         'day_payment_is_due' => 'getDayPaymentIsDue',
+        'death_benefit' => 'getDeathBenefit',
         'guid' => 'getGuid',
+        'holdings_value' => 'getHoldingsValue',
         'institution_code' => 'getInstitutionCode',
         'interest_rate' => 'getInterestRate',
         'is_closed' => 'getIsClosed',
         'last_payment' => 'getLastPayment',
+        'loan_amount' => 'getLoanAmount',
         'matures_on' => 'getMaturesOn',
         'member_guid' => 'getMemberGuid',
         'minimum_balance' => 'getMinimumBalance',
@@ -304,15 +329,20 @@ class Account implements ModelInterface, ArrayAccess
         $this->container['available_balance'] = isset($data['available_balance']) ? $data['available_balance'] : null;
         $this->container['available_credit'] = isset($data['available_credit']) ? $data['available_credit'] : null;
         $this->container['balance'] = isset($data['balance']) ? $data['balance'] : null;
+        $this->container['cash_balance'] = isset($data['cash_balance']) ? $data['cash_balance'] : null;
+        $this->container['cash_surrender_value'] = isset($data['cash_surrender_value']) ? $data['cash_surrender_value'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['credit_limit'] = isset($data['credit_limit']) ? $data['credit_limit'] : null;
         $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
         $this->container['day_payment_is_due'] = isset($data['day_payment_is_due']) ? $data['day_payment_is_due'] : null;
+        $this->container['death_benefit'] = isset($data['death_benefit']) ? $data['death_benefit'] : null;
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
+        $this->container['holdings_value'] = isset($data['holdings_value']) ? $data['holdings_value'] : null;
         $this->container['institution_code'] = isset($data['institution_code']) ? $data['institution_code'] : null;
         $this->container['interest_rate'] = isset($data['interest_rate']) ? $data['interest_rate'] : null;
         $this->container['is_closed'] = isset($data['is_closed']) ? $data['is_closed'] : null;
         $this->container['last_payment'] = isset($data['last_payment']) ? $data['last_payment'] : null;
+        $this->container['loan_amount'] = isset($data['loan_amount']) ? $data['loan_amount'] : null;
         $this->container['matures_on'] = isset($data['matures_on']) ? $data['matures_on'] : null;
         $this->container['member_guid'] = isset($data['member_guid']) ? $data['member_guid'] : null;
         $this->container['minimum_balance'] = isset($data['minimum_balance']) ? $data['minimum_balance'] : null;
@@ -474,6 +504,54 @@ class Account implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets cash_balance
+     *
+     * @return float
+     */
+    public function getCashBalance()
+    {
+        return $this->container['cash_balance'];
+    }
+
+    /**
+     * Sets cash_balance
+     *
+     * @param float $cash_balance cash_balance
+     *
+     * @return $this
+     */
+    public function setCashBalance($cash_balance)
+    {
+        $this->container['cash_balance'] = $cash_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets cash_surrender_value
+     *
+     * @return float
+     */
+    public function getCashSurrenderValue()
+    {
+        return $this->container['cash_surrender_value'];
+    }
+
+    /**
+     * Sets cash_surrender_value
+     *
+     * @param float $cash_surrender_value cash_surrender_value
+     *
+     * @return $this
+     */
+    public function setCashSurrenderValue($cash_surrender_value)
+    {
+        $this->container['cash_surrender_value'] = $cash_surrender_value;
+
+        return $this;
+    }
+
+    /**
      * Gets created_at
      *
      * @return string
@@ -570,6 +648,30 @@ class Account implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets death_benefit
+     *
+     * @return float
+     */
+    public function getDeathBenefit()
+    {
+        return $this->container['death_benefit'];
+    }
+
+    /**
+     * Sets death_benefit
+     *
+     * @param float $death_benefit death_benefit
+     *
+     * @return $this
+     */
+    public function setDeathBenefit($death_benefit)
+    {
+        $this->container['death_benefit'] = $death_benefit;
+
+        return $this;
+    }
+
+    /**
      * Gets guid
      *
      * @return string
@@ -589,6 +691,30 @@ class Account implements ModelInterface, ArrayAccess
     public function setGuid($guid)
     {
         $this->container['guid'] = $guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets holdings_value
+     *
+     * @return float
+     */
+    public function getHoldingsValue()
+    {
+        return $this->container['holdings_value'];
+    }
+
+    /**
+     * Sets holdings_value
+     *
+     * @param float $holdings_value holdings_value
+     *
+     * @return $this
+     */
+    public function setHoldingsValue($holdings_value)
+    {
+        $this->container['holdings_value'] = $holdings_value;
 
         return $this;
     }
@@ -685,6 +811,30 @@ class Account implements ModelInterface, ArrayAccess
     public function setLastPayment($last_payment)
     {
         $this->container['last_payment'] = $last_payment;
+
+        return $this;
+    }
+
+    /**
+     * Gets loan_amount
+     *
+     * @return float
+     */
+    public function getLoanAmount()
+    {
+        return $this->container['loan_amount'];
+    }
+
+    /**
+     * Sets loan_amount
+     *
+     * @param float $loan_amount loan_amount
+     *
+     * @return $this
+     */
+    public function setLoanAmount($loan_amount)
+    {
+        $this->container['loan_amount'] = $loan_amount;
 
         return $this;
     }

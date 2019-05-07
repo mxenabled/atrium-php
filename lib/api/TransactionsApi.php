@@ -255,7 +255,7 @@ class TransactionsApi
             );
         }
 
-        $resourcePath = '/cleanse_and_categorize';
+        $resourcePath = '/transactions/cleanse_and_categorize';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

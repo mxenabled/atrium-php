@@ -99,6 +99,20 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "cash_balance"
+     */
+    public function testPropertyCashBalance()
+    {
+    }
+
+    /**
+     * Test attribute "cash_surrender_value"
+     */
+    public function testPropertyCashSurrenderValue()
+    {
+    }
+
+    /**
      * Test attribute "created_at"
      */
     public function testPropertyCreatedAt()
@@ -127,9 +141,23 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "death_benefit"
+     */
+    public function testPropertyDeathBenefit()
+    {
+    }
+
+    /**
      * Test attribute "guid"
      */
     public function testPropertyGuid()
+    {
+    }
+
+    /**
+     * Test attribute "holdings_value"
+     */
+    public function testPropertyHoldingsValue()
     {
     }
 
@@ -158,6 +186,13 @@ class AccountTest extends \PHPUnit_Framework_TestCase
      * Test attribute "last_payment"
      */
     public function testPropertyLastPayment()
+    {
+    }
+
+    /**
+     * Test attribute "loan_amount"
+     */
+    public function testPropertyLoanAmount()
     {
     }
 
