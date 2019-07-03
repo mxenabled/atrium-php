@@ -67,6 +67,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'member_guid' => 'string',
         'memo' => 'string',
         'merchant_category_code' => 'int',
+        'merchant_guid' => 'string',
         'original_description' => 'string',
         'posted_at' => 'string',
         'status' => 'string',
@@ -106,6 +107,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'member_guid' => null,
         'memo' => null,
         'merchant_category_code' => null,
+        'merchant_guid' => null,
         'original_description' => null,
         'posted_at' => null,
         'status' => null,
@@ -166,6 +168,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'member_guid' => 'member_guid',
         'memo' => 'memo',
         'merchant_category_code' => 'merchant_category_code',
+        'merchant_guid' => 'merchant_guid',
         'original_description' => 'original_description',
         'posted_at' => 'posted_at',
         'status' => 'status',
@@ -205,6 +208,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'member_guid' => 'setMemberGuid',
         'memo' => 'setMemo',
         'merchant_category_code' => 'setMerchantCategoryCode',
+        'merchant_guid' => 'setMerchantGuid',
         'original_description' => 'setOriginalDescription',
         'posted_at' => 'setPostedAt',
         'status' => 'setStatus',
@@ -244,6 +248,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'member_guid' => 'getMemberGuid',
         'memo' => 'getMemo',
         'merchant_category_code' => 'getMerchantCategoryCode',
+        'merchant_guid' => 'getMerchantGuid',
         'original_description' => 'getOriginalDescription',
         'posted_at' => 'getPostedAt',
         'status' => 'getStatus',
@@ -337,6 +342,7 @@ class Transaction implements ModelInterface, ArrayAccess
         $this->container['member_guid'] = isset($data['member_guid']) ? $data['member_guid'] : null;
         $this->container['memo'] = isset($data['memo']) ? $data['memo'] : null;
         $this->container['merchant_category_code'] = isset($data['merchant_category_code']) ? $data['merchant_category_code'] : null;
+        $this->container['merchant_guid'] = isset($data['merchant_guid']) ? $data['merchant_guid'] : null;
         $this->container['original_description'] = isset($data['original_description']) ? $data['original_description'] : null;
         $this->container['posted_at'] = isset($data['posted_at']) ? $data['posted_at'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
@@ -919,6 +925,30 @@ class Transaction implements ModelInterface, ArrayAccess
     public function setMerchantCategoryCode($merchant_category_code)
     {
         $this->container['merchant_category_code'] = $merchant_category_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchant_guid
+     *
+     * @return string
+     */
+    public function getMerchantGuid()
+    {
+        return $this->container['merchant_guid'];
+    }
+
+    /**
+     * Sets merchant_guid
+     *
+     * @param string $merchant_guid merchant_guid
+     *
+     * @return $this
+     */
+    public function setMerchantGuid($merchant_guid)
+    {
+        $this->container['merchant_guid'] = $merchant_guid;
 
         return $this;
     }

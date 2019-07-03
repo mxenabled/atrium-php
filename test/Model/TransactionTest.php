@@ -225,6 +225,13 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "merchant_guid"
+     */
+    public function testPropertyMerchantGuid()
+    {
+    }
+
+    /**
      * Test attribute "original_description"
      */
     public function testPropertyOriginalDescription()
