@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **member_guid** | **string** |  | [optional] 
 **memo** | **string** |  | [optional] 
 **merchant_category_code** | **int** |  | [optional] 
+**merchant_guid** | **string** |  | [optional] 
 **original_description** | **string** |  | [optional] 
 **posted_at** | **string** |  | [optional] 
 **status** | **string** |  | [optional] 
