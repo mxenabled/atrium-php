@@ -47,7 +47,8 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
         'credentials' => '\atrium\model\CredentialRequest[]',
         'identifier' => 'string',
         'institution_code' => 'string',
-        'metadata' => 'string'
+        'metadata' => 'string',
+        'skip_aggregation' => 'bool'
     ];
 
     /**
@@ -59,7 +60,8 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
         'credentials' => null,
         'identifier' => null,
         'institution_code' => null,
-        'metadata' => null
+        'metadata' => null,
+        'skip_aggregation' => null
     ];
 
     /**
@@ -92,7 +94,8 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
         'credentials' => 'credentials',
         'identifier' => 'identifier',
         'institution_code' => 'institution_code',
-        'metadata' => 'metadata'
+        'metadata' => 'metadata',
+        'skip_aggregation' => 'skip_aggregation'
     ];
 
     /**
@@ -104,7 +107,8 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
         'credentials' => 'setCredentials',
         'identifier' => 'setIdentifier',
         'institution_code' => 'setInstitutionCode',
-        'metadata' => 'setMetadata'
+        'metadata' => 'setMetadata',
+        'skip_aggregation' => 'setSkipAggregation'
     ];
 
     /**
@@ -116,7 +120,8 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
         'credentials' => 'getCredentials',
         'identifier' => 'getIdentifier',
         'institution_code' => 'getInstitutionCode',
-        'metadata' => 'getMetadata'
+        'metadata' => 'getMetadata',
+        'skip_aggregation' => 'getSkipAggregation'
     ];
 
     /**
@@ -183,6 +188,7 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['institution_code'] = isset($data['institution_code']) ? $data['institution_code'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
+        $this->container['skip_aggregation'] = isset($data['skip_aggregation']) ? $data['skip_aggregation'] : null;
     }
 
     /**
@@ -307,6 +313,30 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets skip_aggregation
+     *
+     * @return bool
+     */
+    public function getSkipAggregation()
+    {
+        return $this->container['skip_aggregation'];
+    }
+
+    /**
+     * Sets skip_aggregation
+     *
+     * @param bool $skip_aggregation skip_aggregation
+     *
+     * @return $this
+     */
+    public function setSkipAggregation($skip_aggregation)
+    {
+        $this->container['skip_aggregation'] = $skip_aggregation;
 
         return $this;
     }

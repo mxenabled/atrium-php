@@ -90,4 +90,11 @@ class MemberCreateRequestTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMetadata()
     {
     }
+
+    /**
+     * Test attribute "skip_aggregation"
+     */
+    public function testPropertySkipAggregation()
+    {
+    }
 }

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **identifier** | **string** |  | [optional] 
 **institution_code** | **string** |  | 
 **metadata** | **string** |  | [optional] 
+**skip_aggregation** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
