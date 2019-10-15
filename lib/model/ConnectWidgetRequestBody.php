@@ -47,6 +47,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'is_mobile_webview' => 'bool',
         'current_institution_code' => 'string',
         'current_member_guid' => 'string',
+        'ui_message_version' => 'float',
         'update_credentials' => 'bool'
     ];
 
@@ -59,6 +60,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'is_mobile_webview' => null,
         'current_institution_code' => null,
         'current_member_guid' => null,
+        'ui_message_version' => null,
         'update_credentials' => null
     ];
 
@@ -92,6 +94,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'is_mobile_webview' => 'is_mobile_webview',
         'current_institution_code' => 'current_institution_code',
         'current_member_guid' => 'current_member_guid',
+        'ui_message_version' => 'ui_message_version',
         'update_credentials' => 'update_credentials'
     ];
 
@@ -104,6 +107,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'is_mobile_webview' => 'setIsMobileWebview',
         'current_institution_code' => 'setCurrentInstitutionCode',
         'current_member_guid' => 'setCurrentMemberGuid',
+        'ui_message_version' => 'setUiMessageVersion',
         'update_credentials' => 'setUpdateCredentials'
     ];
 
@@ -116,6 +120,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'is_mobile_webview' => 'getIsMobileWebview',
         'current_institution_code' => 'getCurrentInstitutionCode',
         'current_member_guid' => 'getCurrentMemberGuid',
+        'ui_message_version' => 'getUiMessageVersion',
         'update_credentials' => 'getUpdateCredentials'
     ];
 
@@ -182,6 +187,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         $this->container['is_mobile_webview'] = isset($data['is_mobile_webview']) ? $data['is_mobile_webview'] : null;
         $this->container['current_institution_code'] = isset($data['current_institution_code']) ? $data['current_institution_code'] : null;
         $this->container['current_member_guid'] = isset($data['current_member_guid']) ? $data['current_member_guid'] : null;
+        $this->container['ui_message_version'] = isset($data['ui_message_version']) ? $data['ui_message_version'] : null;
         $this->container['update_credentials'] = isset($data['update_credentials']) ? $data['update_credentials'] : null;
     }
 
@@ -277,6 +283,30 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
     public function setCurrentMemberGuid($current_member_guid)
     {
         $this->container['current_member_guid'] = $current_member_guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets ui_message_version
+     *
+     * @return float
+     */
+    public function getUiMessageVersion()
+    {
+        return $this->container['ui_message_version'];
+    }
+
+    /**
+     * Sets ui_message_version
+     *
+     * @param float $ui_message_version ui_message_version
+     *
+     * @return $this
+     */
+    public function setUiMessageVersion($ui_message_version)
+    {
+        $this->container['ui_message_version'] = $ui_message_version;
 
         return $this;
     }

@@ -84,6 +84,7 @@ Class | Method | HTTP request | Description
 *InstitutionsApi* | [**readInstitution**](docs/Api/InstitutionsApi.md#readinstitution) | **GET** /institutions/{institution_code} | Read institution
 *InstitutionsApi* | [**readInstitutionCredentials**](docs/Api/InstitutionsApi.md#readinstitutioncredentials) | **GET** /institutions/{institution_code}/credentials | Read institution credentials
 *MembersApi* | [**aggregateMember**](docs/Api/MembersApi.md#aggregatemember) | **POST** /users/{user_guid}/members/{member_guid}/aggregate | Aggregate member
+*MembersApi* | [**aggregateMemberBalances**](docs/Api/MembersApi.md#aggregatememberbalances) | **POST** /users/{user_guid}/members/{member_guid}/balance | Aggregate member account balances
 *MembersApi* | [**createMember**](docs/Api/MembersApi.md#createmember) | **POST** /users/{user_guid}/members | Create member
 *MembersApi* | [**deleteMember**](docs/Api/MembersApi.md#deletemember) | **DELETE** /users/{user_guid}/members/{member_guid} | Delete member
 *MembersApi* | [**extendHistory**](docs/Api/MembersApi.md#extendhistory) | **POST** /users/{user_guid}/members/{member_guid}/extend_history | Extend history

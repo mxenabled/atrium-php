@@ -69,6 +69,16 @@ class MembersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for aggregateMemberBalances
+     *
+     * Aggregate member account balances.
+     *
+     */
+    public function testAggregateMemberBalances()
+    {
+    }
+
+    /**
      * Test case for createMember
      *
      * Create member.
