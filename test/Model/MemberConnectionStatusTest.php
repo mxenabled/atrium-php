@@ -106,6 +106,13 @@ class MemberConnectionStatusTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "is_authenticated"
+     */
+    public function testPropertyIsAuthenticated()
+    {
+    }
+
+    /**
      * Test attribute "is_being_aggregated"
      */
     public function testPropertyIsBeingAggregated()
