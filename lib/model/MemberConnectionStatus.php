@@ -50,6 +50,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
         'guid' => 'string',
         'has_processed_accounts' => 'bool',
         'has_processed_transactions' => 'bool',
+        'is_authenticated' => 'bool',
         'is_being_aggregated' => 'bool',
         'status' => 'string',
         'successfully_aggregated_at' => 'string'
@@ -67,6 +68,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
         'guid' => null,
         'has_processed_accounts' => null,
         'has_processed_transactions' => null,
+        'is_authenticated' => null,
         'is_being_aggregated' => null,
         'status' => null,
         'successfully_aggregated_at' => null
@@ -105,6 +107,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
         'guid' => 'guid',
         'has_processed_accounts' => 'has_processed_accounts',
         'has_processed_transactions' => 'has_processed_transactions',
+        'is_authenticated' => 'is_authenticated',
         'is_being_aggregated' => 'is_being_aggregated',
         'status' => 'status',
         'successfully_aggregated_at' => 'successfully_aggregated_at'
@@ -122,6 +125,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
         'guid' => 'setGuid',
         'has_processed_accounts' => 'setHasProcessedAccounts',
         'has_processed_transactions' => 'setHasProcessedTransactions',
+        'is_authenticated' => 'setIsAuthenticated',
         'is_being_aggregated' => 'setIsBeingAggregated',
         'status' => 'setStatus',
         'successfully_aggregated_at' => 'setSuccessfullyAggregatedAt'
@@ -139,6 +143,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
         'guid' => 'getGuid',
         'has_processed_accounts' => 'getHasProcessedAccounts',
         'has_processed_transactions' => 'getHasProcessedTransactions',
+        'is_authenticated' => 'getIsAuthenticated',
         'is_being_aggregated' => 'getIsBeingAggregated',
         'status' => 'getStatus',
         'successfully_aggregated_at' => 'getSuccessfullyAggregatedAt'
@@ -210,6 +215,7 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['has_processed_accounts'] = isset($data['has_processed_accounts']) ? $data['has_processed_accounts'] : null;
         $this->container['has_processed_transactions'] = isset($data['has_processed_transactions']) ? $data['has_processed_transactions'] : null;
+        $this->container['is_authenticated'] = isset($data['is_authenticated']) ? $data['is_authenticated'] : null;
         $this->container['is_being_aggregated'] = isset($data['is_being_aggregated']) ? $data['is_being_aggregated'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['successfully_aggregated_at'] = isset($data['successfully_aggregated_at']) ? $data['successfully_aggregated_at'] : null;
@@ -379,6 +385,30 @@ class MemberConnectionStatus implements ModelInterface, ArrayAccess
     public function setHasProcessedTransactions($has_processed_transactions)
     {
         $this->container['has_processed_transactions'] = $has_processed_transactions;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_authenticated
+     *
+     * @return bool
+     */
+    public function getIsAuthenticated()
+    {
+        return $this->container['is_authenticated'];
+    }
+
+    /**
+     * Sets is_authenticated
+     *
+     * @param bool $is_authenticated is_authenticated
+     *
+     * @return $this
+     */
+    public function setIsAuthenticated($is_authenticated)
+    {
+        $this->container['is_authenticated'] = $is_authenticated;
 
         return $this;
     }
