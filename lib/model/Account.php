@@ -44,6 +44,7 @@ class Account implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
+        'account_number' => 'string',
         'apr' => 'float',
         'apy' => 'float',
         'available_balance' => 'float',
@@ -85,6 +86,7 @@ class Account implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxFormats = [
+        'account_number' => null,
         'apr' => null,
         'apy' => null,
         'available_balance' => null,
@@ -147,6 +149,7 @@ class Account implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'account_number' => 'account_number',
         'apr' => 'apr',
         'apy' => 'apy',
         'available_balance' => 'available_balance',
@@ -188,6 +191,7 @@ class Account implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'account_number' => 'setAccountNumber',
         'apr' => 'setApr',
         'apy' => 'setApy',
         'available_balance' => 'setAvailableBalance',
@@ -229,6 +233,7 @@ class Account implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'account_number' => 'getAccountNumber',
         'apr' => 'getApr',
         'apy' => 'getApy',
         'available_balance' => 'getAvailableBalance',
@@ -324,6 +329,7 @@ class Account implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['account_number'] = isset($data['account_number']) ? $data['account_number'] : null;
         $this->container['apr'] = isset($data['apr']) ? $data['apr'] : null;
         $this->container['apy'] = isset($data['apy']) ? $data['apy'] : null;
         $this->container['available_balance'] = isset($data['available_balance']) ? $data['available_balance'] : null;
@@ -382,6 +388,30 @@ class Account implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets account_number
+     *
+     * @return string
+     */
+    public function getAccountNumber()
+    {
+        return $this->container['account_number'];
+    }
+
+    /**
+     * Sets account_number
+     *
+     * @param string $account_number account_number
+     *
+     * @return $this
+     */
+    public function setAccountNumber($account_number)
+    {
+        $this->container['account_number'] = $account_number;
+
+        return $this;
+    }
 
     /**
      * Gets apr

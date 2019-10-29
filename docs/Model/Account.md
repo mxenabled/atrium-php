@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**account_number** | **string** |  | [optional] 
 **apr** | **float** |  | [optional] 
 **apy** | **float** |  | [optional] 
 **available_balance** | **float** |  | [optional] 
