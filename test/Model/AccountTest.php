@@ -64,6 +64,13 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "account_number"
+     */
+    public function testPropertyAccountNumber()
+    {
+    }
+
+    /**
      * Test attribute "apr"
      */
     public function testPropertyApr()
