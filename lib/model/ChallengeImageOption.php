@@ -1,6 +1,6 @@
 <?php
 /**
- * ChallengeOption
+ * ChallengeImageOption
  *
  * PHP version 5
  *
@@ -22,12 +22,12 @@ use \ArrayAccess;
 use \atrium\ObjectSerializer;
 
 /**
- * ChallengeOption Class Doc Comment
+ * ChallengeImageOption Class Doc Comment
  *
  * @category Class
  * @package  atrium
  */
-class ChallengeOption implements ModelInterface, ArrayAccess
+class ChallengeImageOption implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class ChallengeOption implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $mxModelName = 'ChallengeOption';
+    protected static $mxModelName = 'ChallengeImageOption';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -44,6 +44,7 @@ class ChallengeOption implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
+        'data_uri' => 'string',
         'label' => 'string',
         'value' => 'string'
     ];
@@ -54,6 +55,7 @@ class ChallengeOption implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxFormats = [
+        'data_uri' => null,
         'label' => null,
         'value' => null
     ];
@@ -85,6 +87,7 @@ class ChallengeOption implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'data_uri' => 'data_uri',
         'label' => 'label',
         'value' => 'value'
     ];
@@ -95,6 +98,7 @@ class ChallengeOption implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'data_uri' => 'setDataUri',
         'label' => 'setLabel',
         'value' => 'setValue'
     ];
@@ -105,6 +109,7 @@ class ChallengeOption implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'data_uri' => 'getDataUri',
         'label' => 'getLabel',
         'value' => 'getValue'
     ];
@@ -169,6 +174,7 @@ class ChallengeOption implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['data_uri'] = isset($data['data_uri']) ? $data['data_uri'] : null;
         $this->container['label'] = isset($data['label']) ? $data['label'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
@@ -196,6 +202,30 @@ class ChallengeOption implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets data_uri
+     *
+     * @return string
+     */
+    public function getDataUri()
+    {
+        return $this->container['data_uri'];
+    }
+
+    /**
+     * Sets data_uri
+     *
+     * @param string $data_uri data_uri
+     *
+     * @return $this
+     */
+    public function setDataUri($data_uri)
+    {
+        $this->container['data_uri'] = $data_uri;
+
+        return $this;
+    }
 
     /**
      * Gets label

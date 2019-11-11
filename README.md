@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
  - [AccountResponseBody](docs/Model/AccountResponseBody.md)
  - [AccountsResponseBody](docs/Model/AccountsResponseBody.md)
  - [Challenge](docs/Model/Challenge.md)
+ - [ChallengeImageOption](docs/Model/ChallengeImageOption.md)
  - [ChallengeOption](docs/Model/ChallengeOption.md)
  - [ChallengesResponseBody](docs/Model/ChallengesResponseBody.md)
  - [ConnectWidget](docs/Model/ConnectWidget.md)

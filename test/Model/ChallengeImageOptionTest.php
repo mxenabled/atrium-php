@@ -1,6 +1,6 @@
 <?php
 /**
- * ChallengeOptionTest
+ * ChallengeImageOptionTest
  *
  * PHP version 5
  *
@@ -19,13 +19,13 @@
 namespace atrium;
 
 /**
- * ChallengeOptionTest Class Doc Comment
+ * ChallengeImageOptionTest Class Doc Comment
  *
  * @category    Class
- * @description ChallengeOption
+ * @description ChallengeImageOption
  * @package     atrium
  */
-class ChallengeOptionTest extends \PHPUnit_Framework_TestCase
+class ChallengeImageOptionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -57,9 +57,16 @@ class ChallengeOptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ChallengeOption"
+     * Test "ChallengeImageOption"
      */
-    public function testChallengeOption()
+    public function testChallengeImageOption()
+    {
+    }
+
+    /**
+     * Test attribute "data_uri"
+     */
+    public function testPropertyDataUri()
     {
     }
 
