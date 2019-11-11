@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **field_name** | **string** |  | [optional] 
 **guid** | **string** |  | [optional] 
 **image_data** | **string** |  | [optional] 
+**image_options** | [**\atrium\model\ChallengeImageOption[]**](ChallengeImageOption.md) |  | [optional] 
 **label** | **string** |  | [optional] 
 **options** | [**\atrium\model\ChallengeOption[]**](ChallengeOption.md) |  | [optional] 
 **type** | **string** |  | [optional] 

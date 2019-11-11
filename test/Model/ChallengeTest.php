@@ -85,6 +85,13 @@ class ChallengeTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "image_options"
+     */
+    public function testPropertyImageOptions()
+    {
+    }
+
+    /**
      * Test attribute "label"
      */
     public function testPropertyLabel()

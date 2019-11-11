@@ -47,6 +47,7 @@ class Challenge implements ModelInterface, ArrayAccess
         'field_name' => 'string',
         'guid' => 'string',
         'image_data' => 'string',
+        'image_options' => '\atrium\model\ChallengeImageOption[]',
         'label' => 'string',
         'options' => '\atrium\model\ChallengeOption[]',
         'type' => 'string'
@@ -61,6 +62,7 @@ class Challenge implements ModelInterface, ArrayAccess
         'field_name' => null,
         'guid' => null,
         'image_data' => null,
+        'image_options' => null,
         'label' => null,
         'options' => null,
         'type' => null
@@ -96,6 +98,7 @@ class Challenge implements ModelInterface, ArrayAccess
         'field_name' => 'field_name',
         'guid' => 'guid',
         'image_data' => 'image_data',
+        'image_options' => 'image_options',
         'label' => 'label',
         'options' => 'options',
         'type' => 'type'
@@ -110,6 +113,7 @@ class Challenge implements ModelInterface, ArrayAccess
         'field_name' => 'setFieldName',
         'guid' => 'setGuid',
         'image_data' => 'setImageData',
+        'image_options' => 'setImageOptions',
         'label' => 'setLabel',
         'options' => 'setOptions',
         'type' => 'setType'
@@ -124,6 +128,7 @@ class Challenge implements ModelInterface, ArrayAccess
         'field_name' => 'getFieldName',
         'guid' => 'getGuid',
         'image_data' => 'getImageData',
+        'image_options' => 'getImageOptions',
         'label' => 'getLabel',
         'options' => 'getOptions',
         'type' => 'getType'
@@ -192,6 +197,7 @@ class Challenge implements ModelInterface, ArrayAccess
         $this->container['field_name'] = isset($data['field_name']) ? $data['field_name'] : null;
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['image_data'] = isset($data['image_data']) ? $data['image_data'] : null;
+        $this->container['image_options'] = isset($data['image_options']) ? $data['image_options'] : null;
         $this->container['label'] = isset($data['label']) ? $data['label'] : null;
         $this->container['options'] = isset($data['options']) ? $data['options'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
@@ -289,6 +295,30 @@ class Challenge implements ModelInterface, ArrayAccess
     public function setImageData($image_data)
     {
         $this->container['image_data'] = $image_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets image_options
+     *
+     * @return \atrium\model\ChallengeImageOption[]
+     */
+    public function getImageOptions()
+    {
+        return $this->container['image_options'];
+    }
+
+    /**
+     * Sets image_options
+     *
+     * @param \atrium\model\ChallengeImageOption[] $image_options image_options
+     *
+     * @return $this
+     */
+    public function setImageOptions($image_options)
+    {
+        $this->container['image_options'] = $image_options;
 
         return $this;
     }
