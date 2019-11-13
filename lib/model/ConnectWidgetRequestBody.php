@@ -47,6 +47,8 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'is_mobile_webview' => 'bool',
         'current_institution_code' => 'string',
         'current_member_guid' => 'string',
+        'disable_institution_search' => 'bool',
+        'mode' => 'string',
         'ui_message_version' => 'float',
         'update_credentials' => 'bool'
     ];
@@ -60,6 +62,8 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'is_mobile_webview' => null,
         'current_institution_code' => null,
         'current_member_guid' => null,
+        'disable_institution_search' => null,
+        'mode' => null,
         'ui_message_version' => null,
         'update_credentials' => null
     ];
@@ -94,6 +98,8 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'is_mobile_webview' => 'is_mobile_webview',
         'current_institution_code' => 'current_institution_code',
         'current_member_guid' => 'current_member_guid',
+        'disable_institution_search' => 'disable_institution_search',
+        'mode' => 'mode',
         'ui_message_version' => 'ui_message_version',
         'update_credentials' => 'update_credentials'
     ];
@@ -107,6 +113,8 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'is_mobile_webview' => 'setIsMobileWebview',
         'current_institution_code' => 'setCurrentInstitutionCode',
         'current_member_guid' => 'setCurrentMemberGuid',
+        'disable_institution_search' => 'setDisableInstitutionSearch',
+        'mode' => 'setMode',
         'ui_message_version' => 'setUiMessageVersion',
         'update_credentials' => 'setUpdateCredentials'
     ];
@@ -120,6 +128,8 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'is_mobile_webview' => 'getIsMobileWebview',
         'current_institution_code' => 'getCurrentInstitutionCode',
         'current_member_guid' => 'getCurrentMemberGuid',
+        'disable_institution_search' => 'getDisableInstitutionSearch',
+        'mode' => 'getMode',
         'ui_message_version' => 'getUiMessageVersion',
         'update_credentials' => 'getUpdateCredentials'
     ];
@@ -187,6 +197,8 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         $this->container['is_mobile_webview'] = isset($data['is_mobile_webview']) ? $data['is_mobile_webview'] : null;
         $this->container['current_institution_code'] = isset($data['current_institution_code']) ? $data['current_institution_code'] : null;
         $this->container['current_member_guid'] = isset($data['current_member_guid']) ? $data['current_member_guid'] : null;
+        $this->container['disable_institution_search'] = isset($data['disable_institution_search']) ? $data['disable_institution_search'] : null;
+        $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
         $this->container['ui_message_version'] = isset($data['ui_message_version']) ? $data['ui_message_version'] : null;
         $this->container['update_credentials'] = isset($data['update_credentials']) ? $data['update_credentials'] : null;
     }
@@ -283,6 +295,54 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
     public function setCurrentMemberGuid($current_member_guid)
     {
         $this->container['current_member_guid'] = $current_member_guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets disable_institution_search
+     *
+     * @return bool
+     */
+    public function getDisableInstitutionSearch()
+    {
+        return $this->container['disable_institution_search'];
+    }
+
+    /**
+     * Sets disable_institution_search
+     *
+     * @param bool $disable_institution_search disable_institution_search
+     *
+     * @return $this
+     */
+    public function setDisableInstitutionSearch($disable_institution_search)
+    {
+        $this->container['disable_institution_search'] = $disable_institution_search;
+
+        return $this;
+    }
+
+    /**
+     * Gets mode
+     *
+     * @return string
+     */
+    public function getMode()
+    {
+        return $this->container['mode'];
+    }
+
+    /**
+     * Sets mode
+     *
+     * @param string $mode mode
+     *
+     * @return $this
+     */
+    public function setMode($mode)
+    {
+        $this->container['mode'] = $mode;
 
         return $this;
     }
