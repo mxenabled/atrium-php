@@ -85,6 +85,20 @@ class ConnectWidgetRequestBodyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "disable_institution_search"
+     */
+    public function testPropertyDisableInstitutionSearch()
+    {
+    }
+
+    /**
+     * Test attribute "mode"
+     */
+    public function testPropertyMode()
+    {
+    }
+
+    /**
      * Test attribute "ui_message_version"
      */
     public function testPropertyUiMessageVersion()
