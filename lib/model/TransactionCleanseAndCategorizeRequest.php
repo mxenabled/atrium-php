@@ -47,6 +47,7 @@ class TransactionCleanseAndCategorizeRequest implements ModelInterface, ArrayAcc
         'amount' => 'float',
         'description' => 'string',
         'identifier' => 'string',
+        'merchant_category_code' => 'float',
         'type' => 'string'
     ];
 
@@ -59,6 +60,7 @@ class TransactionCleanseAndCategorizeRequest implements ModelInterface, ArrayAcc
         'amount' => null,
         'description' => null,
         'identifier' => null,
+        'merchant_category_code' => null,
         'type' => null
     ];
 
@@ -92,6 +94,7 @@ class TransactionCleanseAndCategorizeRequest implements ModelInterface, ArrayAcc
         'amount' => 'amount',
         'description' => 'description',
         'identifier' => 'identifier',
+        'merchant_category_code' => 'merchant_category_code',
         'type' => 'type'
     ];
 
@@ -104,6 +107,7 @@ class TransactionCleanseAndCategorizeRequest implements ModelInterface, ArrayAcc
         'amount' => 'setAmount',
         'description' => 'setDescription',
         'identifier' => 'setIdentifier',
+        'merchant_category_code' => 'setMerchantCategoryCode',
         'type' => 'setType'
     ];
 
@@ -116,6 +120,7 @@ class TransactionCleanseAndCategorizeRequest implements ModelInterface, ArrayAcc
         'amount' => 'getAmount',
         'description' => 'getDescription',
         'identifier' => 'getIdentifier',
+        'merchant_category_code' => 'getMerchantCategoryCode',
         'type' => 'getType'
     ];
 
@@ -182,6 +187,7 @@ class TransactionCleanseAndCategorizeRequest implements ModelInterface, ArrayAcc
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['merchant_category_code'] = isset($data['merchant_category_code']) ? $data['merchant_category_code'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
@@ -277,6 +283,30 @@ class TransactionCleanseAndCategorizeRequest implements ModelInterface, ArrayAcc
     public function setIdentifier($identifier)
     {
         $this->container['identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchant_category_code
+     *
+     * @return float
+     */
+    public function getMerchantCategoryCode()
+    {
+        return $this->container['merchant_category_code'];
+    }
+
+    /**
+     * Sets merchant_category_code
+     *
+     * @param float $merchant_category_code merchant_category_code
+     *
+     * @return $this
+     */
+    public function setMerchantCategoryCode($merchant_category_code)
+    {
+        $this->container['merchant_category_code'] = $merchant_category_code;
 
         return $this;
     }

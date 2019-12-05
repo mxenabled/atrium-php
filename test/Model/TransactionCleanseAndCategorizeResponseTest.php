@@ -153,4 +153,25 @@ class TransactionCleanseAndCategorizeResponseTest extends \PHPUnit_Framework_Tes
     public function testPropertyIsPayrollAdvance()
     {
     }
+
+    /**
+     * Test attribute "merchant_category_code"
+     */
+    public function testPropertyMerchantCategoryCode()
+    {
+    }
+
+    /**
+     * Test attribute "merchant_guid"
+     */
+    public function testPropertyMerchantGuid()
+    {
+    }
+
+    /**
+     * Test attribute "original_description"
+     */
+    public function testPropertyOriginalDescription()
+    {
+    }
 }
