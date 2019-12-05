@@ -85,6 +85,13 @@ class TransactionCleanseAndCategorizeRequestTest extends \PHPUnit_Framework_Test
     }
 
     /**
+     * Test attribute "merchant_category_code"
+     */
+    public function testPropertyMerchantCategoryCode()
+    {
+    }
+
+    /**
      * Test attribute "type"
      */
     public function testPropertyType()

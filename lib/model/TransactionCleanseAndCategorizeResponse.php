@@ -56,7 +56,10 @@ class TransactionCleanseAndCategorizeResponse implements ModelInterface, ArrayAc
         'is_income' => 'bool',
         'is_international' => 'bool',
         'is_overdraft_fee' => 'bool',
-        'is_payroll_advance' => 'bool'
+        'is_payroll_advance' => 'bool',
+        'merchant_category_code' => 'float',
+        'merchant_guid' => 'string',
+        'original_description' => 'string'
     ];
 
     /**
@@ -77,7 +80,10 @@ class TransactionCleanseAndCategorizeResponse implements ModelInterface, ArrayAc
         'is_income' => null,
         'is_international' => null,
         'is_overdraft_fee' => null,
-        'is_payroll_advance' => null
+        'is_payroll_advance' => null,
+        'merchant_category_code' => null,
+        'merchant_guid' => null,
+        'original_description' => null
     ];
 
     /**
@@ -119,7 +125,10 @@ class TransactionCleanseAndCategorizeResponse implements ModelInterface, ArrayAc
         'is_income' => 'is_income',
         'is_international' => 'is_international',
         'is_overdraft_fee' => 'is_overdraft_fee',
-        'is_payroll_advance' => 'is_payroll_advance'
+        'is_payroll_advance' => 'is_payroll_advance',
+        'merchant_category_code' => 'merchant_category_code',
+        'merchant_guid' => 'merchant_guid',
+        'original_description' => 'original_description'
     ];
 
     /**
@@ -140,7 +149,10 @@ class TransactionCleanseAndCategorizeResponse implements ModelInterface, ArrayAc
         'is_income' => 'setIsIncome',
         'is_international' => 'setIsInternational',
         'is_overdraft_fee' => 'setIsOverdraftFee',
-        'is_payroll_advance' => 'setIsPayrollAdvance'
+        'is_payroll_advance' => 'setIsPayrollAdvance',
+        'merchant_category_code' => 'setMerchantCategoryCode',
+        'merchant_guid' => 'setMerchantGuid',
+        'original_description' => 'setOriginalDescription'
     ];
 
     /**
@@ -161,7 +173,10 @@ class TransactionCleanseAndCategorizeResponse implements ModelInterface, ArrayAc
         'is_income' => 'getIsIncome',
         'is_international' => 'getIsInternational',
         'is_overdraft_fee' => 'getIsOverdraftFee',
-        'is_payroll_advance' => 'getIsPayrollAdvance'
+        'is_payroll_advance' => 'getIsPayrollAdvance',
+        'merchant_category_code' => 'getMerchantCategoryCode',
+        'merchant_guid' => 'getMerchantGuid',
+        'original_description' => 'getOriginalDescription'
     ];
 
     /**
@@ -237,6 +252,9 @@ class TransactionCleanseAndCategorizeResponse implements ModelInterface, ArrayAc
         $this->container['is_international'] = isset($data['is_international']) ? $data['is_international'] : null;
         $this->container['is_overdraft_fee'] = isset($data['is_overdraft_fee']) ? $data['is_overdraft_fee'] : null;
         $this->container['is_payroll_advance'] = isset($data['is_payroll_advance']) ? $data['is_payroll_advance'] : null;
+        $this->container['merchant_category_code'] = isset($data['merchant_category_code']) ? $data['merchant_category_code'] : null;
+        $this->container['merchant_guid'] = isset($data['merchant_guid']) ? $data['merchant_guid'] : null;
+        $this->container['original_description'] = isset($data['original_description']) ? $data['original_description'] : null;
     }
 
     /**
@@ -571,6 +589,78 @@ class TransactionCleanseAndCategorizeResponse implements ModelInterface, ArrayAc
     public function setIsPayrollAdvance($is_payroll_advance)
     {
         $this->container['is_payroll_advance'] = $is_payroll_advance;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchant_category_code
+     *
+     * @return float
+     */
+    public function getMerchantCategoryCode()
+    {
+        return $this->container['merchant_category_code'];
+    }
+
+    /**
+     * Sets merchant_category_code
+     *
+     * @param float $merchant_category_code merchant_category_code
+     *
+     * @return $this
+     */
+    public function setMerchantCategoryCode($merchant_category_code)
+    {
+        $this->container['merchant_category_code'] = $merchant_category_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets merchant_guid
+     *
+     * @return string
+     */
+    public function getMerchantGuid()
+    {
+        return $this->container['merchant_guid'];
+    }
+
+    /**
+     * Sets merchant_guid
+     *
+     * @param string $merchant_guid merchant_guid
+     *
+     * @return $this
+     */
+    public function setMerchantGuid($merchant_guid)
+    {
+        $this->container['merchant_guid'] = $merchant_guid;
+
+        return $this;
+    }
+
+    /**
+     * Gets original_description
+     *
+     * @return string
+     */
+    public function getOriginalDescription()
+    {
+        return $this->container['original_description'];
+    }
+
+    /**
+     * Sets original_description
+     *
+     * @param string $original_description original_description
+     *
+     * @return $this
+     */
+    public function setOriginalDescription($original_description)
+    {
+        $this->container['original_description'] = $original_description;
 
         return $this;
     }
