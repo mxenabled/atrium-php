@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountNumber
+ * MerchantsResponseBody
  *
  * PHP version 5
  *
@@ -22,12 +22,12 @@ use \ArrayAccess;
 use \atrium\ObjectSerializer;
 
 /**
- * AccountNumber Class Doc Comment
+ * MerchantsResponseBody Class Doc Comment
  *
  * @category Class
  * @package  atrium
  */
-class AccountNumber implements ModelInterface, ArrayAccess
+class MerchantsResponseBody implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class AccountNumber implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $mxModelName = 'AccountNumber';
+    protected static $mxModelName = 'MerchantsResponseBody';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -44,13 +44,8 @@ class AccountNumber implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'account_guid' => 'string',
-        'account_number' => 'string',
-        'institution_number' => 'string',
-        'member_guid' => 'string',
-        'routing_number' => 'string',
-        'transit_number' => 'string',
-        'user_guid' => 'string'
+        'merchant' => '\atrium\model\Merchant[]',
+        'pagination' => '\atrium\model\Pagination'
     ];
 
     /**
@@ -59,13 +54,8 @@ class AccountNumber implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxFormats = [
-        'account_guid' => null,
-        'account_number' => null,
-        'institution_number' => null,
-        'member_guid' => null,
-        'routing_number' => null,
-        'transit_number' => null,
-        'user_guid' => null
+        'merchant' => null,
+        'pagination' => null
     ];
 
     /**
@@ -95,13 +85,8 @@ class AccountNumber implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_guid' => 'account_guid',
-        'account_number' => 'account_number',
-        'institution_number' => 'institution_number',
-        'member_guid' => 'member_guid',
-        'routing_number' => 'routing_number',
-        'transit_number' => 'transit_number',
-        'user_guid' => 'user_guid'
+        'merchant' => 'merchant',
+        'pagination' => 'pagination'
     ];
 
     /**
@@ -110,13 +95,8 @@ class AccountNumber implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'account_guid' => 'setAccountGuid',
-        'account_number' => 'setAccountNumber',
-        'institution_number' => 'setInstitutionNumber',
-        'member_guid' => 'setMemberGuid',
-        'routing_number' => 'setRoutingNumber',
-        'transit_number' => 'setTransitNumber',
-        'user_guid' => 'setUserGuid'
+        'merchant' => 'setMerchant',
+        'pagination' => 'setPagination'
     ];
 
     /**
@@ -125,13 +105,8 @@ class AccountNumber implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'account_guid' => 'getAccountGuid',
-        'account_number' => 'getAccountNumber',
-        'institution_number' => 'getInstitutionNumber',
-        'member_guid' => 'getMemberGuid',
-        'routing_number' => 'getRoutingNumber',
-        'transit_number' => 'getTransitNumber',
-        'user_guid' => 'getUserGuid'
+        'merchant' => 'getMerchant',
+        'pagination' => 'getPagination'
     ];
 
     /**
@@ -194,13 +169,8 @@ class AccountNumber implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_guid'] = isset($data['account_guid']) ? $data['account_guid'] : null;
-        $this->container['account_number'] = isset($data['account_number']) ? $data['account_number'] : null;
-        $this->container['institution_number'] = isset($data['institution_number']) ? $data['institution_number'] : null;
-        $this->container['member_guid'] = isset($data['member_guid']) ? $data['member_guid'] : null;
-        $this->container['routing_number'] = isset($data['routing_number']) ? $data['routing_number'] : null;
-        $this->container['transit_number'] = isset($data['transit_number']) ? $data['transit_number'] : null;
-        $this->container['user_guid'] = isset($data['user_guid']) ? $data['user_guid'] : null;
+        $this->container['merchant'] = isset($data['merchant']) ? $data['merchant'] : null;
+        $this->container['pagination'] = isset($data['pagination']) ? $data['pagination'] : null;
     }
 
     /**
@@ -228,169 +198,49 @@ class AccountNumber implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets account_guid
+     * Gets merchant
      *
-     * @return string
+     * @return \atrium\model\Merchant[]
      */
-    public function getAccountGuid()
+    public function getMerchant()
     {
-        return $this->container['account_guid'];
+        return $this->container['merchant'];
     }
 
     /**
-     * Sets account_guid
+     * Sets merchant
      *
-     * @param string $account_guid account_guid
+     * @param \atrium\model\Merchant[] $merchant merchant
      *
      * @return $this
      */
-    public function setAccountGuid($account_guid)
+    public function setMerchant($merchant)
     {
-        $this->container['account_guid'] = $account_guid;
+        $this->container['merchant'] = $merchant;
 
         return $this;
     }
 
     /**
-     * Gets account_number
+     * Gets pagination
      *
-     * @return string
+     * @return \atrium\model\Pagination
      */
-    public function getAccountNumber()
+    public function getPagination()
     {
-        return $this->container['account_number'];
+        return $this->container['pagination'];
     }
 
     /**
-     * Sets account_number
+     * Sets pagination
      *
-     * @param string $account_number account_number
+     * @param \atrium\model\Pagination $pagination pagination
      *
      * @return $this
      */
-    public function setAccountNumber($account_number)
+    public function setPagination($pagination)
     {
-        $this->container['account_number'] = $account_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets institution_number
-     *
-     * @return string
-     */
-    public function getInstitutionNumber()
-    {
-        return $this->container['institution_number'];
-    }
-
-    /**
-     * Sets institution_number
-     *
-     * @param string $institution_number institution_number
-     *
-     * @return $this
-     */
-    public function setInstitutionNumber($institution_number)
-    {
-        $this->container['institution_number'] = $institution_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets member_guid
-     *
-     * @return string
-     */
-    public function getMemberGuid()
-    {
-        return $this->container['member_guid'];
-    }
-
-    /**
-     * Sets member_guid
-     *
-     * @param string $member_guid member_guid
-     *
-     * @return $this
-     */
-    public function setMemberGuid($member_guid)
-    {
-        $this->container['member_guid'] = $member_guid;
-
-        return $this;
-    }
-
-    /**
-     * Gets routing_number
-     *
-     * @return string
-     */
-    public function getRoutingNumber()
-    {
-        return $this->container['routing_number'];
-    }
-
-    /**
-     * Sets routing_number
-     *
-     * @param string $routing_number routing_number
-     *
-     * @return $this
-     */
-    public function setRoutingNumber($routing_number)
-    {
-        $this->container['routing_number'] = $routing_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets transit_number
-     *
-     * @return string
-     */
-    public function getTransitNumber()
-    {
-        return $this->container['transit_number'];
-    }
-
-    /**
-     * Sets transit_number
-     *
-     * @param string $transit_number transit_number
-     *
-     * @return $this
-     */
-    public function setTransitNumber($transit_number)
-    {
-        $this->container['transit_number'] = $transit_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_guid
-     *
-     * @return string
-     */
-    public function getUserGuid()
-    {
-        return $this->container['user_guid'];
-    }
-
-    /**
-     * Sets user_guid
-     *
-     * @param string $user_guid user_guid
-     *
-     * @return $this
-     */
-    public function setUserGuid($user_guid)
-    {
-        $this->container['user_guid'] = $user_guid;
+        $this->container['pagination'] = $pagination;
 
         return $this;
     }

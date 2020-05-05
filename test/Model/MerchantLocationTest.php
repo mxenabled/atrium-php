@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountNumberTest
+ * MerchantLocationTest
  *
  * PHP version 5
  *
@@ -19,13 +19,13 @@
 namespace atrium;
 
 /**
- * AccountNumberTest Class Doc Comment
+ * MerchantLocationTest Class Doc Comment
  *
  * @category    Class
- * @description AccountNumber
+ * @description MerchantLocation
  * @package     atrium
  */
-class AccountNumberTest extends \PHPUnit_Framework_TestCase
+class MerchantLocationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -57,58 +57,79 @@ class AccountNumberTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "AccountNumber"
+     * Test "MerchantLocation"
      */
-    public function testAccountNumber()
+    public function testMerchantLocation()
     {
     }
 
     /**
-     * Test attribute "account_guid"
+     * Test attribute "city"
      */
-    public function testPropertyAccountGuid()
+    public function testPropertyCity()
     {
     }
 
     /**
-     * Test attribute "account_number"
+     * Test attribute "guid"
      */
-    public function testPropertyAccountNumber()
+    public function testPropertyGuid()
     {
     }
 
     /**
-     * Test attribute "institution_number"
+     * Test attribute "latitude"
      */
-    public function testPropertyInstitutionNumber()
+    public function testPropertyLatitude()
     {
     }
 
     /**
-     * Test attribute "member_guid"
+     * Test attribute "longitude"
      */
-    public function testPropertyMemberGuid()
+    public function testPropertyLongitude()
     {
     }
 
     /**
-     * Test attribute "routing_number"
+     * Test attribute "merchant_guid"
      */
-    public function testPropertyRoutingNumber()
+    public function testPropertyMerchantGuid()
     {
     }
 
     /**
-     * Test attribute "transit_number"
+     * Test attribute "phone_number"
      */
-    public function testPropertyTransitNumber()
+    public function testPropertyPhoneNumber()
     {
     }
 
     /**
-     * Test attribute "user_guid"
+     * Test attribute "postal_code"
      */
-    public function testPropertyUserGuid()
+    public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+    }
+
+    /**
+     * Test attribute "store_number"
+     */
+    public function testPropertyStoreNumber()
+    {
+    }
+
+    /**
+     * Test attribute "street_address"
+     */
+    public function testPropertyStreetAddress()
     {
     }
 }

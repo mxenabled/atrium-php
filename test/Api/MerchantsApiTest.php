@@ -59,12 +59,42 @@ class MerchantsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for listMerchantLocations
+     *
+     * List merchant locations.
+     *
+     */
+    public function testListMerchantLocations()
+    {
+    }
+
+    /**
+     * Test case for listMerchants
+     *
+     * List merchants.
+     *
+     */
+    public function testListMerchants()
+    {
+    }
+
+    /**
      * Test case for readMerchant
      *
      * Read merchant.
      *
      */
     public function testReadMerchant()
+    {
+    }
+
+    /**
+     * Test case for readMerchantLocation
+     *
+     * Read merchant location.
+     *
+     */
+    public function testReadMerchantLocation()
     {
     }
 }
