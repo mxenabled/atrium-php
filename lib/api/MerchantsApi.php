@@ -75,6 +75,531 @@ class MerchantsApi
     }
 
     /**
+     * Operation listMerchantLocations
+     *
+     * List merchant locations
+     *
+     * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     *
+     * @throws \atrium\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \atrium\model\MerchantLocationsResponseBody
+     */
+    public function listMerchantLocations($merchant_guid)
+    {
+        list($response) = $this->listMerchantLocationsWithHttpInfo($merchant_guid);
+        return $response;
+    }
+
+    /**
+     * Operation listMerchantLocationsWithHttpInfo
+     *
+     * List merchant locations
+     *
+     * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     *
+     * @throws \atrium\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \atrium\model\MerchantLocationsResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listMerchantLocationsWithHttpInfo($merchant_guid)
+    {
+        $returnType = '\atrium\model\MerchantLocationsResponseBody';
+        $request = $this->listMerchantLocationsRequest($merchant_guid);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\atrium\model\MerchantLocationsResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listMerchantLocationsAsync
+     *
+     * List merchant locations
+     *
+     * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listMerchantLocationsAsync($merchant_guid)
+    {
+        return $this->listMerchantLocationsAsyncWithHttpInfo($merchant_guid)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listMerchantLocationsAsyncWithHttpInfo
+     *
+     * List merchant locations
+     *
+     * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listMerchantLocationsAsyncWithHttpInfo($merchant_guid)
+    {
+        $returnType = '\atrium\model\MerchantLocationsResponseBody';
+        $request = $this->listMerchantLocationsRequest($merchant_guid);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listMerchantLocations'
+     *
+     * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function listMerchantLocationsRequest($merchant_guid)
+    {
+        // verify the required parameter 'merchant_guid' is set
+        if ($merchant_guid === null || (is_array($merchant_guid) && count($merchant_guid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $merchant_guid when calling listMerchantLocations'
+            );
+        }
+
+        $resourcePath = '/merchants/{merchant_guid}/merchant_locations';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($merchant_guid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'merchant_guid' . '}',
+                ObjectSerializer::toPathValue($merchant_guid),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/vnd.mx.atrium.v1+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/vnd.mx.atrium.v1+json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('MX-API-Key');
+        if ($apiKey !== null) {
+            $headers['MX-API-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('MX-Client-ID');
+        if ($apiKey !== null) {
+            $headers['MX-Client-ID'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listMerchants
+     *
+     * List merchants
+     *
+     *
+     * @throws \atrium\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \atrium\model\MerchantsResponseBody
+     */
+    public function listMerchants()
+    {
+        list($response) = $this->listMerchantsWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation listMerchantsWithHttpInfo
+     *
+     * List merchants
+     *
+     *
+     * @throws \atrium\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \atrium\model\MerchantsResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listMerchantsWithHttpInfo()
+    {
+        $returnType = '\atrium\model\MerchantsResponseBody';
+        $request = $this->listMerchantsRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\atrium\model\MerchantsResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listMerchantsAsync
+     *
+     * List merchants
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listMerchantsAsync()
+    {
+        return $this->listMerchantsAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listMerchantsAsyncWithHttpInfo
+     *
+     * List merchants
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listMerchantsAsyncWithHttpInfo()
+    {
+        $returnType = '\atrium\model\MerchantsResponseBody';
+        $request = $this->listMerchantsRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listMerchants'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function listMerchantsRequest()
+    {
+
+        $resourcePath = '/merchants';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/vnd.mx.atrium.v1+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/vnd.mx.atrium.v1+json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('MX-API-Key');
+        if ($apiKey !== null) {
+            $headers['MX-API-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('MX-Client-ID');
+        if ($apiKey !== null) {
+            $headers['MX-Client-ID'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation readMerchant
      *
      * Read merchant
@@ -268,6 +793,297 @@ class MerchantsApi
             $resourcePath = str_replace(
                 '{' . 'merchant_guid' . '}',
                 ObjectSerializer::toPathValue($merchant_guid),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/vnd.mx.atrium.v1+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/vnd.mx.atrium.v1+json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('MX-API-Key');
+        if ($apiKey !== null) {
+            $headers['MX-API-Key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('MX-Client-ID');
+        if ($apiKey !== null) {
+            $headers['MX-Client-ID'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation readMerchantLocation
+     *
+     * Read merchant location
+     *
+     * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     * @param  string $merchant_location_guid The unique identifier for a &#x60;merchant_location&#x60;. (required)
+     *
+     * @throws \atrium\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \atrium\model\MerchantLocationResponseBody
+     */
+    public function readMerchantLocation($merchant_guid, $merchant_location_guid)
+    {
+        list($response) = $this->readMerchantLocationWithHttpInfo($merchant_guid, $merchant_location_guid);
+        return $response;
+    }
+
+    /**
+     * Operation readMerchantLocationWithHttpInfo
+     *
+     * Read merchant location
+     *
+     * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     * @param  string $merchant_location_guid The unique identifier for a &#x60;merchant_location&#x60;. (required)
+     *
+     * @throws \atrium\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \atrium\model\MerchantLocationResponseBody, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function readMerchantLocationWithHttpInfo($merchant_guid, $merchant_location_guid)
+    {
+        $returnType = '\atrium\model\MerchantLocationResponseBody';
+        $request = $this->readMerchantLocationRequest($merchant_guid, $merchant_location_guid);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\atrium\model\MerchantLocationResponseBody',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation readMerchantLocationAsync
+     *
+     * Read merchant location
+     *
+     * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     * @param  string $merchant_location_guid The unique identifier for a &#x60;merchant_location&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function readMerchantLocationAsync($merchant_guid, $merchant_location_guid)
+    {
+        return $this->readMerchantLocationAsyncWithHttpInfo($merchant_guid, $merchant_location_guid)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation readMerchantLocationAsyncWithHttpInfo
+     *
+     * Read merchant location
+     *
+     * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     * @param  string $merchant_location_guid The unique identifier for a &#x60;merchant_location&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function readMerchantLocationAsyncWithHttpInfo($merchant_guid, $merchant_location_guid)
+    {
+        $returnType = '\atrium\model\MerchantLocationResponseBody';
+        $request = $this->readMerchantLocationRequest($merchant_guid, $merchant_location_guid);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'readMerchantLocation'
+     *
+     * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     * @param  string $merchant_location_guid The unique identifier for a &#x60;merchant_location&#x60;. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function readMerchantLocationRequest($merchant_guid, $merchant_location_guid)
+    {
+        // verify the required parameter 'merchant_guid' is set
+        if ($merchant_guid === null || (is_array($merchant_guid) && count($merchant_guid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $merchant_guid when calling readMerchantLocation'
+            );
+        }
+        // verify the required parameter 'merchant_location_guid' is set
+        if ($merchant_location_guid === null || (is_array($merchant_location_guid) && count($merchant_location_guid) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $merchant_location_guid when calling readMerchantLocation'
+            );
+        }
+
+        $resourcePath = '/merchants/{merchant_guid}/merchant_locations/{merchant_location_guid}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($merchant_guid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'merchant_guid' . '}',
+                ObjectSerializer::toPathValue($merchant_guid),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($merchant_location_guid !== null) {
+            $resourcePath = str_replace(
+                '{' . 'merchant_location_guid' . '}',
+                ObjectSerializer::toPathValue($merchant_location_guid),
                 $resourcePath
             );
         }

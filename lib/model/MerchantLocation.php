@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountNumber
+ * MerchantLocation
  *
  * PHP version 5
  *
@@ -22,12 +22,12 @@ use \ArrayAccess;
 use \atrium\ObjectSerializer;
 
 /**
- * AccountNumber Class Doc Comment
+ * MerchantLocation Class Doc Comment
  *
  * @category Class
  * @package  atrium
  */
-class AccountNumber implements ModelInterface, ArrayAccess
+class MerchantLocation implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -36,7 +36,7 @@ class AccountNumber implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $mxModelName = 'AccountNumber';
+    protected static $mxModelName = 'MerchantLocation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -44,13 +44,16 @@ class AccountNumber implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'account_guid' => 'string',
-        'account_number' => 'string',
-        'institution_number' => 'string',
-        'member_guid' => 'string',
-        'routing_number' => 'string',
-        'transit_number' => 'string',
-        'user_guid' => 'string'
+        'city' => 'string',
+        'guid' => 'string',
+        'latitude' => 'float',
+        'longitude' => 'float',
+        'merchant_guid' => 'string',
+        'phone_number' => 'string',
+        'postal_code' => 'string',
+        'state' => 'string',
+        'store_number' => 'string',
+        'street_address' => 'string'
     ];
 
     /**
@@ -59,13 +62,16 @@ class AccountNumber implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxFormats = [
-        'account_guid' => null,
-        'account_number' => null,
-        'institution_number' => null,
-        'member_guid' => null,
-        'routing_number' => null,
-        'transit_number' => null,
-        'user_guid' => null
+        'city' => null,
+        'guid' => null,
+        'latitude' => null,
+        'longitude' => null,
+        'merchant_guid' => null,
+        'phone_number' => null,
+        'postal_code' => null,
+        'state' => null,
+        'store_number' => null,
+        'street_address' => null
     ];
 
     /**
@@ -95,13 +101,16 @@ class AccountNumber implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_guid' => 'account_guid',
-        'account_number' => 'account_number',
-        'institution_number' => 'institution_number',
-        'member_guid' => 'member_guid',
-        'routing_number' => 'routing_number',
-        'transit_number' => 'transit_number',
-        'user_guid' => 'user_guid'
+        'city' => 'city',
+        'guid' => 'guid',
+        'latitude' => 'latitude',
+        'longitude' => 'longitude',
+        'merchant_guid' => 'merchant_guid',
+        'phone_number' => 'phone_number',
+        'postal_code' => 'postal_code',
+        'state' => 'state',
+        'store_number' => 'store_number',
+        'street_address' => 'street_address'
     ];
 
     /**
@@ -110,13 +119,16 @@ class AccountNumber implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'account_guid' => 'setAccountGuid',
-        'account_number' => 'setAccountNumber',
-        'institution_number' => 'setInstitutionNumber',
-        'member_guid' => 'setMemberGuid',
-        'routing_number' => 'setRoutingNumber',
-        'transit_number' => 'setTransitNumber',
-        'user_guid' => 'setUserGuid'
+        'city' => 'setCity',
+        'guid' => 'setGuid',
+        'latitude' => 'setLatitude',
+        'longitude' => 'setLongitude',
+        'merchant_guid' => 'setMerchantGuid',
+        'phone_number' => 'setPhoneNumber',
+        'postal_code' => 'setPostalCode',
+        'state' => 'setState',
+        'store_number' => 'setStoreNumber',
+        'street_address' => 'setStreetAddress'
     ];
 
     /**
@@ -125,13 +137,16 @@ class AccountNumber implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'account_guid' => 'getAccountGuid',
-        'account_number' => 'getAccountNumber',
-        'institution_number' => 'getInstitutionNumber',
-        'member_guid' => 'getMemberGuid',
-        'routing_number' => 'getRoutingNumber',
-        'transit_number' => 'getTransitNumber',
-        'user_guid' => 'getUserGuid'
+        'city' => 'getCity',
+        'guid' => 'getGuid',
+        'latitude' => 'getLatitude',
+        'longitude' => 'getLongitude',
+        'merchant_guid' => 'getMerchantGuid',
+        'phone_number' => 'getPhoneNumber',
+        'postal_code' => 'getPostalCode',
+        'state' => 'getState',
+        'store_number' => 'getStoreNumber',
+        'street_address' => 'getStreetAddress'
     ];
 
     /**
@@ -194,13 +209,16 @@ class AccountNumber implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_guid'] = isset($data['account_guid']) ? $data['account_guid'] : null;
-        $this->container['account_number'] = isset($data['account_number']) ? $data['account_number'] : null;
-        $this->container['institution_number'] = isset($data['institution_number']) ? $data['institution_number'] : null;
-        $this->container['member_guid'] = isset($data['member_guid']) ? $data['member_guid'] : null;
-        $this->container['routing_number'] = isset($data['routing_number']) ? $data['routing_number'] : null;
-        $this->container['transit_number'] = isset($data['transit_number']) ? $data['transit_number'] : null;
-        $this->container['user_guid'] = isset($data['user_guid']) ? $data['user_guid'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
+        $this->container['latitude'] = isset($data['latitude']) ? $data['latitude'] : null;
+        $this->container['longitude'] = isset($data['longitude']) ? $data['longitude'] : null;
+        $this->container['merchant_guid'] = isset($data['merchant_guid']) ? $data['merchant_guid'] : null;
+        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['store_number'] = isset($data['store_number']) ? $data['store_number'] : null;
+        $this->container['street_address'] = isset($data['street_address']) ? $data['street_address'] : null;
     }
 
     /**
@@ -228,169 +246,241 @@ class AccountNumber implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets account_guid
+     * Gets city
      *
      * @return string
      */
-    public function getAccountGuid()
+    public function getCity()
     {
-        return $this->container['account_guid'];
+        return $this->container['city'];
     }
 
     /**
-     * Sets account_guid
+     * Sets city
      *
-     * @param string $account_guid account_guid
+     * @param string $city city
      *
      * @return $this
      */
-    public function setAccountGuid($account_guid)
+    public function setCity($city)
     {
-        $this->container['account_guid'] = $account_guid;
+        $this->container['city'] = $city;
 
         return $this;
     }
 
     /**
-     * Gets account_number
+     * Gets guid
      *
      * @return string
      */
-    public function getAccountNumber()
+    public function getGuid()
     {
-        return $this->container['account_number'];
+        return $this->container['guid'];
     }
 
     /**
-     * Sets account_number
+     * Sets guid
      *
-     * @param string $account_number account_number
+     * @param string $guid guid
      *
      * @return $this
      */
-    public function setAccountNumber($account_number)
+    public function setGuid($guid)
     {
-        $this->container['account_number'] = $account_number;
+        $this->container['guid'] = $guid;
 
         return $this;
     }
 
     /**
-     * Gets institution_number
+     * Gets latitude
      *
-     * @return string
+     * @return float
      */
-    public function getInstitutionNumber()
+    public function getLatitude()
     {
-        return $this->container['institution_number'];
+        return $this->container['latitude'];
     }
 
     /**
-     * Sets institution_number
+     * Sets latitude
      *
-     * @param string $institution_number institution_number
+     * @param float $latitude latitude
      *
      * @return $this
      */
-    public function setInstitutionNumber($institution_number)
+    public function setLatitude($latitude)
     {
-        $this->container['institution_number'] = $institution_number;
+        $this->container['latitude'] = $latitude;
 
         return $this;
     }
 
     /**
-     * Gets member_guid
+     * Gets longitude
      *
-     * @return string
+     * @return float
      */
-    public function getMemberGuid()
+    public function getLongitude()
     {
-        return $this->container['member_guid'];
+        return $this->container['longitude'];
     }
 
     /**
-     * Sets member_guid
+     * Sets longitude
      *
-     * @param string $member_guid member_guid
+     * @param float $longitude longitude
      *
      * @return $this
      */
-    public function setMemberGuid($member_guid)
+    public function setLongitude($longitude)
     {
-        $this->container['member_guid'] = $member_guid;
+        $this->container['longitude'] = $longitude;
 
         return $this;
     }
 
     /**
-     * Gets routing_number
+     * Gets merchant_guid
      *
      * @return string
      */
-    public function getRoutingNumber()
+    public function getMerchantGuid()
     {
-        return $this->container['routing_number'];
+        return $this->container['merchant_guid'];
     }
 
     /**
-     * Sets routing_number
+     * Sets merchant_guid
      *
-     * @param string $routing_number routing_number
+     * @param string $merchant_guid merchant_guid
      *
      * @return $this
      */
-    public function setRoutingNumber($routing_number)
+    public function setMerchantGuid($merchant_guid)
     {
-        $this->container['routing_number'] = $routing_number;
+        $this->container['merchant_guid'] = $merchant_guid;
 
         return $this;
     }
 
     /**
-     * Gets transit_number
+     * Gets phone_number
      *
      * @return string
      */
-    public function getTransitNumber()
+    public function getPhoneNumber()
     {
-        return $this->container['transit_number'];
+        return $this->container['phone_number'];
     }
 
     /**
-     * Sets transit_number
+     * Sets phone_number
      *
-     * @param string $transit_number transit_number
+     * @param string $phone_number phone_number
      *
      * @return $this
      */
-    public function setTransitNumber($transit_number)
+    public function setPhoneNumber($phone_number)
     {
-        $this->container['transit_number'] = $transit_number;
+        $this->container['phone_number'] = $phone_number;
 
         return $this;
     }
 
     /**
-     * Gets user_guid
+     * Gets postal_code
      *
      * @return string
      */
-    public function getUserGuid()
+    public function getPostalCode()
     {
-        return $this->container['user_guid'];
+        return $this->container['postal_code'];
     }
 
     /**
-     * Sets user_guid
+     * Sets postal_code
      *
-     * @param string $user_guid user_guid
+     * @param string $postal_code postal_code
      *
      * @return $this
      */
-    public function setUserGuid($user_guid)
+    public function setPostalCode($postal_code)
     {
-        $this->container['user_guid'] = $user_guid;
+        $this->container['postal_code'] = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param string $state state
+     *
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets store_number
+     *
+     * @return string
+     */
+    public function getStoreNumber()
+    {
+        return $this->container['store_number'];
+    }
+
+    /**
+     * Sets store_number
+     *
+     * @param string $store_number store_number
+     *
+     * @return $this
+     */
+    public function setStoreNumber($store_number)
+    {
+        $this->container['store_number'] = $store_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets street_address
+     *
+     * @return string
+     */
+    public function getStreetAddress()
+    {
+        return $this->container['street_address'];
+    }
+
+    /**
+     * Sets street_address
+     *
+     * @param string $street_address street_address
+     *
+     * @return $this
+     */
+    public function setStreetAddress($street_address)
+    {
+        $this->container['street_address'] = $street_address;
 
         return $this;
     }

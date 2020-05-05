@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountNumberTest
+ * MerchantLocationResponseBodyTest
  *
  * PHP version 5
  *
@@ -19,13 +19,13 @@
 namespace atrium;
 
 /**
- * AccountNumberTest Class Doc Comment
+ * MerchantLocationResponseBodyTest Class Doc Comment
  *
  * @category    Class
- * @description AccountNumber
+ * @description MerchantLocationResponseBody
  * @package     atrium
  */
-class AccountNumberTest extends \PHPUnit_Framework_TestCase
+class MerchantLocationResponseBodyTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -57,58 +57,16 @@ class AccountNumberTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "AccountNumber"
+     * Test "MerchantLocationResponseBody"
      */
-    public function testAccountNumber()
+    public function testMerchantLocationResponseBody()
     {
     }
 
     /**
-     * Test attribute "account_guid"
+     * Test attribute "merchant_location"
      */
-    public function testPropertyAccountGuid()
-    {
-    }
-
-    /**
-     * Test attribute "account_number"
-     */
-    public function testPropertyAccountNumber()
-    {
-    }
-
-    /**
-     * Test attribute "institution_number"
-     */
-    public function testPropertyInstitutionNumber()
-    {
-    }
-
-    /**
-     * Test attribute "member_guid"
-     */
-    public function testPropertyMemberGuid()
-    {
-    }
-
-    /**
-     * Test attribute "routing_number"
-     */
-    public function testPropertyRoutingNumber()
-    {
-    }
-
-    /**
-     * Test attribute "transit_number"
-     */
-    public function testPropertyTransitNumber()
-    {
-    }
-
-    /**
-     * Test attribute "user_guid"
-     */
-    public function testPropertyUserGuid()
+    public function testPropertyMerchantLocation()
     {
     }
 }
