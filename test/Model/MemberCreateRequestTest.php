@@ -78,6 +78,13 @@ class MemberCreateRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "is_oauth"
+     */
+    public function testPropertyIsOauth()
+    {
+    }
+
+    /**
      * Test attribute "institution_code"
      */
     public function testPropertyInstitutionCode()
@@ -92,9 +99,23 @@ class MemberCreateRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "referral_source"
+     */
+    public function testPropertyReferralSource()
+    {
+    }
+
+    /**
      * Test attribute "skip_aggregation"
      */
     public function testPropertySkipAggregation()
+    {
+    }
+
+    /**
+     * Test attribute "ui_message_webview_url_scheme"
+     */
+    public function testPropertyUiMessageWebviewUrlScheme()
     {
     }
 }
