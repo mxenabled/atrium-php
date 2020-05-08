@@ -50,6 +50,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'disable_institution_search' => 'bool',
         'mode' => 'string',
         'ui_message_version' => 'float',
+        'ui_message_webview_url_scheme' => 'string',
         'update_credentials' => 'bool'
     ];
 
@@ -65,6 +66,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'disable_institution_search' => null,
         'mode' => null,
         'ui_message_version' => null,
+        'ui_message_webview_url_scheme' => null,
         'update_credentials' => null
     ];
 
@@ -101,6 +103,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'disable_institution_search' => 'disable_institution_search',
         'mode' => 'mode',
         'ui_message_version' => 'ui_message_version',
+        'ui_message_webview_url_scheme' => 'ui_message_webview_url_scheme',
         'update_credentials' => 'update_credentials'
     ];
 
@@ -116,6 +119,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'disable_institution_search' => 'setDisableInstitutionSearch',
         'mode' => 'setMode',
         'ui_message_version' => 'setUiMessageVersion',
+        'ui_message_webview_url_scheme' => 'setUiMessageWebviewUrlScheme',
         'update_credentials' => 'setUpdateCredentials'
     ];
 
@@ -131,6 +135,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         'disable_institution_search' => 'getDisableInstitutionSearch',
         'mode' => 'getMode',
         'ui_message_version' => 'getUiMessageVersion',
+        'ui_message_webview_url_scheme' => 'getUiMessageWebviewUrlScheme',
         'update_credentials' => 'getUpdateCredentials'
     ];
 
@@ -200,6 +205,7 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
         $this->container['disable_institution_search'] = isset($data['disable_institution_search']) ? $data['disable_institution_search'] : null;
         $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
         $this->container['ui_message_version'] = isset($data['ui_message_version']) ? $data['ui_message_version'] : null;
+        $this->container['ui_message_webview_url_scheme'] = isset($data['ui_message_webview_url_scheme']) ? $data['ui_message_webview_url_scheme'] : null;
         $this->container['update_credentials'] = isset($data['update_credentials']) ? $data['update_credentials'] : null;
     }
 
@@ -367,6 +373,30 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
     public function setUiMessageVersion($ui_message_version)
     {
         $this->container['ui_message_version'] = $ui_message_version;
+
+        return $this;
+    }
+
+    /**
+     * Gets ui_message_webview_url_scheme
+     *
+     * @return string
+     */
+    public function getUiMessageWebviewUrlScheme()
+    {
+        return $this->container['ui_message_webview_url_scheme'];
+    }
+
+    /**
+     * Sets ui_message_webview_url_scheme
+     *
+     * @param string $ui_message_webview_url_scheme ui_message_webview_url_scheme
+     *
+     * @return $this
+     */
+    public function setUiMessageWebviewUrlScheme($ui_message_webview_url_scheme)
+    {
+        $this->container['ui_message_webview_url_scheme'] = $ui_message_webview_url_scheme;
 
         return $this;
     }

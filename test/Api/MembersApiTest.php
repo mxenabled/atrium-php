@@ -179,6 +179,16 @@ class MembersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for readOAuthWindowURI
+     *
+     * Read OAuth Window URI.
+     *
+     */
+    public function testReadOAuthWindowURI()
+    {
+    }
+
+    /**
      * Test case for resumeMember
      *
      * Resume aggregation from MFA.

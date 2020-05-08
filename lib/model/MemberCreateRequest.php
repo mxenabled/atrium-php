@@ -46,9 +46,12 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     protected static $mxTypes = [
         'credentials' => '\atrium\model\CredentialRequest[]',
         'identifier' => 'string',
+        'is_oauth' => 'bool',
         'institution_code' => 'string',
         'metadata' => 'string',
-        'skip_aggregation' => 'bool'
+        'referral_source' => 'string',
+        'skip_aggregation' => 'bool',
+        'ui_message_webview_url_scheme' => 'string'
     ];
 
     /**
@@ -59,9 +62,12 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     protected static $mxFormats = [
         'credentials' => null,
         'identifier' => null,
+        'is_oauth' => null,
         'institution_code' => null,
         'metadata' => null,
-        'skip_aggregation' => null
+        'referral_source' => null,
+        'skip_aggregation' => null,
+        'ui_message_webview_url_scheme' => null
     ];
 
     /**
@@ -93,9 +99,12 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'credentials' => 'credentials',
         'identifier' => 'identifier',
+        'is_oauth' => 'is_oauth',
         'institution_code' => 'institution_code',
         'metadata' => 'metadata',
-        'skip_aggregation' => 'skip_aggregation'
+        'referral_source' => 'referral_source',
+        'skip_aggregation' => 'skip_aggregation',
+        'ui_message_webview_url_scheme' => 'ui_message_webview_url_scheme'
     ];
 
     /**
@@ -106,9 +115,12 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     protected static $setters = [
         'credentials' => 'setCredentials',
         'identifier' => 'setIdentifier',
+        'is_oauth' => 'setIsOauth',
         'institution_code' => 'setInstitutionCode',
         'metadata' => 'setMetadata',
-        'skip_aggregation' => 'setSkipAggregation'
+        'referral_source' => 'setReferralSource',
+        'skip_aggregation' => 'setSkipAggregation',
+        'ui_message_webview_url_scheme' => 'setUiMessageWebviewUrlScheme'
     ];
 
     /**
@@ -119,9 +131,12 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     protected static $getters = [
         'credentials' => 'getCredentials',
         'identifier' => 'getIdentifier',
+        'is_oauth' => 'getIsOauth',
         'institution_code' => 'getInstitutionCode',
         'metadata' => 'getMetadata',
-        'skip_aggregation' => 'getSkipAggregation'
+        'referral_source' => 'getReferralSource',
+        'skip_aggregation' => 'getSkipAggregation',
+        'ui_message_webview_url_scheme' => 'getUiMessageWebviewUrlScheme'
     ];
 
     /**
@@ -186,9 +201,12 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     {
         $this->container['credentials'] = isset($data['credentials']) ? $data['credentials'] : null;
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
+        $this->container['is_oauth'] = isset($data['is_oauth']) ? $data['is_oauth'] : null;
         $this->container['institution_code'] = isset($data['institution_code']) ? $data['institution_code'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
+        $this->container['referral_source'] = isset($data['referral_source']) ? $data['referral_source'] : null;
         $this->container['skip_aggregation'] = isset($data['skip_aggregation']) ? $data['skip_aggregation'] : null;
+        $this->container['ui_message_webview_url_scheme'] = isset($data['ui_message_webview_url_scheme']) ? $data['ui_message_webview_url_scheme'] : null;
     }
 
     /**
@@ -200,9 +218,6 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['credentials'] === null) {
-            $invalidProperties[] = "'credentials' can't be null";
-        }
         if ($this->container['institution_code'] === null) {
             $invalidProperties[] = "'institution_code' can't be null";
         }
@@ -270,6 +285,30 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets is_oauth
+     *
+     * @return bool
+     */
+    public function getIsOauth()
+    {
+        return $this->container['is_oauth'];
+    }
+
+    /**
+     * Sets is_oauth
+     *
+     * @param bool $is_oauth is_oauth
+     *
+     * @return $this
+     */
+    public function setIsOauth($is_oauth)
+    {
+        $this->container['is_oauth'] = $is_oauth;
+
+        return $this;
+    }
+
+    /**
      * Gets institution_code
      *
      * @return string
@@ -318,6 +357,30 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets referral_source
+     *
+     * @return string
+     */
+    public function getReferralSource()
+    {
+        return $this->container['referral_source'];
+    }
+
+    /**
+     * Sets referral_source
+     *
+     * @param string $referral_source referral_source
+     *
+     * @return $this
+     */
+    public function setReferralSource($referral_source)
+    {
+        $this->container['referral_source'] = $referral_source;
+
+        return $this;
+    }
+
+    /**
      * Gets skip_aggregation
      *
      * @return bool
@@ -337,6 +400,30 @@ class MemberCreateRequest implements ModelInterface, ArrayAccess
     public function setSkipAggregation($skip_aggregation)
     {
         $this->container['skip_aggregation'] = $skip_aggregation;
+
+        return $this;
+    }
+
+    /**
+     * Gets ui_message_webview_url_scheme
+     *
+     * @return string
+     */
+    public function getUiMessageWebviewUrlScheme()
+    {
+        return $this->container['ui_message_webview_url_scheme'];
+    }
+
+    /**
+     * Sets ui_message_webview_url_scheme
+     *
+     * @param string $ui_message_webview_url_scheme ui_message_webview_url_scheme
+     *
+     * @return $this
+     */
+    public function setUiMessageWebviewUrlScheme($ui_message_webview_url_scheme)
+    {
+        $this->container['ui_message_webview_url_scheme'] = $ui_message_webview_url_scheme;
 
         return $this;
     }

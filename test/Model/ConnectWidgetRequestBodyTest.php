@@ -106,6 +106,13 @@ class ConnectWidgetRequestBodyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "ui_message_webview_url_scheme"
+     */
+    public function testPropertyUiMessageWebviewUrlScheme()
+    {
+    }
+
+    /**
      * Test attribute "update_credentials"
      */
     public function testPropertyUpdateCredentials()

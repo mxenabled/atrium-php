@@ -52,6 +52,7 @@ class Member implements ModelInterface, ArrayAccess
         'is_being_aggregated' => 'bool',
         'metadata' => 'string',
         'name' => 'string',
+        'oauth_window_uri' => 'string',
         'status' => 'string',
         'successfully_aggregated_at' => 'string',
         'user_guid' => 'string'
@@ -71,6 +72,7 @@ class Member implements ModelInterface, ArrayAccess
         'is_being_aggregated' => null,
         'metadata' => null,
         'name' => null,
+        'oauth_window_uri' => null,
         'status' => null,
         'successfully_aggregated_at' => null,
         'user_guid' => null
@@ -111,6 +113,7 @@ class Member implements ModelInterface, ArrayAccess
         'is_being_aggregated' => 'is_being_aggregated',
         'metadata' => 'metadata',
         'name' => 'name',
+        'oauth_window_uri' => 'oauth_window_uri',
         'status' => 'status',
         'successfully_aggregated_at' => 'successfully_aggregated_at',
         'user_guid' => 'user_guid'
@@ -130,6 +133,7 @@ class Member implements ModelInterface, ArrayAccess
         'is_being_aggregated' => 'setIsBeingAggregated',
         'metadata' => 'setMetadata',
         'name' => 'setName',
+        'oauth_window_uri' => 'setOauthWindowUri',
         'status' => 'setStatus',
         'successfully_aggregated_at' => 'setSuccessfullyAggregatedAt',
         'user_guid' => 'setUserGuid'
@@ -149,6 +153,7 @@ class Member implements ModelInterface, ArrayAccess
         'is_being_aggregated' => 'getIsBeingAggregated',
         'metadata' => 'getMetadata',
         'name' => 'getName',
+        'oauth_window_uri' => 'getOauthWindowUri',
         'status' => 'getStatus',
         'successfully_aggregated_at' => 'getSuccessfullyAggregatedAt',
         'user_guid' => 'getUserGuid'
@@ -222,6 +227,7 @@ class Member implements ModelInterface, ArrayAccess
         $this->container['is_being_aggregated'] = isset($data['is_being_aggregated']) ? $data['is_being_aggregated'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['oauth_window_uri'] = isset($data['oauth_window_uri']) ? $data['oauth_window_uri'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['successfully_aggregated_at'] = isset($data['successfully_aggregated_at']) ? $data['successfully_aggregated_at'] : null;
         $this->container['user_guid'] = isset($data['user_guid']) ? $data['user_guid'] : null;
@@ -439,6 +445,30 @@ class Member implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets oauth_window_uri
+     *
+     * @return string
+     */
+    public function getOauthWindowUri()
+    {
+        return $this->container['oauth_window_uri'];
+    }
+
+    /**
+     * Sets oauth_window_uri
+     *
+     * @param string $oauth_window_uri oauth_window_uri
+     *
+     * @return $this
+     */
+    public function setOauthWindowUri($oauth_window_uri)
+    {
+        $this->container['oauth_window_uri'] = $oauth_window_uri;
 
         return $this;
     }

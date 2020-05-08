@@ -120,6 +120,13 @@ class MemberTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "oauth_window_uri"
+     */
+    public function testPropertyOauthWindowUri()
+    {
+    }
+
+    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()

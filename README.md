@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**listMembers**](docs/Api/MembersApi.md#listmembers) | **GET** /users/{user_guid}/members | List members
 *MembersApi* | [**readMember**](docs/Api/MembersApi.md#readmember) | **GET** /users/{user_guid}/members/{member_guid} | Read member
 *MembersApi* | [**readMemberStatus**](docs/Api/MembersApi.md#readmemberstatus) | **GET** /users/{user_guid}/members/{member_guid}/status | Read member connection status
+*MembersApi* | [**readOAuthWindowURI**](docs/Api/MembersApi.md#readoauthwindowuri) | **GET** /users/{user_guid}/members/{member_guid}/oauth_window_uri | Read OAuth Window URI
 *MembersApi* | [**resumeMember**](docs/Api/MembersApi.md#resumemember) | **PUT** /users/{user_guid}/members/{member_guid}/resume | Resume aggregation from MFA
 *MembersApi* | [**updateMember**](docs/Api/MembersApi.md#updatemember) | **PUT** /users/{user_guid}/members/{member_guid} | Update member
 *MerchantsApi* | [**listMerchantLocations**](docs/Api/MerchantsApi.md#listmerchantlocations) | **GET** /merchants/{merchant_guid}/merchant_locations | List merchant locations
