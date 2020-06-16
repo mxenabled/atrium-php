@@ -64,9 +64,9 @@ class MerchantsResponseBodyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "merchant"
+     * Test attribute "merchants"
      */
-    public function testPropertyMerchant()
+    public function testPropertyMerchants()
     {
     }
 
