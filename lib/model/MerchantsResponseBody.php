@@ -44,7 +44,7 @@ class MerchantsResponseBody implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxTypes = [
-        'merchant' => '\atrium\model\Merchant[]',
+        'merchants' => '\atrium\model\Merchant[]',
         'pagination' => '\atrium\model\Pagination'
     ];
 
@@ -54,7 +54,7 @@ class MerchantsResponseBody implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $mxFormats = [
-        'merchant' => null,
+        'merchants' => null,
         'pagination' => null
     ];
 
@@ -85,7 +85,7 @@ class MerchantsResponseBody implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'merchant' => 'merchant',
+        'merchants' => 'merchants',
         'pagination' => 'pagination'
     ];
 
@@ -95,7 +95,7 @@ class MerchantsResponseBody implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'merchant' => 'setMerchant',
+        'merchants' => 'setMerchants',
         'pagination' => 'setPagination'
     ];
 
@@ -105,7 +105,7 @@ class MerchantsResponseBody implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'merchant' => 'getMerchant',
+        'merchants' => 'getMerchants',
         'pagination' => 'getPagination'
     ];
 
@@ -169,7 +169,7 @@ class MerchantsResponseBody implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['merchant'] = isset($data['merchant']) ? $data['merchant'] : null;
+        $this->container['merchants'] = isset($data['merchants']) ? $data['merchants'] : null;
         $this->container['pagination'] = isset($data['pagination']) ? $data['pagination'] : null;
     }
 
@@ -198,25 +198,25 @@ class MerchantsResponseBody implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets merchant
+     * Gets merchants
      *
      * @return \atrium\model\Merchant[]
      */
-    public function getMerchant()
+    public function getMerchants()
     {
-        return $this->container['merchant'];
+        return $this->container['merchants'];
     }
 
     /**
-     * Sets merchant
+     * Sets merchants
      *
-     * @param \atrium\model\Merchant[] $merchant merchant
+     * @param \atrium\model\Merchant[] $merchants merchants
      *
      * @return $this
      */
-    public function setMerchant($merchant)
+    public function setMerchants($merchants)
     {
-        $this->container['merchant'] = $merchant;
+        $this->container['merchants'] = $merchants;
 
         return $this;
     }
