@@ -28,11 +28,9 @@ Then run `composer install`
 
 ### Manual Installation
 
-Download the files and include `autoload.php`:
+Download the files and run `composer install`.
 
-```php
-require_once('/path/to/MXClient-php/vendor/autoload.php');
-```
+The `composer.lock` and `/vendor` directory including `autoload.php` will be generated.
 
 ## Example Usage
 
