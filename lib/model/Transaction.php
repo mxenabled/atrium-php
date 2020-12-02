@@ -62,6 +62,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'is_international' => 'bool',
         'is_overdraft_fee' => 'bool',
         'is_payroll_advance' => 'bool',
+        'is_subscription' => 'bool',
         'latitude' => 'float',
         'longitude' => 'float',
         'member_guid' => 'string',
@@ -102,6 +103,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'is_international' => null,
         'is_overdraft_fee' => null,
         'is_payroll_advance' => null,
+        'is_subscription' => null,
         'latitude' => null,
         'longitude' => null,
         'member_guid' => null,
@@ -163,6 +165,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'is_international' => 'is_international',
         'is_overdraft_fee' => 'is_overdraft_fee',
         'is_payroll_advance' => 'is_payroll_advance',
+        'is_subscription' => 'is_subscription',
         'latitude' => 'latitude',
         'longitude' => 'longitude',
         'member_guid' => 'member_guid',
@@ -203,6 +206,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'is_international' => 'setIsInternational',
         'is_overdraft_fee' => 'setIsOverdraftFee',
         'is_payroll_advance' => 'setIsPayrollAdvance',
+        'is_subscription' => 'setIsSubscription',
         'latitude' => 'setLatitude',
         'longitude' => 'setLongitude',
         'member_guid' => 'setMemberGuid',
@@ -243,6 +247,7 @@ class Transaction implements ModelInterface, ArrayAccess
         'is_international' => 'getIsInternational',
         'is_overdraft_fee' => 'getIsOverdraftFee',
         'is_payroll_advance' => 'getIsPayrollAdvance',
+        'is_subscription' => 'getIsSubscription',
         'latitude' => 'getLatitude',
         'longitude' => 'getLongitude',
         'member_guid' => 'getMemberGuid',
@@ -337,6 +342,7 @@ class Transaction implements ModelInterface, ArrayAccess
         $this->container['is_international'] = isset($data['is_international']) ? $data['is_international'] : null;
         $this->container['is_overdraft_fee'] = isset($data['is_overdraft_fee']) ? $data['is_overdraft_fee'] : null;
         $this->container['is_payroll_advance'] = isset($data['is_payroll_advance']) ? $data['is_payroll_advance'] : null;
+        $this->container['is_subscription'] = isset($data['is_subscription']) ? $data['is_subscription'] : null;
         $this->container['latitude'] = isset($data['latitude']) ? $data['latitude'] : null;
         $this->container['longitude'] = isset($data['longitude']) ? $data['longitude'] : null;
         $this->container['member_guid'] = isset($data['member_guid']) ? $data['member_guid'] : null;
@@ -805,6 +811,30 @@ class Transaction implements ModelInterface, ArrayAccess
     public function setIsPayrollAdvance($is_payroll_advance)
     {
         $this->container['is_payroll_advance'] = $is_payroll_advance;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_subscription
+     *
+     * @return bool
+     */
+    public function getIsSubscription()
+    {
+        return $this->container['is_subscription'];
+    }
+
+    /**
+     * Sets is_subscription
+     *
+     * @param bool $is_subscription is_subscription
+     *
+     * @return $this
+     */
+    public function setIsSubscription($is_subscription)
+    {
+        $this->container['is_subscription'] = $is_subscription;
 
         return $this;
     }

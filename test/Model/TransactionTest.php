@@ -190,6 +190,13 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "is_subscription"
+     */
+    public function testPropertyIsSubscription()
+    {
+    }
+
+    /**
      * Test attribute "latitude"
      */
     public function testPropertyLatitude()
