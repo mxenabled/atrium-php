@@ -59,6 +59,7 @@ class Account implements ModelInterface, ArrayAccess
         'death_benefit' => 'float',
         'guid' => 'string',
         'holdings_value' => 'float',
+        'insured_name' => 'string',
         'institution_code' => 'string',
         'interest_rate' => 'float',
         'is_closed' => 'bool',
@@ -72,6 +73,8 @@ class Account implements ModelInterface, ArrayAccess
         'original_balance' => 'float',
         'payment_due_at' => 'string',
         'payoff_balance' => 'float',
+        'pay_out_amount' => 'float',
+        'premium_amount' => 'float',
         'started_on' => 'string',
         'subtype' => 'string',
         'total_account_value' => 'float',
@@ -101,6 +104,7 @@ class Account implements ModelInterface, ArrayAccess
         'death_benefit' => null,
         'guid' => null,
         'holdings_value' => null,
+        'insured_name' => null,
         'institution_code' => null,
         'interest_rate' => null,
         'is_closed' => null,
@@ -114,6 +118,8 @@ class Account implements ModelInterface, ArrayAccess
         'original_balance' => null,
         'payment_due_at' => null,
         'payoff_balance' => null,
+        'pay_out_amount' => null,
+        'premium_amount' => null,
         'started_on' => null,
         'subtype' => null,
         'total_account_value' => null,
@@ -164,6 +170,7 @@ class Account implements ModelInterface, ArrayAccess
         'death_benefit' => 'death_benefit',
         'guid' => 'guid',
         'holdings_value' => 'holdings_value',
+        'insured_name' => 'insured_name',
         'institution_code' => 'institution_code',
         'interest_rate' => 'interest_rate',
         'is_closed' => 'is_closed',
@@ -177,6 +184,8 @@ class Account implements ModelInterface, ArrayAccess
         'original_balance' => 'original_balance',
         'payment_due_at' => 'payment_due_at',
         'payoff_balance' => 'payoff_balance',
+        'pay_out_amount' => 'pay_out_amount',
+        'premium_amount' => 'premium_amount',
         'started_on' => 'started_on',
         'subtype' => 'subtype',
         'total_account_value' => 'total_account_value',
@@ -206,6 +215,7 @@ class Account implements ModelInterface, ArrayAccess
         'death_benefit' => 'setDeathBenefit',
         'guid' => 'setGuid',
         'holdings_value' => 'setHoldingsValue',
+        'insured_name' => 'setInsuredName',
         'institution_code' => 'setInstitutionCode',
         'interest_rate' => 'setInterestRate',
         'is_closed' => 'setIsClosed',
@@ -219,6 +229,8 @@ class Account implements ModelInterface, ArrayAccess
         'original_balance' => 'setOriginalBalance',
         'payment_due_at' => 'setPaymentDueAt',
         'payoff_balance' => 'setPayoffBalance',
+        'pay_out_amount' => 'setPayOutAmount',
+        'premium_amount' => 'setPremiumAmount',
         'started_on' => 'setStartedOn',
         'subtype' => 'setSubtype',
         'total_account_value' => 'setTotalAccountValue',
@@ -248,6 +260,7 @@ class Account implements ModelInterface, ArrayAccess
         'death_benefit' => 'getDeathBenefit',
         'guid' => 'getGuid',
         'holdings_value' => 'getHoldingsValue',
+        'insured_name' => 'getInsuredName',
         'institution_code' => 'getInstitutionCode',
         'interest_rate' => 'getInterestRate',
         'is_closed' => 'getIsClosed',
@@ -261,6 +274,8 @@ class Account implements ModelInterface, ArrayAccess
         'original_balance' => 'getOriginalBalance',
         'payment_due_at' => 'getPaymentDueAt',
         'payoff_balance' => 'getPayoffBalance',
+        'pay_out_amount' => 'getPayOutAmount',
+        'premium_amount' => 'getPremiumAmount',
         'started_on' => 'getStartedOn',
         'subtype' => 'getSubtype',
         'total_account_value' => 'getTotalAccountValue',
@@ -344,6 +359,7 @@ class Account implements ModelInterface, ArrayAccess
         $this->container['death_benefit'] = isset($data['death_benefit']) ? $data['death_benefit'] : null;
         $this->container['guid'] = isset($data['guid']) ? $data['guid'] : null;
         $this->container['holdings_value'] = isset($data['holdings_value']) ? $data['holdings_value'] : null;
+        $this->container['insured_name'] = isset($data['insured_name']) ? $data['insured_name'] : null;
         $this->container['institution_code'] = isset($data['institution_code']) ? $data['institution_code'] : null;
         $this->container['interest_rate'] = isset($data['interest_rate']) ? $data['interest_rate'] : null;
         $this->container['is_closed'] = isset($data['is_closed']) ? $data['is_closed'] : null;
@@ -357,6 +373,8 @@ class Account implements ModelInterface, ArrayAccess
         $this->container['original_balance'] = isset($data['original_balance']) ? $data['original_balance'] : null;
         $this->container['payment_due_at'] = isset($data['payment_due_at']) ? $data['payment_due_at'] : null;
         $this->container['payoff_balance'] = isset($data['payoff_balance']) ? $data['payoff_balance'] : null;
+        $this->container['pay_out_amount'] = isset($data['pay_out_amount']) ? $data['pay_out_amount'] : null;
+        $this->container['premium_amount'] = isset($data['premium_amount']) ? $data['premium_amount'] : null;
         $this->container['started_on'] = isset($data['started_on']) ? $data['started_on'] : null;
         $this->container['subtype'] = isset($data['subtype']) ? $data['subtype'] : null;
         $this->container['total_account_value'] = isset($data['total_account_value']) ? $data['total_account_value'] : null;
@@ -750,6 +768,30 @@ class Account implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets insured_name
+     *
+     * @return string
+     */
+    public function getInsuredName()
+    {
+        return $this->container['insured_name'];
+    }
+
+    /**
+     * Sets insured_name
+     *
+     * @param string $insured_name insured_name
+     *
+     * @return $this
+     */
+    public function setInsuredName($insured_name)
+    {
+        $this->container['insured_name'] = $insured_name;
+
+        return $this;
+    }
+
+    /**
      * Gets institution_code
      *
      * @return string
@@ -1057,6 +1099,54 @@ class Account implements ModelInterface, ArrayAccess
     public function setPayoffBalance($payoff_balance)
     {
         $this->container['payoff_balance'] = $payoff_balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets pay_out_amount
+     *
+     * @return float
+     */
+    public function getPayOutAmount()
+    {
+        return $this->container['pay_out_amount'];
+    }
+
+    /**
+     * Sets pay_out_amount
+     *
+     * @param float $pay_out_amount pay_out_amount
+     *
+     * @return $this
+     */
+    public function setPayOutAmount($pay_out_amount)
+    {
+        $this->container['pay_out_amount'] = $pay_out_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets premium_amount
+     *
+     * @return float
+     */
+    public function getPremiumAmount()
+    {
+        return $this->container['premium_amount'];
+    }
+
+    /**
+     * Sets premium_amount
+     *
+     * @param float $premium_amount premium_amount
+     *
+     * @return $this
+     */
+    public function setPremiumAmount($premium_amount)
+    {
+        $this->container['premium_amount'] = $premium_amount;
 
         return $this;
     }

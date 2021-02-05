@@ -45,13 +45,16 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
       */
     protected static $mxTypes = [
         'is_mobile_webview' => 'bool',
+        'color_scheme' => 'string',
         'current_institution_code' => 'string',
         'current_member_guid' => 'string',
         'disable_institution_search' => 'bool',
+        'include_transactions' => 'bool',
         'mode' => 'string',
         'ui_message_version' => 'float',
         'ui_message_webview_url_scheme' => 'string',
-        'update_credentials' => 'bool'
+        'update_credentials' => 'bool',
+        'wait_for_full_aggregation' => 'bool'
     ];
 
     /**
@@ -61,13 +64,16 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
       */
     protected static $mxFormats = [
         'is_mobile_webview' => null,
+        'color_scheme' => null,
         'current_institution_code' => null,
         'current_member_guid' => null,
         'disable_institution_search' => null,
+        'include_transactions' => null,
         'mode' => null,
         'ui_message_version' => null,
         'ui_message_webview_url_scheme' => null,
-        'update_credentials' => null
+        'update_credentials' => null,
+        'wait_for_full_aggregation' => null
     ];
 
     /**
@@ -98,13 +104,16 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'is_mobile_webview' => 'is_mobile_webview',
+        'color_scheme' => 'color_scheme',
         'current_institution_code' => 'current_institution_code',
         'current_member_guid' => 'current_member_guid',
         'disable_institution_search' => 'disable_institution_search',
+        'include_transactions' => 'include_transactions',
         'mode' => 'mode',
         'ui_message_version' => 'ui_message_version',
         'ui_message_webview_url_scheme' => 'ui_message_webview_url_scheme',
-        'update_credentials' => 'update_credentials'
+        'update_credentials' => 'update_credentials',
+        'wait_for_full_aggregation' => 'wait_for_full_aggregation'
     ];
 
     /**
@@ -114,13 +123,16 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'is_mobile_webview' => 'setIsMobileWebview',
+        'color_scheme' => 'setColorScheme',
         'current_institution_code' => 'setCurrentInstitutionCode',
         'current_member_guid' => 'setCurrentMemberGuid',
         'disable_institution_search' => 'setDisableInstitutionSearch',
+        'include_transactions' => 'setIncludeTransactions',
         'mode' => 'setMode',
         'ui_message_version' => 'setUiMessageVersion',
         'ui_message_webview_url_scheme' => 'setUiMessageWebviewUrlScheme',
-        'update_credentials' => 'setUpdateCredentials'
+        'update_credentials' => 'setUpdateCredentials',
+        'wait_for_full_aggregation' => 'setWaitForFullAggregation'
     ];
 
     /**
@@ -130,13 +142,16 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'is_mobile_webview' => 'getIsMobileWebview',
+        'color_scheme' => 'getColorScheme',
         'current_institution_code' => 'getCurrentInstitutionCode',
         'current_member_guid' => 'getCurrentMemberGuid',
         'disable_institution_search' => 'getDisableInstitutionSearch',
+        'include_transactions' => 'getIncludeTransactions',
         'mode' => 'getMode',
         'ui_message_version' => 'getUiMessageVersion',
         'ui_message_webview_url_scheme' => 'getUiMessageWebviewUrlScheme',
-        'update_credentials' => 'getUpdateCredentials'
+        'update_credentials' => 'getUpdateCredentials',
+        'wait_for_full_aggregation' => 'getWaitForFullAggregation'
     ];
 
     /**
@@ -200,13 +215,16 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['is_mobile_webview'] = isset($data['is_mobile_webview']) ? $data['is_mobile_webview'] : null;
+        $this->container['color_scheme'] = isset($data['color_scheme']) ? $data['color_scheme'] : null;
         $this->container['current_institution_code'] = isset($data['current_institution_code']) ? $data['current_institution_code'] : null;
         $this->container['current_member_guid'] = isset($data['current_member_guid']) ? $data['current_member_guid'] : null;
         $this->container['disable_institution_search'] = isset($data['disable_institution_search']) ? $data['disable_institution_search'] : null;
+        $this->container['include_transactions'] = isset($data['include_transactions']) ? $data['include_transactions'] : null;
         $this->container['mode'] = isset($data['mode']) ? $data['mode'] : null;
         $this->container['ui_message_version'] = isset($data['ui_message_version']) ? $data['ui_message_version'] : null;
         $this->container['ui_message_webview_url_scheme'] = isset($data['ui_message_webview_url_scheme']) ? $data['ui_message_webview_url_scheme'] : null;
         $this->container['update_credentials'] = isset($data['update_credentials']) ? $data['update_credentials'] : null;
+        $this->container['wait_for_full_aggregation'] = isset($data['wait_for_full_aggregation']) ? $data['wait_for_full_aggregation'] : null;
     }
 
     /**
@@ -253,6 +271,30 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
     public function setIsMobileWebview($is_mobile_webview)
     {
         $this->container['is_mobile_webview'] = $is_mobile_webview;
+
+        return $this;
+    }
+
+    /**
+     * Gets color_scheme
+     *
+     * @return string
+     */
+    public function getColorScheme()
+    {
+        return $this->container['color_scheme'];
+    }
+
+    /**
+     * Sets color_scheme
+     *
+     * @param string $color_scheme color_scheme
+     *
+     * @return $this
+     */
+    public function setColorScheme($color_scheme)
+    {
+        $this->container['color_scheme'] = $color_scheme;
 
         return $this;
     }
@@ -325,6 +367,30 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
     public function setDisableInstitutionSearch($disable_institution_search)
     {
         $this->container['disable_institution_search'] = $disable_institution_search;
+
+        return $this;
+    }
+
+    /**
+     * Gets include_transactions
+     *
+     * @return bool
+     */
+    public function getIncludeTransactions()
+    {
+        return $this->container['include_transactions'];
+    }
+
+    /**
+     * Sets include_transactions
+     *
+     * @param bool $include_transactions include_transactions
+     *
+     * @return $this
+     */
+    public function setIncludeTransactions($include_transactions)
+    {
+        $this->container['include_transactions'] = $include_transactions;
 
         return $this;
     }
@@ -421,6 +487,30 @@ class ConnectWidgetRequestBody implements ModelInterface, ArrayAccess
     public function setUpdateCredentials($update_credentials)
     {
         $this->container['update_credentials'] = $update_credentials;
+
+        return $this;
+    }
+
+    /**
+     * Gets wait_for_full_aggregation
+     *
+     * @return bool
+     */
+    public function getWaitForFullAggregation()
+    {
+        return $this->container['wait_for_full_aggregation'];
+    }
+
+    /**
+     * Sets wait_for_full_aggregation
+     *
+     * @param bool $wait_for_full_aggregation wait_for_full_aggregation
+     *
+     * @return $this
+     */
+    public function setWaitForFullAggregation($wait_for_full_aggregation)
+    {
+        $this->container['wait_for_full_aggregation'] = $wait_for_full_aggregation;
 
         return $this;
     }
