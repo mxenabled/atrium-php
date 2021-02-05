@@ -71,6 +71,13 @@ class ConnectWidgetRequestBodyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "color_scheme"
+     */
+    public function testPropertyColorScheme()
+    {
+    }
+
+    /**
      * Test attribute "current_institution_code"
      */
     public function testPropertyCurrentInstitutionCode()
@@ -88,6 +95,13 @@ class ConnectWidgetRequestBodyTest extends \PHPUnit_Framework_TestCase
      * Test attribute "disable_institution_search"
      */
     public function testPropertyDisableInstitutionSearch()
+    {
+    }
+
+    /**
+     * Test attribute "include_transactions"
+     */
+    public function testPropertyIncludeTransactions()
     {
     }
 
@@ -116,6 +130,13 @@ class ConnectWidgetRequestBodyTest extends \PHPUnit_Framework_TestCase
      * Test attribute "update_credentials"
      */
     public function testPropertyUpdateCredentials()
+    {
+    }
+
+    /**
+     * Test attribute "wait_for_full_aggregation"
+     */
+    public function testPropertyWaitForFullAggregation()
     {
     }
 }

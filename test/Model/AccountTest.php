@@ -169,6 +169,13 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "insured_name"
+     */
+    public function testPropertyInsuredName()
+    {
+    }
+
+    /**
      * Test attribute "institution_code"
      */
     public function testPropertyInstitutionCode()
@@ -256,6 +263,20 @@ class AccountTest extends \PHPUnit_Framework_TestCase
      * Test attribute "payoff_balance"
      */
     public function testPropertyPayoffBalance()
+    {
+    }
+
+    /**
+     * Test attribute "pay_out_amount"
+     */
+    public function testPropertyPayOutAmount()
+    {
+    }
+
+    /**
+     * Test attribute "premium_amount"
+     */
+    public function testPropertyPremiumAmount()
     {
     }
 
