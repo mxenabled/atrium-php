@@ -64,6 +64,7 @@ class Account implements ModelInterface, ArrayAccess
         'interest_rate' => 'float',
         'is_closed' => 'bool',
         'last_payment' => 'float',
+        'last_payment_at' => 'string',
         'loan_amount' => 'float',
         'matures_on' => 'string',
         'member_guid' => 'string',
@@ -109,6 +110,7 @@ class Account implements ModelInterface, ArrayAccess
         'interest_rate' => null,
         'is_closed' => null,
         'last_payment' => null,
+        'last_payment_at' => null,
         'loan_amount' => null,
         'matures_on' => null,
         'member_guid' => null,
@@ -175,6 +177,7 @@ class Account implements ModelInterface, ArrayAccess
         'interest_rate' => 'interest_rate',
         'is_closed' => 'is_closed',
         'last_payment' => 'last_payment',
+        'last_payment_at' => 'last_payment_at',
         'loan_amount' => 'loan_amount',
         'matures_on' => 'matures_on',
         'member_guid' => 'member_guid',
@@ -220,6 +223,7 @@ class Account implements ModelInterface, ArrayAccess
         'interest_rate' => 'setInterestRate',
         'is_closed' => 'setIsClosed',
         'last_payment' => 'setLastPayment',
+        'last_payment_at' => 'setLastPaymentAt',
         'loan_amount' => 'setLoanAmount',
         'matures_on' => 'setMaturesOn',
         'member_guid' => 'setMemberGuid',
@@ -265,6 +269,7 @@ class Account implements ModelInterface, ArrayAccess
         'interest_rate' => 'getInterestRate',
         'is_closed' => 'getIsClosed',
         'last_payment' => 'getLastPayment',
+        'last_payment_at' => 'getLastPaymentAt',
         'loan_amount' => 'getLoanAmount',
         'matures_on' => 'getMaturesOn',
         'member_guid' => 'getMemberGuid',
@@ -364,6 +369,7 @@ class Account implements ModelInterface, ArrayAccess
         $this->container['interest_rate'] = isset($data['interest_rate']) ? $data['interest_rate'] : null;
         $this->container['is_closed'] = isset($data['is_closed']) ? $data['is_closed'] : null;
         $this->container['last_payment'] = isset($data['last_payment']) ? $data['last_payment'] : null;
+        $this->container['last_payment_at'] = isset($data['last_payment_at']) ? $data['last_payment_at'] : null;
         $this->container['loan_amount'] = isset($data['loan_amount']) ? $data['loan_amount'] : null;
         $this->container['matures_on'] = isset($data['matures_on']) ? $data['matures_on'] : null;
         $this->container['member_guid'] = isset($data['member_guid']) ? $data['member_guid'] : null;
@@ -883,6 +889,30 @@ class Account implements ModelInterface, ArrayAccess
     public function setLastPayment($last_payment)
     {
         $this->container['last_payment'] = $last_payment;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_payment_at
+     *
+     * @return string
+     */
+    public function getLastPaymentAt()
+    {
+        return $this->container['last_payment_at'];
+    }
+
+    /**
+     * Sets last_payment_at
+     *
+     * @param string $last_payment_at last_payment_at
+     *
+     * @return $this
+     */
+    public function setLastPaymentAt($last_payment_at)
+    {
+        $this->container['last_payment_at'] = $last_payment_at;
 
         return $this;
     }

@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **interest_rate** | **float** |  | [optional] 
 **is_closed** | **bool** |  | [optional] 
 **last_payment** | **float** |  | [optional] 
+**last_payment_at** | **string** |  | [optional] 
 **loan_amount** | **float** |  | [optional] 
 **matures_on** | **string** |  | [optional] 
 **member_guid** | **string** |  | [optional] 
