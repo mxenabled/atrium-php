@@ -204,6 +204,13 @@ class AccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "last_payment_at"
+     */
+    public function testPropertyLastPaymentAt()
+    {
+    }
+
+    /**
      * Test attribute "loan_amount"
      */
     public function testPropertyLoanAmount()
