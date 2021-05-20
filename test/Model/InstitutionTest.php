@@ -113,6 +113,13 @@ class InstitutionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "supports_oauth"
+     */
+    public function testPropertySupportsOauth()
+    {
+    }
+
+    /**
      * Test attribute "supports_transaction_history"
      */
     public function testPropertySupportsTransactionHistory()

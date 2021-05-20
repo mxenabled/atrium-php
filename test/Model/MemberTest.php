@@ -106,6 +106,13 @@ class MemberTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "is_oauth"
+     */
+    public function testPropertyIsOauth()
+    {
+    }
+
+    /**
      * Test attribute "metadata"
      */
     public function testPropertyMetadata()

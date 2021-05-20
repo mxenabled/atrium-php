@@ -51,6 +51,7 @@ class Institution implements ModelInterface, ArrayAccess
         'supports_account_identification' => 'bool',
         'supports_account_statement' => 'bool',
         'supports_account_verification' => 'bool',
+        'supports_oauth' => 'bool',
         'supports_transaction_history' => 'bool',
         'url' => 'string'
     ];
@@ -68,6 +69,7 @@ class Institution implements ModelInterface, ArrayAccess
         'supports_account_identification' => null,
         'supports_account_statement' => null,
         'supports_account_verification' => null,
+        'supports_oauth' => null,
         'supports_transaction_history' => null,
         'url' => null
     ];
@@ -106,6 +108,7 @@ class Institution implements ModelInterface, ArrayAccess
         'supports_account_identification' => 'supports_account_identification',
         'supports_account_statement' => 'supports_account_statement',
         'supports_account_verification' => 'supports_account_verification',
+        'supports_oauth' => 'supports_oauth',
         'supports_transaction_history' => 'supports_transaction_history',
         'url' => 'url'
     ];
@@ -123,6 +126,7 @@ class Institution implements ModelInterface, ArrayAccess
         'supports_account_identification' => 'setSupportsAccountIdentification',
         'supports_account_statement' => 'setSupportsAccountStatement',
         'supports_account_verification' => 'setSupportsAccountVerification',
+        'supports_oauth' => 'setSupportsOauth',
         'supports_transaction_history' => 'setSupportsTransactionHistory',
         'url' => 'setUrl'
     ];
@@ -140,6 +144,7 @@ class Institution implements ModelInterface, ArrayAccess
         'supports_account_identification' => 'getSupportsAccountIdentification',
         'supports_account_statement' => 'getSupportsAccountStatement',
         'supports_account_verification' => 'getSupportsAccountVerification',
+        'supports_oauth' => 'getSupportsOauth',
         'supports_transaction_history' => 'getSupportsTransactionHistory',
         'url' => 'getUrl'
     ];
@@ -211,6 +216,7 @@ class Institution implements ModelInterface, ArrayAccess
         $this->container['supports_account_identification'] = isset($data['supports_account_identification']) ? $data['supports_account_identification'] : null;
         $this->container['supports_account_statement'] = isset($data['supports_account_statement']) ? $data['supports_account_statement'] : null;
         $this->container['supports_account_verification'] = isset($data['supports_account_verification']) ? $data['supports_account_verification'] : null;
+        $this->container['supports_oauth'] = isset($data['supports_oauth']) ? $data['supports_oauth'] : null;
         $this->container['supports_transaction_history'] = isset($data['supports_transaction_history']) ? $data['supports_transaction_history'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
@@ -403,6 +409,30 @@ class Institution implements ModelInterface, ArrayAccess
     public function setSupportsAccountVerification($supports_account_verification)
     {
         $this->container['supports_account_verification'] = $supports_account_verification;
+
+        return $this;
+    }
+
+    /**
+     * Gets supports_oauth
+     *
+     * @return bool
+     */
+    public function getSupportsOauth()
+    {
+        return $this->container['supports_oauth'];
+    }
+
+    /**
+     * Sets supports_oauth
+     *
+     * @param bool $supports_oauth supports_oauth
+     *
+     * @return $this
+     */
+    public function setSupportsOauth($supports_oauth)
+    {
+        $this->container['supports_oauth'] = $supports_oauth;
 
         return $this;
     }
