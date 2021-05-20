@@ -50,6 +50,7 @@ class Member implements ModelInterface, ArrayAccess
         'identifier' => 'string',
         'institution_code' => 'string',
         'is_being_aggregated' => 'bool',
+        'is_oauth' => 'bool',
         'metadata' => 'string',
         'name' => 'string',
         'oauth_window_uri' => 'string',
@@ -70,6 +71,7 @@ class Member implements ModelInterface, ArrayAccess
         'identifier' => null,
         'institution_code' => null,
         'is_being_aggregated' => null,
+        'is_oauth' => null,
         'metadata' => null,
         'name' => null,
         'oauth_window_uri' => null,
@@ -111,6 +113,7 @@ class Member implements ModelInterface, ArrayAccess
         'identifier' => 'identifier',
         'institution_code' => 'institution_code',
         'is_being_aggregated' => 'is_being_aggregated',
+        'is_oauth' => 'is_oauth',
         'metadata' => 'metadata',
         'name' => 'name',
         'oauth_window_uri' => 'oauth_window_uri',
@@ -131,6 +134,7 @@ class Member implements ModelInterface, ArrayAccess
         'identifier' => 'setIdentifier',
         'institution_code' => 'setInstitutionCode',
         'is_being_aggregated' => 'setIsBeingAggregated',
+        'is_oauth' => 'setIsOauth',
         'metadata' => 'setMetadata',
         'name' => 'setName',
         'oauth_window_uri' => 'setOauthWindowUri',
@@ -151,6 +155,7 @@ class Member implements ModelInterface, ArrayAccess
         'identifier' => 'getIdentifier',
         'institution_code' => 'getInstitutionCode',
         'is_being_aggregated' => 'getIsBeingAggregated',
+        'is_oauth' => 'getIsOauth',
         'metadata' => 'getMetadata',
         'name' => 'getName',
         'oauth_window_uri' => 'getOauthWindowUri',
@@ -225,6 +230,7 @@ class Member implements ModelInterface, ArrayAccess
         $this->container['identifier'] = isset($data['identifier']) ? $data['identifier'] : null;
         $this->container['institution_code'] = isset($data['institution_code']) ? $data['institution_code'] : null;
         $this->container['is_being_aggregated'] = isset($data['is_being_aggregated']) ? $data['is_being_aggregated'] : null;
+        $this->container['is_oauth'] = isset($data['is_oauth']) ? $data['is_oauth'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['oauth_window_uri'] = isset($data['oauth_window_uri']) ? $data['oauth_window_uri'] : null;
@@ -397,6 +403,30 @@ class Member implements ModelInterface, ArrayAccess
     public function setIsBeingAggregated($is_being_aggregated)
     {
         $this->container['is_being_aggregated'] = $is_being_aggregated;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_oauth
+     *
+     * @return bool
+     */
+    public function getIsOauth()
+    {
+        return $this->container['is_oauth'];
+    }
+
+    /**
+     * Sets is_oauth
+     *
+     * @param bool $is_oauth is_oauth
+     *
+     * @return $this
+     */
+    public function setIsOauth($is_oauth)
+    {
+        $this->container['is_oauth'] = $is_oauth;
 
         return $this;
     }
