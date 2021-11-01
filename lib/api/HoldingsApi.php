@@ -80,14 +80,16 @@ class HoldingsApi
      * List holdings
      *
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \atrium\model\HoldingsResponseBody
      */
-    public function listHoldings($user_guid)
+    public function listHoldings($user_guid, $page = null, $records_per_page = null)
     {
-        list($response) = $this->listHoldingsWithHttpInfo($user_guid);
+        list($response) = $this->listHoldingsWithHttpInfo($user_guid, $page, $records_per_page);
         return $response;
     }
 
@@ -97,15 +99,17 @@ class HoldingsApi
      * List holdings
      *
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \atrium\model\HoldingsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listHoldingsWithHttpInfo($user_guid)
+    public function listHoldingsWithHttpInfo($user_guid, $page = null, $records_per_page = null)
     {
         $returnType = '\atrium\model\HoldingsResponseBody';
-        $request = $this->listHoldingsRequest($user_guid);
+        $request = $this->listHoldingsRequest($user_guid, $page, $records_per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -172,13 +176,15 @@ class HoldingsApi
      * List holdings
      *
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listHoldingsAsync($user_guid)
+    public function listHoldingsAsync($user_guid, $page = null, $records_per_page = null)
     {
-        return $this->listHoldingsAsyncWithHttpInfo($user_guid)
+        return $this->listHoldingsAsyncWithHttpInfo($user_guid, $page, $records_per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -192,14 +198,16 @@ class HoldingsApi
      * List holdings
      *
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listHoldingsAsyncWithHttpInfo($user_guid)
+    public function listHoldingsAsyncWithHttpInfo($user_guid, $page = null, $records_per_page = null)
     {
         $returnType = '\atrium\model\HoldingsResponseBody';
-        $request = $this->listHoldingsRequest($user_guid);
+        $request = $this->listHoldingsRequest($user_guid, $page, $records_per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -242,11 +250,13 @@ class HoldingsApi
      * Create request for operation 'listHoldings'
      *
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listHoldingsRequest($user_guid)
+    protected function listHoldingsRequest($user_guid, $page = null, $records_per_page = null)
     {
         // verify the required parameter 'user_guid' is set
         if ($user_guid === null || (is_array($user_guid) && count($user_guid) === 0)) {
@@ -262,6 +272,14 @@ class HoldingsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($records_per_page !== null) {
+            $queryParams['records_per_page'] = ObjectSerializer::toQueryValue($records_per_page);
+        }
 
         // path params
         if ($user_guid !== null) {
@@ -353,14 +371,16 @@ class HoldingsApi
      *
      * @param  string $account_guid The unique identifier for an &#x60;account&#x60;. (required)
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \atrium\model\HoldingsResponseBody
      */
-    public function listHoldingsByAccount($account_guid, $user_guid)
+    public function listHoldingsByAccount($account_guid, $user_guid, $page = null, $records_per_page = null)
     {
-        list($response) = $this->listHoldingsByAccountWithHttpInfo($account_guid, $user_guid);
+        list($response) = $this->listHoldingsByAccountWithHttpInfo($account_guid, $user_guid, $page, $records_per_page);
         return $response;
     }
 
@@ -371,15 +391,17 @@ class HoldingsApi
      *
      * @param  string $account_guid The unique identifier for an &#x60;account&#x60;. (required)
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \atrium\model\HoldingsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listHoldingsByAccountWithHttpInfo($account_guid, $user_guid)
+    public function listHoldingsByAccountWithHttpInfo($account_guid, $user_guid, $page = null, $records_per_page = null)
     {
         $returnType = '\atrium\model\HoldingsResponseBody';
-        $request = $this->listHoldingsByAccountRequest($account_guid, $user_guid);
+        $request = $this->listHoldingsByAccountRequest($account_guid, $user_guid, $page, $records_per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -447,13 +469,15 @@ class HoldingsApi
      *
      * @param  string $account_guid The unique identifier for an &#x60;account&#x60;. (required)
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listHoldingsByAccountAsync($account_guid, $user_guid)
+    public function listHoldingsByAccountAsync($account_guid, $user_guid, $page = null, $records_per_page = null)
     {
-        return $this->listHoldingsByAccountAsyncWithHttpInfo($account_guid, $user_guid)
+        return $this->listHoldingsByAccountAsyncWithHttpInfo($account_guid, $user_guid, $page, $records_per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -468,14 +492,16 @@ class HoldingsApi
      *
      * @param  string $account_guid The unique identifier for an &#x60;account&#x60;. (required)
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listHoldingsByAccountAsyncWithHttpInfo($account_guid, $user_guid)
+    public function listHoldingsByAccountAsyncWithHttpInfo($account_guid, $user_guid, $page = null, $records_per_page = null)
     {
         $returnType = '\atrium\model\HoldingsResponseBody';
-        $request = $this->listHoldingsByAccountRequest($account_guid, $user_guid);
+        $request = $this->listHoldingsByAccountRequest($account_guid, $user_guid, $page, $records_per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -519,11 +545,13 @@ class HoldingsApi
      *
      * @param  string $account_guid The unique identifier for an &#x60;account&#x60;. (required)
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listHoldingsByAccountRequest($account_guid, $user_guid)
+    protected function listHoldingsByAccountRequest($account_guid, $user_guid, $page = null, $records_per_page = null)
     {
         // verify the required parameter 'account_guid' is set
         if ($account_guid === null || (is_array($account_guid) && count($account_guid) === 0)) {
@@ -545,6 +573,14 @@ class HoldingsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($records_per_page !== null) {
+            $queryParams['records_per_page'] = ObjectSerializer::toQueryValue($records_per_page);
+        }
 
         // path params
         if ($account_guid !== null) {
@@ -644,14 +680,16 @@ class HoldingsApi
      *
      * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \atrium\model\HoldingsResponseBody
      */
-    public function listHoldingsByMember($member_guid, $user_guid)
+    public function listHoldingsByMember($member_guid, $user_guid, $page = null, $records_per_page = null)
     {
-        list($response) = $this->listHoldingsByMemberWithHttpInfo($member_guid, $user_guid);
+        list($response) = $this->listHoldingsByMemberWithHttpInfo($member_guid, $user_guid, $page, $records_per_page);
         return $response;
     }
 
@@ -662,15 +700,17 @@ class HoldingsApi
      *
      * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \atrium\model\HoldingsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listHoldingsByMemberWithHttpInfo($member_guid, $user_guid)
+    public function listHoldingsByMemberWithHttpInfo($member_guid, $user_guid, $page = null, $records_per_page = null)
     {
         $returnType = '\atrium\model\HoldingsResponseBody';
-        $request = $this->listHoldingsByMemberRequest($member_guid, $user_guid);
+        $request = $this->listHoldingsByMemberRequest($member_guid, $user_guid, $page, $records_per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -738,13 +778,15 @@ class HoldingsApi
      *
      * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listHoldingsByMemberAsync($member_guid, $user_guid)
+    public function listHoldingsByMemberAsync($member_guid, $user_guid, $page = null, $records_per_page = null)
     {
-        return $this->listHoldingsByMemberAsyncWithHttpInfo($member_guid, $user_guid)
+        return $this->listHoldingsByMemberAsyncWithHttpInfo($member_guid, $user_guid, $page, $records_per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -759,14 +801,16 @@ class HoldingsApi
      *
      * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listHoldingsByMemberAsyncWithHttpInfo($member_guid, $user_guid)
+    public function listHoldingsByMemberAsyncWithHttpInfo($member_guid, $user_guid, $page = null, $records_per_page = null)
     {
         $returnType = '\atrium\model\HoldingsResponseBody';
-        $request = $this->listHoldingsByMemberRequest($member_guid, $user_guid);
+        $request = $this->listHoldingsByMemberRequest($member_guid, $user_guid, $page, $records_per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -810,11 +854,13 @@ class HoldingsApi
      *
      * @param  string $member_guid The unique identifier for a &#x60;member&#x60;. (required)
      * @param  string $user_guid The unique identifier for a &#x60;user&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listHoldingsByMemberRequest($member_guid, $user_guid)
+    protected function listHoldingsByMemberRequest($member_guid, $user_guid, $page = null, $records_per_page = null)
     {
         // verify the required parameter 'member_guid' is set
         if ($member_guid === null || (is_array($member_guid) && count($member_guid) === 0)) {
@@ -836,6 +882,14 @@ class HoldingsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($records_per_page !== null) {
+            $queryParams['records_per_page'] = ObjectSerializer::toQueryValue($records_per_page);
+        }
 
         // path params
         if ($member_guid !== null) {

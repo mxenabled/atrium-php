@@ -80,14 +80,16 @@ class MerchantsApi
      * List merchant locations
      *
      * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \atrium\model\MerchantLocationsResponseBody
      */
-    public function listMerchantLocations($merchant_guid)
+    public function listMerchantLocations($merchant_guid, $page = null, $records_per_page = null)
     {
-        list($response) = $this->listMerchantLocationsWithHttpInfo($merchant_guid);
+        list($response) = $this->listMerchantLocationsWithHttpInfo($merchant_guid, $page, $records_per_page);
         return $response;
     }
 
@@ -97,15 +99,17 @@ class MerchantsApi
      * List merchant locations
      *
      * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \atrium\model\MerchantLocationsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMerchantLocationsWithHttpInfo($merchant_guid)
+    public function listMerchantLocationsWithHttpInfo($merchant_guid, $page = null, $records_per_page = null)
     {
         $returnType = '\atrium\model\MerchantLocationsResponseBody';
-        $request = $this->listMerchantLocationsRequest($merchant_guid);
+        $request = $this->listMerchantLocationsRequest($merchant_guid, $page, $records_per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -172,13 +176,15 @@ class MerchantsApi
      * List merchant locations
      *
      * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMerchantLocationsAsync($merchant_guid)
+    public function listMerchantLocationsAsync($merchant_guid, $page = null, $records_per_page = null)
     {
-        return $this->listMerchantLocationsAsyncWithHttpInfo($merchant_guid)
+        return $this->listMerchantLocationsAsyncWithHttpInfo($merchant_guid, $page, $records_per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -192,14 +198,16 @@ class MerchantsApi
      * List merchant locations
      *
      * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMerchantLocationsAsyncWithHttpInfo($merchant_guid)
+    public function listMerchantLocationsAsyncWithHttpInfo($merchant_guid, $page = null, $records_per_page = null)
     {
         $returnType = '\atrium\model\MerchantLocationsResponseBody';
-        $request = $this->listMerchantLocationsRequest($merchant_guid);
+        $request = $this->listMerchantLocationsRequest($merchant_guid, $page, $records_per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -242,11 +250,13 @@ class MerchantsApi
      * Create request for operation 'listMerchantLocations'
      *
      * @param  string $merchant_guid The unique identifier for a &#x60;merchant&#x60;. (required)
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listMerchantLocationsRequest($merchant_guid)
+    protected function listMerchantLocationsRequest($merchant_guid, $page = null, $records_per_page = null)
     {
         // verify the required parameter 'merchant_guid' is set
         if ($merchant_guid === null || (is_array($merchant_guid) && count($merchant_guid) === 0)) {
@@ -262,6 +272,14 @@ class MerchantsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($records_per_page !== null) {
+            $queryParams['records_per_page'] = ObjectSerializer::toQueryValue($records_per_page);
+        }
 
         // path params
         if ($merchant_guid !== null) {
@@ -351,14 +369,16 @@ class MerchantsApi
      *
      * List merchants
      *
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \atrium\model\MerchantsResponseBody
      */
-    public function listMerchants()
+    public function listMerchants($page = null, $records_per_page = null)
     {
-        list($response) = $this->listMerchantsWithHttpInfo();
+        list($response) = $this->listMerchantsWithHttpInfo($page, $records_per_page);
         return $response;
     }
 
@@ -367,15 +387,17 @@ class MerchantsApi
      *
      * List merchants
      *
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \atrium\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \atrium\model\MerchantsResponseBody, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listMerchantsWithHttpInfo()
+    public function listMerchantsWithHttpInfo($page = null, $records_per_page = null)
     {
         $returnType = '\atrium\model\MerchantsResponseBody';
-        $request = $this->listMerchantsRequest();
+        $request = $this->listMerchantsRequest($page, $records_per_page);
 
         try {
             $options = $this->createHttpClientOption();
@@ -441,13 +463,15 @@ class MerchantsApi
      *
      * List merchants
      *
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMerchantsAsync()
+    public function listMerchantsAsync($page = null, $records_per_page = null)
     {
-        return $this->listMerchantsAsyncWithHttpInfo()
+        return $this->listMerchantsAsyncWithHttpInfo($page, $records_per_page)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -460,14 +484,16 @@ class MerchantsApi
      *
      * List merchants
      *
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listMerchantsAsyncWithHttpInfo()
+    public function listMerchantsAsyncWithHttpInfo($page = null, $records_per_page = null)
     {
         $returnType = '\atrium\model\MerchantsResponseBody';
-        $request = $this->listMerchantsRequest();
+        $request = $this->listMerchantsRequest($page, $records_per_page);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -509,11 +535,13 @@ class MerchantsApi
     /**
      * Create request for operation 'listMerchants'
      *
+     * @param  int $page Specify current page. (optional)
+     * @param  int $records_per_page Specify records per page. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listMerchantsRequest()
+    protected function listMerchantsRequest($page = null, $records_per_page = null)
     {
 
         $resourcePath = '/merchants';
@@ -523,6 +551,14 @@ class MerchantsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($records_per_page !== null) {
+            $queryParams['records_per_page'] = ObjectSerializer::toQueryValue($records_per_page);
+        }
 
 
         // body params

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **listHoldings**
-> \atrium\model\HoldingsResponseBody listHoldings($user_guid)
+> \atrium\model\HoldingsResponseBody listHoldings($user_guid, $page, $records_per_page)
 
 List holdings
 
@@ -27,9 +27,11 @@ $client = new atrium\Api\AtriumClient(
 );
 
 $user_guid = "USR-123"; // string | The unique identifier for a `user`.
+$page = 1; // int | Specify current page.
+$records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $client->holdings->listHoldings($user_guid);
+    $result = $client->holdings->listHoldings($user_guid, $page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HoldingsApi->listHoldings: ', $e->getMessage(), PHP_EOL;
@@ -42,6 +44,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_guid** | **string**| The unique identifier for a &#x60;user&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
 
 ### Return type
 
@@ -50,7 +54,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listHoldingsByAccount**
-> \atrium\model\HoldingsResponseBody listHoldingsByAccount($account_guid, $user_guid)
+> \atrium\model\HoldingsResponseBody listHoldingsByAccount($account_guid, $user_guid, $page, $records_per_page)
 
 List holdings by account
 
@@ -69,9 +73,11 @@ $client = new atrium\Api\AtriumClient(
 
 $account_guid = "ACT-123"; // string | The unique identifier for an `account`.
 $user_guid = "USR-123"; // string | The unique identifier for a `user`.
+$page = 1; // int | Specify current page.
+$records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $client->holdings->listHoldingsByAccount($account_guid, $user_guid);
+    $result = $client->holdings->listHoldingsByAccount($account_guid, $user_guid, $page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HoldingsApi->listHoldingsByAccount: ', $e->getMessage(), PHP_EOL;
@@ -85,6 +91,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_guid** | **string**| The unique identifier for an &#x60;account&#x60;. |
  **user_guid** | **string**| The unique identifier for a &#x60;user&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
 
 ### Return type
 
@@ -93,7 +101,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listHoldingsByMember**
-> \atrium\model\HoldingsResponseBody listHoldingsByMember($member_guid, $user_guid)
+> \atrium\model\HoldingsResponseBody listHoldingsByMember($member_guid, $user_guid, $page, $records_per_page)
 
 List holdings by member
 
@@ -112,9 +120,11 @@ $client = new atrium\Api\AtriumClient(
 
 $member_guid = "MBR-123"; // string | The unique identifier for a `member`.
 $user_guid = "USR-123"; // string | The unique identifier for a `user`.
+$page = 1; // int | Specify current page.
+$records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $client->holdings->listHoldingsByMember($member_guid, $user_guid);
+    $result = $client->holdings->listHoldingsByMember($member_guid, $user_guid, $page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HoldingsApi->listHoldingsByMember: ', $e->getMessage(), PHP_EOL;
@@ -128,6 +138,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **member_guid** | **string**| The unique identifier for a &#x60;member&#x60;. |
  **user_guid** | **string**| The unique identifier for a &#x60;user&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
 
 ### Return type
 
