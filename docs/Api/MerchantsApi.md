@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **listMerchantLocations**
-> \atrium\model\MerchantLocationsResponseBody listMerchantLocations($merchant_guid)
+> \atrium\model\MerchantLocationsResponseBody listMerchantLocations($merchant_guid, $page, $records_per_page)
 
 List merchant locations
 
@@ -27,9 +27,11 @@ $client = new atrium\Api\AtriumClient(
 );
 
 $merchant_guid = "MCH-123"; // string | The unique identifier for a `merchant`.
+$page = 1; // int | Specify current page.
+$records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $client->merchants->listMerchantLocations($merchant_guid);
+    $result = $client->merchants->listMerchantLocations($merchant_guid, $page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantsApi->listMerchantLocations: ', $e->getMessage(), PHP_EOL;
@@ -42,6 +44,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merchant_guid** | **string**| The unique identifier for a &#x60;merchant&#x60;. |
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
 
 ### Return type
 
@@ -50,7 +54,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listMerchants**
-> \atrium\model\MerchantsResponseBody listMerchants()
+> \atrium\model\MerchantsResponseBody listMerchants($page, $records_per_page)
 
 List merchants
 
@@ -67,9 +71,11 @@ $client = new atrium\Api\AtriumClient(
     new GuzzleHttp\Client()
 );
 
+$page = 1; // int | Specify current page.
+$records_per_page = 12; // int | Specify records per page.
 
 try {
-    $result = $client->merchants->listMerchants();
+    $result = $client->merchants->listMerchants($page, $records_per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MerchantsApi->listMerchants: ', $e->getMessage(), PHP_EOL;
@@ -78,7 +84,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Specify current page. | [optional]
+ **records_per_page** | **int**| Specify records per page. | [optional]
 
 ### Return type
 
